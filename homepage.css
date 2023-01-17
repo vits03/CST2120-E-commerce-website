@@ -3,7 +3,7 @@
 
 body{
    
-    height: 200vh;
+    height: 300vh;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     box-sizing: border-box;
@@ -77,6 +77,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .option{
@@ -582,9 +583,125 @@ footer .flex:last-child a:hover{
     }
 }
 
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
 
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 90%; /* Full-width */
+  height: 20px; /* Specified height */
+  background-color: rgb(176, 174, 174);
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #eb6200; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
 .carousel {
 
    display: flex;
    justify-content: center;
+}
+
+.product-filter{
+
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.filter{
+  height: 100%;
+  width: 15%;
+  outline: 2px solid red;
+}
+.products{
+  display: flex;
+  flex-direction: column;
+ 
+  outline: 2px solid rgb(104, 66, 66);
+  height: auto;
+  width:80%;
+}
+
+.product-wrapper{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  outline: 2px solid red;
+  height: 100%;
+  width: 100%
+}
+.product-container{
+  height: 12rem;
+  width: 13rem;
+  outline: 2px solid red;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+
+.product-container img{
+  width: 100%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.product-description,.product-price{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+select{
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.filter-menu{
+  margin: 1rem;
+  margin-left: auto;
+}
+
+.product-container:hover{
+  
+  opacity:0.4;
+}
+
+span,p{
+  display:  block;
+  text-align: center;
+}
+
+.filter{
+  padding: 1rem;
+}
+
+.categories{
+  margin-top: 2rem;
 }
