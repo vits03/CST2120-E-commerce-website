@@ -2,7 +2,7 @@
 
 body{
    
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     box-sizing: border-box;
@@ -66,7 +66,7 @@ body{
 }
 
 a{
-    color: rgb(32, 32, 32);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
@@ -322,15 +322,37 @@ footer .flex:last-child a:hover{
     }
 }
 
+.ref-date-detail{
+    display:flex;
+    justify-content: space-evenly;
+    border: 2px solid  #efa760;
+    padding: 2rem;
+    border-radius: 20px;
+  }
 
-.order-history{
-    margin-top: 3rem;
-}
-
-
-.orders-container{
+.payment-detail{
+    display: flex;
+    justify-content: center;
     margin-top: 2rem;
+    border: 2px solid  #efa760;
+    padding: 2rem;
+    border-radius: 20px;
 }
+
+.address-detail{
+    margin-top: 2rem;
+    border: 2px solid  #efa760;
+    padding: 2rem;
+    border-radius: 20px;
+  
+}
+
+.del-header{
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+
 
 table {
     font-family: inherit;
@@ -348,16 +370,11 @@ table {
     background-color: #dddddd;
   }
 
-  .view-btn{
-    background-color: var(--primary);
-    padding: .5rem;
-    border-radius: 15px;
-   
+
+  .product-detail{
+    margin: 2rem 0;
   }
 
-  .view-container{
-    display: flex;
-    justify-content: space-between;
+  .order-details{
+    margin-top: 3rem;
   }
-
-  
