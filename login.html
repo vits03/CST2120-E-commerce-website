@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | E-Commerce</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      <div class="loginbackground box-background--white padding-top--64">
+      </div>
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <div class="logo-image">
+            <img src="assets\images\temp-logo.png" alt="logo">
+          </div>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+                <div class="container-heading">
+                    <span class="padding-bottom--15">Sign in to your account</span>
+                </div>
+              
+              <form id="stripe-login">
+                <div class="field padding-bottom--24">
+                  <label for="username">Username</label>
+                  <input type="text" name="username">
+                </div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Password</label>
+                    <div class="reset-pass">
+                      <a href="#">Forgot your password?</a>
+                    </div>
+                  </div>
+                  <input type="password" name="password">
+                </div>
+                <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
+
+                </div>
+                <div class="field padding-bottom--24">
+                  <a href="homepage.html">
+                    <input type="submit" name="submit" value="Sign In">
+                  </a>
+                </div>
+                <div class="container-heading" id="heading2">
+                    <span>Don't have an account? <a href="">Sign up</a></span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
