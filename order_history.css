@@ -2,7 +2,7 @@
 
 body{
    
-    height: 150vh;
+    height: 100vh;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     box-sizing: border-box;
@@ -12,7 +12,6 @@ body{
     width: 90%;
     margin: 0 auto;
     height: 100%;
-    outline: 2px solid red;
 }
 
 .navbar{
@@ -67,7 +66,7 @@ body{
 }
 
 a{
-    color: rgb(4, 1, 1);
+    color: rgb(32, 32, 32);
     text-decoration: none;
 }
 
@@ -324,63 +323,39 @@ footer .flex:last-child a:hover{
 }
 
 
-.product-container{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-   
-    
+.order-history{
+    margin-top: 3rem;
 }
 
-.product-image{
-    height: 90%;
-    width:60%;
-    outline: 0px solid red;
-}
 
-.product-details{
-   
-    width: 45%;
-    height: 90%;
-    outline: 0px solid black;
-}
-
-.product-description{
+.orders-container{
     margin-top: 2rem;
-    font-size: 2rem;
 }
 
-.product-price{
-    color: var(--primary);
-   margin-top: 2rem;
-    font-size: 1.5rem;
-}
+table {
+    font-family: inherit;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 
-.product-list-description li{
-    font-size: 0.9rem;
-}
-
-.product-image img{
-    height: 80%;
-    width: 80%;
-    object-fit:contain;
-}
-
-.cart-btn a{
+  .view-btn{
     background-color: var(--primary);
-    padding: 1.2rem;
-    border-radius: 40px;
-    
-}
+    padding: .5rem;
+    border-radius: 15px;
+   
+  }
 
-.cart-btn{
-    margin: 3rem;   
-}
-
-.buynow-btn a{
-    background-color: var(--primary);
-    padding: 1.2rem;
-    border-radius: 40px;
- 
-}
+  .view-container{
+    display: flex;
+    justify-content: space-between;
+  }
