@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout | E-Commerce</title>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="checkout.css">
 </head>
 <body>
@@ -111,18 +111,35 @@
                         <a href="cart.html"><strong>< Return to cart</strong></a>
                     </div>
                     <div class="continue">
+                      <a href="#demo-modal">
                         <button class="button-82-pushable" role="button">
-                            <span class="button-82-shadow"></span>
-                            <span class="button-82-edge"></span>
-                            <span class="button-82-front text">
-                              Continue to shipping
-                            </span>
-                        </button>
+                          <span class="button-82-shadow"></span>
+                          <span class="button-82-edge"></span>
+                          <span class="button-82-front text">
+                            Continue to shipping
+                          </span>
+                      </button>
+                      </a>
+                        
                     </div>
                 </div>
             </div>
 
-            
+            <div id="demo-modal" class="modal">
+              <div class="modal__content">
+                <div class="animation">
+                  <img src="assets\images\confirmed-order.gif">
+              </div>
+              <div class="message">
+                <h3>Your order has been received!</h3>
+              </div>       
+                  <a href="#" class="modal__close">
+                    <span class="material-symbols-outlined">
+                      close
+                      </span>
+                  </a>
+              </div>
+          </div>
             <div class="checkout-details">
                 <div class="items">
                     <div class="item-detail">
