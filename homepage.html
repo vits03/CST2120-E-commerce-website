@@ -21,13 +21,9 @@
     <div class="navbar">
         <div class="nav">
             
-             <div class="logo"><a href="#">Website logo/website logo/website</a></div>
+             <div class="logo"><a href="#">Website Logo</a></div>
              <div class="searchbar">
-
-
-                    
                     <input type="text" placeholder="Search bar" id="searchbar-input" name="fname">
-
              </div>
              <div class="right-container">
              <div class="login"><a href="login.html">Log In</a></div>
@@ -40,16 +36,66 @@
     </div>
 
    <div class="wrapper">
-
     <div class="option-container">
-        <div class="option">
-            <a href="">Mobile phones</a>
+      <div class="option">
+          <a href="">Mobile phones</a>
+      </div>
+      <div class="option"><a href="#">Televisions</a></div>
+      <div class="option"><a href="#">Tablets</a></div>
+      <div class="option"><a href="#">wireless earbuds</a></div>
+      <div class="option"><a href="#">Monitors</a>
+      </div>
+      
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+      <!-- Item 1 -->
+      <div class="item-container">
+        <div class="cart-item">
+          <div class="product-image">
+              <img src="assets\images\tv.png">
+          </div>
+          <div class="product-name">Samsung 43" UHD Smart TV</div>
+          <div class="product-price">Rs 75,000</div>
         </div>
-        <div class="option"><a href="#">Televisions</a></div>
-        <div class="option"><a href="#">Tablets</a></div>
-        <div class="option"><a href="#">wireless earbuds</a></div>
-        <div class="option"><a href="#">Monitors</a>
+
+        <!-- Item 2 -->
+        <div class="cart-item">
+          <div class="product-image">
+              <img src="assets\images\phone1.png">
+          </div>
+          <div class="product-name">Apple Iphone 13 Pro Max</div>
+          <div class="product-price">Rs 65,490</div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="cart-item">
+        <div class="product-image">
+            <img src="assets\images\vacuum-cleaner.png">
         </div>
+        <div class="product-name">Candy Vacuum Cleaner 2000W</div>
+        <div class="product-price">Rs 3,990</div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="cart-item">
+        <div class="product-image">
+            <img src="assets\images\phone2.png">
+        </div>
+        <div class="product-name">Huawei P50 Pro</div>
+        <div class="product-price">Rs 52,990</div>
+    </div>
+
+    <div class="button">
+      <a href="cart.html">
+        <button class="button-87" role="button">Go to Cart</button>
+      </a>
+    </div>
+
+      </div>
+    </div>
+
+    
 
 
     </div>
@@ -57,10 +103,10 @@
     <div class="container-main">
         <div class="main-slider">
           <div class="slider-imagenes">
-            <div class="slider-img activo"><img src="tablet.webp" alt=""></div>
-            <div class="slider-img"><img src="monitor.jpg" alt=""></div>
-            <div class="slider-img"><img src="phone4.jpg" alt=""></div>
-            <div class="slider-img"><img src="phone3.webp" alt=""></div>
+            <div class="slider-img activo"><img src="assets\images\tablet.webp" alt=""></div>
+            <div class="slider-img"><img src="assets\images\monitor.jpg" alt=""></div>
+            <div class="slider-img"><img src="assets\images\phone4.jpg" alt=""></div>
+            <div class="slider-img"><img src="assets\images\phone3.webp" alt=""></div>
           </div>
           <div class="slider-controles">
             <div class="slider-controles-previous">
@@ -202,16 +248,16 @@
         
           <div class="product-container">
          
-              <div class="btn-container"><a href="#">Add to cart</a><a href="#">buy now</a></div>
-                <img src="nintendo.jpg" alt="">
+              <div class="btn-container"><a onclick="openNav()">Add to cart</a><a href="#">buy now</a></div>
+                <img src="assets\images\nintendo.jpg" alt="">
                 <div class="product-description">Nintendo Switch-128gb 4K</div>
                 <div class="product-price">Rs 11,5690</div> 
           </div>
        
         <div class="product-container">
          
-          <div class="btn-container"><a href="#">Add to cart</a><a href="#">buy now</a></div>
-            <img src="nintendo.jpg" alt="">
+          <div class="btn-container"><a onclick="openNav()">Add to cart</a><a href="#">buy now</a></div>
+            <img src="assets\images\nintendo.jpg" alt="">
             <div class="product-description">Nintendo Switch-128gb 4K</div>
             <div class="product-price">Rs 11,5690</div>  
     
@@ -219,8 +265,8 @@
         
       <div class="product-container">
          
-        <div class="btn-container"><a href="#">Add to cart</a><a href="#">buy now</a></div>
-          <img src="nintendo.jpg" alt="">
+        <div class="btn-container"><a onclick="openNav()">Add to cart</a><a href="#">buy now</a></div>
+          <img src="assets\images\nintendo.jpg" alt="">
           <div class="product-description">Nintendo Switch-128gb 4K</div>
           <div class="product-price">Rs 11,5690</div>  
   
@@ -228,8 +274,8 @@
       
     <div class="product-container">
          
-      <div class="btn-container"><a href="#">Add to cart</a><a href="#">buy now</a></div>
-        <img src="nintendo.jpg" alt="">
+      <div class="btn-container"><a onclick="openNav()">Add to cart</a><a href="#">buy now</a></div>
+        <img src="assets\images\nintendo.jpg" alt="">
         <div class="product-description">Nintendo Switch-128gb 4K</div>
         <div class="product-price">Rs 11,5690</div>  
 
@@ -238,8 +284,8 @@
 
   <div class="product-container">
          
-    <div class="btn-container"><a href="#">Add to cart</a><a href="#">buy now</a></div>
-      <img src="nintendo.jpg" alt="">
+    <div class="btn-container"><a onclick="openNav()">Add to cart</a><a href="#">buy now</a></div>
+      <img src="assets\images\nintendo.jpg" alt="">
       <div class="product-description">Nintendo Switch-128gb 4K</div>
       <div class="product-price">Rs 11,5690</div>  
 
@@ -248,8 +294,8 @@
 
 <div class="product-container">
          
-  <div class="btn-container"><a href="#">Add to cart</a><a href="#">buy now</a></div>
-    <img src="nintendo.jpg" alt="">
+  <div class="btn-container"><a onclick="openNav()">Add to cart</a><a href="#">buy now</a></div>
+    <img src="assets\images\nintendo.jpg" alt="">
     <div class="product-description">Nintendo Switch-128gb 4K</div>
     <div class="product-price">Rs 11,5690</div>  
 
@@ -257,24 +303,24 @@
 
 <div class="product-container">
          
-  <div class="btn-container"><a href="#">Add to cart</a><a href="#">buy now</a></div>
-    <img src="nintendo.jpg" alt="">
+  <div class="btn-container"><a onclick="openNav()">Add to cart</a><a href="#">buy now</a></div>
+    <img src="assets\images\nintendo.jpg" alt="">
     <div class="product-description">Nintendo Switch-128gb 4K</div>
     <div class="product-price">Rs 11,5690</div>  
 
 </div>
 <div class="product-container">
          
-  <div class="btn-container"><a href="#">Add to cart</a><a href="#">buy now</a></div>
-    <img src="nintendo.jpg" alt="">
+  <div class="btn-container"><a onclick="openNav()">Add to cart</a><a href="#">buy now</a></div>
+    <img src="assets\images\nintendo.jpg" alt="">
     <div class="product-description">Nintendo Switch-128gb 4K</div>
     <div class="product-price">Rs 11,5690</div>  
 
 </div>
 <div class="product-container">
          
-  <div class="btn-container"><a href="#">Add to cart</a><a href="#">buy now</a></div>
-    <img src="nintendo.jpg" alt="">
+  <div class="btn-container"><a onclick="openNav()">Add to cart</a><a href="#">buy now</a></div>
+    <img src="assets\images\nintendo.jpg" alt="">
     <div class="product-description">Nintendo Switch-128gb 4K</div>
     <div class="product-price">Rs 11,5690</div>  
 

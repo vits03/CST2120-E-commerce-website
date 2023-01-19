@@ -75,7 +75,7 @@ a{
 
 
 .option-container {
-    height:30vh;
+    height:10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -731,6 +731,7 @@ span,p{
 }
 
 .btn-container a{
+  cursor: pointer;
   background-color: var(--primary);
   padding: 1rem;
   border-radius: 20px;
@@ -776,4 +777,114 @@ span,p{
 .product-redirect{
   height: 100%;
   width: 100%;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 75%;
+  background-color: rgb(230, 230, 230);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.closebtn {
+  color: #000;
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 1%;
+  margin: 0 auto;
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+}
+
+.product-image {
+  border-radius: 10px;
+  max-width: 30%;
+  max-height: 100%;
+}
+
+img {
+  border-radius: 10px;
+  max-width: 75%;
+  max-height: 75%;
+  margin: auto;
+  display: block;
+}
+
+.product-name {
+  width: 50%;
+}
+
+.product-price {
+  width: 20%;
+  font-weight: bold;
+  color: orange;
+}
+
+
+.button {
+  position: absolute;
+  top: 80%;
+  bottom: 0;
+  align-items: center;
+  width: 100%;
+}
+
+
+/* Button */
+.button-87 {
+  width: 60%;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 0 auto;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
 }

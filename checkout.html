@@ -111,20 +111,20 @@
                         <a href="cart.html"><strong>< Return to cart</strong></a>
                     </div>
                     <div class="continue">
-                      <a href="#demo-modal">
-                        <button class="button-82-pushable" role="button">
-                          <span class="button-82-shadow"></span>
-                          <span class="button-82-edge"></span>
-                          <span class="button-82-front text">
-                            Continue to shipping
-                          </span>
-                      </button>
-                      </a>
+                      <button class="button-82-pushable" role="button" onclick="openModal()">
+                        <span class="button-82-shadow"></span>
+                        <span class="button-82-edge"></span>
+                        <span class="button-82-front text">
+                          Continue to shipping
+                        </span>
+                    </button>
                         
                     </div>
                 </div>
             </div>
 
+            
+            <!-- Modal -->
             <div id="demo-modal" class="modal">
               <div class="modal__content">
                 <div class="animation">
@@ -133,13 +133,15 @@
               <div class="message">
                 <h3>Your order has been received!</h3>
               </div>       
-                  <a href="#" class="modal__close">
+                  <a href="#" class="modal__close" onclick="closeModal()">
                     <span class="material-symbols-outlined">
                       close
                       </span>
                   </a>
               </div>
           </div>
+
+
             <div class="checkout-details">
                 <div class="items">
                     <div class="item-detail">
@@ -262,7 +264,7 @@
       </section>
     </div>
   </footer>
-
+    <script src="checkout.js"></script>
     <script src="https://kit.fontawesome.com/32d80fb20c.js" crossorigin="anonymous"></script>
 </body>
 </html>
