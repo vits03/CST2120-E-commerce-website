@@ -7,7 +7,7 @@ body{
 }
 
 .main-content {
-  background-image: url("assets/images/background-video.gif");
+  background-image: url("assets/images/background-video4.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -139,6 +139,7 @@ input[type="text"] {font: 15px/24px "Lato", Arial, sans-serif;
 }
 
 .button {
+  margin-top: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +147,7 @@ input[type="text"] {font: 15px/24px "Lato", Arial, sans-serif;
 
 /* button */
 .button-58 {
-
+  width: 60%;
   border-radius: 10px;
   align-items: center;
   background-color: #06f;
@@ -194,4 +195,14 @@ input[type="text"] {font: 15px/24px "Lato", Arial, sans-serif;
   .button-58 {
     min-width: 170px;
   }
+}
+
+.container3 {
+  text-align: center;
+  font-weight: 400;
+}
+
+.container3 a {
+  text-decoration: none;
+  color: white;
 }
