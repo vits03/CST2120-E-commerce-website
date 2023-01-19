@@ -16,7 +16,8 @@ body{
 
 .navbar{
     height: 10vh;
-    background-color:#efa760;
+    background: rgb(224,127,0);
+    background: linear-gradient(90deg, rgba(224,127,0,1) 0%, rgba(253,29,29,1) 40%, rgba(252,176,69,1) 100%);
     padding: 0.5rem;
 }
 
@@ -96,7 +97,7 @@ a{
     --dark:#1E1E1E;
     --gray:rgba(1,1,1,0.6);
     --lite:rgba(255,255,255,0.6);
-    --primary:#efa760;
+    --primary:#fb682f;
     --secondary:#fdc632;
 }
 
@@ -227,12 +228,17 @@ fieldset{
 }
 
 
-
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
 /***************************
                FOOTER
 ****************************/
 footer{
-    background-color:var(--primary);
+    background: rgb(224,127,0);
+    background: linear-gradient(90deg, rgba(224,127,0,1) 0%, rgba(253,29,29,1) 40%, rgba(252,176,69,1) 100%);
+   
     color:var(--lite);
 }
 
