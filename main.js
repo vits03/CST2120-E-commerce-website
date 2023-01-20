@@ -142,3 +142,11 @@ output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function() {
   output.textContent = this.value;
 } 
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "25%";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
