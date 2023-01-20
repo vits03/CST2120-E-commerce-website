@@ -26,7 +26,7 @@ body{
   min-height: 200vh;
   font-family: 'Montserrat', sans-serif;
   margin: 0;
-  background-image: url("assets/images/background-video4.gif");
+  background-image: url("../assets/images/background-video4.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

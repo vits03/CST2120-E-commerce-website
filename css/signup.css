@@ -10,7 +10,7 @@ body{
     margin: 0;
     box-sizing: border-box;
     background-color: #FAF9F6;
-    background-image: url("assets/images/background-video1.gif");
+    background-image: url("../assets/images/background-video1.gif");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
