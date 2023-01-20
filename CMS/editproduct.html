@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="editproduct.css">
+    <!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="nav">
+            
+             <div class="logo"><a href="#">TabaJ Admin </a></div>
+             
+             <div class="right-container">
+             <div class="view-product-link"><a href="#">View products</a></div>
+             <div class="add-product-link"><a href="addproduct.html">Add products</a></div>
+             <div class="Customer-order-link"><a href="#">Customer Orders</a></div>
+             <div class="logout"><a href="#">Log out</a></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+  <div class="spacer"></div>
+   <div class="wrapper">
+  
+    <!--INSERT ALL CONTENT HERE-->
+     <div class="addproduct-addition-container">
+        <div class="addproducts-container">
+           
+            <div class="add-product"> 
+                <form action="/action_category.php"><p>Edit a product</p>
+                  <label for="fname" class="block">Product name</label>
+                  <textarea id="productname" name="productname" rows="4" cols="50">Nintendo Switch – OLED Model w/ Neon Red & Neon Blue Joy-Con</textarea><br><br>
+                  
+
+                  <label for="fname" class="block">Product Description</label>
+                  <textarea id="description" name="Description" rows="4" cols="50">7-inch OLED screen - Enjoy vivid colors and crisp contrast with a screen that makes colors pop
+                    Wired LAN port - Use the dock’s LAN port when playing in TV mode for a wired internet connection
+                    64 GB internal storage - Save games to your system with 64 GB of internal storage
+                    Enhanced audio – Enjoy enhanced sound from the system’s onboard speakers when playing in Handheld and Tabletop modes.
+                    Wide adjustable stand – Freely angle the system’s wide, adjustable stand for comfortable viewing in Tabletop mode. Nintendo Switch – OLED Model supports all Joy-Con controllers and Nintendo Switch software</textarea><br><br>
+                 
+                  <label for="fname" class="block">Price</label>
+                  <textarea id="price" name="Description" rows="4" cols="50">Rs 45,000</textarea><br><br>
+                      
+                  <label for="fname" class="block">Quantity</label>
+                  <textarea id="description" name="Description" rows="4" cols="50">1</textarea><br><br>
+                   <p>Choose a category</p>
+                   <input type="radio" checked="checked" id="category1" name="category" value="mobile">
+                     <label for="category1">Mobile Phones</label><br>
+                   <input type="radio" id="category2" name="category" value="60">
+                   <label for="category2">Tablets</label><br>  
+                    <input type="radio" id="category3" name="category" value="100">
+                   <label for="category3">Monitors</label><br>
+                      <input type="radio" id="category3" name="category" value="100">
+                     
+                      <label for="category3">Wireless earbuds</label>
+                 <br>
+                  <input type="submit" value="Submit">
+                 
+                  
+                </form></div>
+        </div>
+     </div>
+    
+
+
+</div>
+
+
+
+
+<!--footer-->
+<footer class="padding_4x">
+    
+   
+      <section class="flex-content padding_1x">
+        <p>Copyright ©2023 All rights reserved ||  TabaJ 2000</p>
+      </section>
+    
+  </footer>
+
+</body>
+
+<script src="https://kit.fontawesome.com/32d80fb20c.js" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</html>

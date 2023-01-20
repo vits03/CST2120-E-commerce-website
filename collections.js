@@ -7,6 +7,7 @@
      "address":"boulevard street,california",
      "email":"Johnsmith3@gmail.com",
      "telephonenum":"230582342312",
+     "country":"Mauritius"
      "orders":[ObjectId("FFFF"),ObjectId("GGGG")]
 }
 
@@ -19,6 +20,7 @@
     "description":"......",
     "price":"56500",
     "quantity":"25",
+    "category":"Mobile Phones"
     "url":"/iphone14"
 }
 
