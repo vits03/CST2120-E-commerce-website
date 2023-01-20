@@ -33,7 +33,7 @@ body {
 .login-heading {
     text-align: center;
     margin-top: 25vh;
-    color: orange;
+    color: #fb682f;
 
     margin-bottom: 20vh;
 }
@@ -107,8 +107,8 @@ body {
     width: 70%;
     border-radius: 10px;
     align-items: center;
-    background-color: orange;
-    border: 2px solid orange;
+    background-color: #fb682f ;
+    border: 2px solid #fb682f;
     box-sizing: border-box;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -137,13 +137,13 @@ body {
   }
   
   .button-58:hover {
-    background-color: #3385ff;
+    background-color: #f77c02;
     border-color: #3385ff;
     fill: #06f;
   }
   
   .button-58:active {
-    background-color: #3385ff;
+    background-color:#fb682f;
     border-color: #3385ff;
     fill: #06f;
   }

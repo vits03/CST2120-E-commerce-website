@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin-customer-order.css">
+    <link rel="stylesheet" href="editproduct.css">
+    <!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="admin-view-products.css">
-    <link rel="stylesheet" href="addproduct.css">
-    <title>View Products | Taba-J Admin</title>
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+
 </head>
 <body>
+
     <div class="navbar">
         <div class="nav">
             
@@ -21,7 +30,6 @@
             <div class="Customer-order-link"><a href="admin-customer-orders.html">Customer Orders</a></div>
             <div class="logout"><a href="#">Log out</a></div>
             </div>
-
         </div>
 
     </div>
@@ -30,9 +38,10 @@
   <div class="spacer"></div>
    <div class="wrapper">
   
+    <!--INSERT ALL CONTENT HERE-->
     <div class="main-content">
         <div class="page-heading">
-            <h1>View Products</h1>
+            <h1>Customer Order</h1>
         </div>
         <div class="filter-container">
             <div class="search-container">
@@ -49,11 +58,11 @@
                       <a class="button">Filter by</a>
                     </summary>
                     <ul>
-                      <li><a href="#">Product ID</a></li>
-                      <li><a href="#">Product Name</a></li>
-                      <li><a href="#">Category</a></li>
-                      <li><a href="#">Price</a></li>
-                      <li><a href="#">Quantity</a></li>
+                      <li><a href="#">Order ID</a></li>
+                      <li><a href="#">Customer ID</a></li>
+                      <li><a href="#">Products</a></li>
+                      <li><a href="#">Total</a></li>
+                      <li><a href="#">Options</a></li>
                   </ul>
                 </details>
             </div>
@@ -62,42 +71,33 @@
                 <table class="fl-table">
                     <thead>
                     <tr>
-                        <th>Product ID</th>
-                        <th>Product Name</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
+                        <th>Order ID</th>
+                        <th>Customer ID</th>
+                        <th>Products</th>
+                        <th>Total</th>
                         <th>Options</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>T0098</td>
-                        <td>Samsung 43" UHD Smart TV</td>
-                        <td>Television</td>
-                        <td>75000</td>
-                        <td>76</td>
+                        <td>O8771</td>
+                        <td>C0098</td>
+                        <td>5</td>
+                        <td>2500</td>
                         <td class="buttons">
                             <div class="edit-button" >
-                                <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td>P5509</td>
-                        <td>Apple Iphone 13 Pro Max</td>
-                        <td>Mobile Phone</td>
-                        <td>65490</td>
-                        <td>110</td>
+                        <td>O7667</td>
+                        <td>C0091</td>
+                        <td>2</td>
+                        <td>69420</td>
                         <td class="buttons">
                             <div class="edit-button" >
-                                <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
@@ -106,13 +106,9 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
                         <td class="buttons">
                             <div class="edit-button" >
-                                <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
@@ -121,13 +117,9 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
                         <td class="buttons">
                             <div class="edit-button" >
-                                <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
@@ -136,13 +128,9 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
                         <td class="buttons">
                             <div class="edit-button" >
-                                <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
@@ -151,13 +139,9 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
                         <td class="buttons">
                             <div class="edit-button" >
-                                <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
@@ -166,13 +150,9 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
                         <td class="buttons">
                             <div class="edit-button" >
-                                <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
@@ -181,13 +161,9 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
                         <td class="buttons">
                             <div class="edit-button" >
-                                <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
@@ -196,13 +172,9 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
                         <td class="buttons">
                             <div class="edit-button" >
-                                <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
@@ -211,35 +183,35 @@
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
                         <td class="buttons">
-                            <div class="edit-button" > <a class="button-68" href="editproduct.html" id="edit" role="button">Edit</a>
-                            </div>
-                            <div class="delete-button">
-                                <button class="button-68" id="delete" role="button">Delete</button>
+                            <div class="edit-button" >
+                                <button class="button-68" id="edit" role="button">Edit</button>
                             </div>
                         </td>
                     </tr>
                     <tbody>
                 </table>
             </div>
+
+
         </div>
+    </div>
 
-</div>
 
 
-        <!--footer-->
-        <footer class="padding_4x">
-            
-           
-              <section class="flex-content padding_1x">
-                <p>Copyright ©2023 All rights reserved ||  TabaJ 2000</p>
-              </section>
-            
-          </footer>
-        
-        </body>
-        
-        <script src="https://kit.fontawesome.com/32d80fb20c.js" crossorigin="anonymous"></script>
+
+<!--footer-->
+<footer class="padding_4x">
+    
+   
+      <section class="flex-content padding_1x">
+        <p>Copyright ©2023 All rights reserved ||  TabaJ 2000</p>
+      </section>
+    
+  </footer>
+
 </body>
+
+<script src="https://kit.fontawesome.com/32d80fb20c.js" crossorigin="anonymous"></script>
+<script src="main.js"></script>
 </html>

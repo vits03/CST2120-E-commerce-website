@@ -15,7 +15,7 @@ body {
 
 .filter-container {
     display: flex;
-    background-color: #9b9b9b;
+    background-color: #dddddd;
     border-radius: 10px;
     width: 90%;
     margin: 0 auto;
@@ -34,7 +34,7 @@ body {
     width: 90%;
     border-radius: 5px;
     border: #636161;
-    background-color: antiquewhite;
+    background-color: rgb(249, 246, 241);
     margin: 5%
 }
 
@@ -52,7 +52,7 @@ body {
 #search-btn {
     border-radius: 5px;
     padding: 5%;
-    background-color: rgb(233, 143, 70);
+    background-color:#fb682f;
 }
 
 .filter {
@@ -84,42 +84,6 @@ h2{
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
 
-.fl-table {
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: normal;
-    border: none;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
-    white-space: nowrap;
-    background-color: rgb(190, 190, 190);
-}
-
-.fl-table td, .fl-table th {
-    text-align: center;
-    padding: 8px;
-}
-
-.fl-table td {
-    border-right: 1px solid #f8f8f8;
-    font-size: 15px;
-}
-
-.fl-table thead th {
-    color: #ffffff;
-    background: #324960;
-}
-
-
-.fl-table thead th:nth-child(odd) {
-    color: #ffffff;
-    background: #324960;
-}
-
-.fl-table tr:nth-child(even) {
-    background: #636161;
-}
 
 /* Responsive */
 
@@ -280,7 +244,7 @@ h2{
     
     /* Style */
     border: none;
-    background: var(--button-background);
+    background: #fb682f;
     color: var(--button-color);
     font-size: 20px;
     cursor: pointer;
@@ -386,3 +350,20 @@ h2{
       z-index: 1;
   }
   
+
+  table {
+    font-family: inherit;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
