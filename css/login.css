@@ -26,7 +26,7 @@ body{
   min-height: 200vh;
   font-family: 'Montserrat', sans-serif;
   margin: 0;
-  background-image: url("assets/images/background-video4.gif");
+  background-image: url("../assets/images/background-video4.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -188,7 +188,7 @@ input[type="text"] {font: 15px/24px "Lato", Arial, sans-serif;
   border-radius: 10px;
   align-items: center;
   background-color: var(--primary);
-  border: 2px solid --primary;
+  border: 2px solid var(--primary);
   box-sizing: border-box;
   color: rgb(255, 255, 255);
   cursor: pointer;
@@ -242,7 +242,7 @@ input[type="text"] {font: 15px/24px "Lato", Arial, sans-serif;
 
 .container3 a {
   text-decoration: none;
-  color:var(--primary);
+  color: white;
   font-family: inherit;
 }
 

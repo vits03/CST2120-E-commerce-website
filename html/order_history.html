@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="order_details.css">
+    <title>Order History | Taba-J 2000</title>
+    <link rel="stylesheet" href="..\css\order_history.css">
     <!--FONT AWESOME-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -20,7 +20,7 @@
     <div class="navbar">
         <div class="nav">
             
-             <div class="logo"><a href="#">TabaJ 2000</a></div>
+             <div class="logo"><a href="homepage.html">Taba-J 2000</a></div>
              <div class="searchbar">
 
 
@@ -29,8 +29,8 @@
 
              </div>
              <div class="right-container">
-             <div class="login"><a href="#">Log in</a></div>
-             <div class="cart"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></div>
+             <div class="login"><a href="login.html">Log In</a></div>
+             <div class="cart"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
              <div class="user"><a href="#"><i id="user" class="fa-solid fa-user"></i></a></div>
             </div>
 
@@ -41,78 +41,40 @@
     <div class="wrapper">
 
         <!--INSERT ALL CONTENT HERE-->
-          <div class="order-details">
-            <h1>Order details</h1>
-            <div class="ref-date-detail"> <div class="ref-detail"><span> Order Reference: </span>
-              <span class="ref-num">#A3DUI98</span>
-            </div> 
-            <div class="date-detail">
-              <span>Order placed on:</span>
-              <span class="date-num">12/12/2022</span>
-            </div>
-          </div>
-            <div class="payment-detail"><span>Payment method:</span><span class="payment-type">Cash On Delivery (C.O.D)</span></div>
-            <div class="address-detail"><p class="del-header">Delivery Address</p>
-           <p class="delivery-name">Prakass Sookdev</p>
-           <p class="delivery-address">Royal Road,chemin endans</p>
-           <p class="delivery-postalcode">69420</p>
-           <p class="delivery-country">Mauritius</p>
-           <p class="delivery-phonenumber">59394434</p></div>
-            <div class="product-detail">
+        <div class="order-history">
+         <h2>Order history</h2>
+          <div class="orders-container">
+            <h3>Your orders</h3>
+            <div class="orders">
               <table>
                 <tr>
-                  <th >Product</th>
-                  <th >quanity</th>
-                  <th >Unit price</th>
-                  <th >Total price</th>
+                  <th>Order Reference</th>
+                  <th>Date</th>
+                  <th>Total Price</th>
+                  <th>Payment</th>
                 </tr>
                 <tr>
-                   <td class="product">IR Obstacle Avoidance infrared Sensor Module </td>
-                   <td class="quanity">2</td>
-                   <td class="unit-price">Rs 50</td>
-                  <td class="Total price">Rs 100</td>
+                  <td>#GH764JK</td>
+                  <td>12/12/2022</td>
+                  <td>Rs2300</td>
+                  <td><div class="view-container">Cash On Delivery (C.O.D)<a class="view-btn"href="order_details.html">View</a> </div></td>
                 </tr>
-
                 <tr>
-                  <td class="product">IR Obstacle Avoidance infrared Sensor Module </td>
-                  <td class="quanity">2</td>
-                  <td class="unit-price">Rs 50</td>
-                 <td class="Total price">Rs 100</td>
-               </tr>
-
-
-               <tr>
-                <td class="product">IR Obstacle Avoidance infrared Sensor Module </td>
-                <td class="quanity">2</td>
-                <td class="unit-price">Rs 50</td>
-               <td class="Total price">Rs 100</td>
-             </tr>
-
-
-             <tr>
-              <td class="product">Ultrasonic Ranging module HC-SR04 - 5V </td>
-              <td class="quanity">2</td>
-              <td class="unit-price">Rs 50</td>
-             <td class="Total price">Rs 100</td>
-           </tr>
-
-
-           <tr>
-            <td class="product">Ultrasonic Ranging module HC-SR04 - 5V </td>
-            <td class="quanity">2</td>
-            <td class="unit-price">Rs 50</td>
-           <td class="Total price">Rs 100</td>
-         </tr>
-
-           <tr>
-            <td > </td>
-            <td ></td>
-            <td ><b>Total:</b></td>
-           <td class="Total price">Rs 500</td>
-         </tr>
-              </table>
+                  <td>#Y67UI98</td>
+                  <td>16/10/2021</td>
+                  <td>Rs7865</td>
+                  <td><div class="view-container">Cash On Delivery (C.O.D) <a class="view-btn"href="order_details.html">View</a> </div></td>
+                </tr>
+                <tr>
+                  <td>#A3DUI98</td>
+                  <td>12/11/2021</td>
+                  <td>Rs312</td>
+                  <td><div class="view-container">Cash On Delivery (C.O.D) <a class="view-btn"href="order_details.html">View</a> </div></td>
+                </tr>
+              </table> 
             </div>
           </div>
+        </div>
         </div>
     
 
