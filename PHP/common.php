@@ -37,7 +37,7 @@ function outputHeader($title,$page){
   <button class="dropbtn">            <i id="user" class="fa-solid fa-user"></i>
   </button>
   <div class="dropdown-content">
-    <a href="#">Account details</a>
+    <a href="userdetails.php">Account details</a>
     <a href="orderhistory.php">Order history</a>
     <a href="homepage.php">log out</a>
   </div>
@@ -51,7 +51,7 @@ function outputHeader($title,$page){
 }
 
 
-function outputFooter(){
+function outputFooter($page){
    echo ' 
 
     <!--footer-->
@@ -103,9 +103,14 @@ function outputFooter(){
     </body>
     
     <script src="https://kit.fontawesome.com/32d80fb20c.js" crossorigin="anonymous"></script>
-    <script src="..\javascript\main.js"></script>
-    </html>
-';
+    ';
+    if ($page == "homepage"){
+      echo' <script src="..\javascript\main.js"></script>
+   ';
+  
+    }
+   echo ' </html>';
+;
 
 
 }

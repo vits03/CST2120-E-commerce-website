@@ -207,6 +207,6 @@ outputHeader("homepage","checkout");
 
 <?php
  
-outputFooter();
+outputFooter('homepage');
 
 ?>

@@ -52,6 +52,6 @@ outputHeader("homepage","order_history");
 
 <?php
  
-outputFooter();
+outputFooter('orderhistory');
 
 ?>
