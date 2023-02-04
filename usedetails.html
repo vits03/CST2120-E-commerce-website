@@ -6,6 +6,215 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/userdetails.css">
     <title>Document</title>
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        
+        .product-carousel-header {
+          background: #4a4a4a;
+            color:#ffffff;
+          box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+            padding: 10px 14px;
+            width: 100%;
+        }
+        
+        .product-carousel {
+          background: #ffffff;
+          border: 1px solid #4a4a4a;
+          box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+            padding: 20px 40px;
+            width: 100%;
+        }
+        
+        .product-carousel .product {
+            box-sizing: border-box;
+            margin: 0 10px;
+            text-align: center;
+            display: flex;
+            flex-flow: column;
+            align-content: space-between;
+        }
+        
+        .product-carousel .product-top {
+            width: 100%;
+        }
+        
+        .product-carousel p, .product-carousel .product-image, .product-carousel img.review-stars {
+            margin: 0 0 10px 0;
+        }
+        
+        .product-carousel .product-image {
+            align-self: flex-start;
+            width: 100%;
+        }
+        
+        img.review-stars {
+            width: 100px;
+            display: inline-block;
+            
+        }
+        
+        .product-carousel .product-name {
+            font-weight: bold;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        
+        .product-carousel .product-bottom {
+            margin-top: auto;
+            align-items: flex-end;
+        }
+        
+        .product-carousel .product-prices {
+            display: flex;
+            flex-flow: row wrap;
+            flex: 1 0 100%;
+            align-self: center;
+        }
+        
+        .product-carousel .product-prices span {
+            width: 100%;
+        }
+        
+        .product-carousel .product-prices span.price-was {
+            color: #a2a2a2;
+            text-decoration: line-through;
+        }
+        .product-carousel .product-prices span.price-save {
+            color: red;
+            
+        }
+        
+        .product-carousel .product-prices span.price-now {
+            font-weight: bold;
+        }
+        
+        .product-carousel button.shop-now {
+          border:none;
+          background-image:none;
+          background-color:#4a4a4a;
+            color: #ffffff;
+          box-shadow: none;
+              -webkit-box-shadow: none;
+              -moz-box-shadow: none;
+            font-size: 16px;
+            padding: 8px 10px;
+            align-self: center;
+        }
+        
+        /** ARROWS **/
+        i {
+          border: solid 20px;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 12px;
+            position: absolute;
+            top: calc(50% - 12px/2);
+            cursor: pointer;
+        }
+        
+        .right {
+            right: 10px;
+          transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        
+        .left {
+            left: 10px;
+          transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+        
+        /** SLICK SLIDER CSS **/
+        /* Slider */
+        .slick-slider
+        {
+          position: relative;
+          -moz-box-sizing: border-box;
+               box-sizing: border-box;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+          -webkit-touch-callout: none;
+          -khtml-user-select: none;
+          -ms-touch-action: pan-y;
+              touch-action: pan-y;
+          -webkit-tap-highlight-color: transparent;
+        }
+        
+        .slick-list
+        {
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          padding: 0;
+        }
+        .slick-list:focus
+        {
+          outline: none;
+        }
+        .slick-list.dragging
+        {
+          cursor: pointer;
+          cursor: hand;
+        }
+        
+        .slick-slider .slick-track,
+        .slick-slider .slick-list
+        {
+          -webkit-transform: translate3d(0, 0, 0);
+             -moz-transform: translate3d(0, 0, 0);
+              -ms-transform: translate3d(0, 0, 0);
+               -o-transform: translate3d(0, 0, 0);
+                  transform: translate3d(0, 0, 0);
+        }
+        
+        .slick-track
+        {
+            display: flex;
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        .slick-loading .slick-track
+        {
+          visibility: hidden;
+        }
+        [dir='rtl'] .slick-slide
+        {
+          float: right;
+        }
+        .slick-slide.slick-loading img
+        {
+          display: none;
+        }
+        .slick-slide.dragging img
+        {
+          pointer-events: none;
+        }
+        .slick-loading .slick-slide
+        {
+          visibility: hidden;
+        }
+        .slick-vertical .slick-slide
+        {
+          height: auto;
+          border: 1px solid transparent;
+        }
+        .slick-arrow.slick-hidden {
+          display: none;
+        }</style>
 </head>
 <body>
     <div class="user-profile"> <i id="user" class="fa-solid fa-user"></i></div>
@@ -276,5 +485,200 @@
 
     </div>
 
+
+    <div class="product-carousel-header">PRODUCT CAROUSEL HEADER</div>
+    <div class="product-carousel">
+      <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+          <!--div class="product-name">
+            <p>Product Name</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price-was">£22.00</span>
+            <span class="price-save">£10.00</span>
+            <span class="price-now">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+                <!--div class="product-name">
+                <p>Product Name</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+          <img class="review-stars" src="http://www.yehdekh.com/wp-content/uploads/2016/04/stars.png" />
+          <!--iv class="product-name">
+            <p>Product Name That Could Be Really Long</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price-was">£22.00</span>
+            <span class="price-save">£10.00</span>
+            <span class="price-now">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+          <!--div class="product-name">
+            <p>Product Name That Could Be Even Longer Than The Previous One</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price-was">£22.00</span>
+            <span class="price-save">£10.00</span>
+            <span class="price-now">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+                <!--div class="product-name">
+                <p>Product Name</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+        <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+          <!--div class="product-name">
+            <p>Product Name</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price-was">£22.00</span>
+            <span class="price-save">£10.00</span>
+            <span class="price-now">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+                <!--div class="product-name">
+                <p>Product Name</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+          <img class="review-stars" src="http://www.yehdekh.com/wp-content/uploads/2016/04/stars.png" />
+          <!--iv class="product-name">
+            <p>Product Name That Could Be Really Long</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price-was">£22.00</span>
+            <span class="price-save">£10.00</span>
+            <span class="price-now">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+          <!--div class="product-name">
+            <p>Product Name That Could Be Even Longer Than The Previous One</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price-was">£22.00</span>
+            <span class="price-save">£10.00</span>
+            <span class="price-now">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-top">
+          <img class="product-image" src="https://www.placehold.it/300x300" />
+                <!--div class="product-name">
+                <p>Product Name</p>
+          </div-->
+        </div>
+        <div class="product-bottom">
+          <p class="product-prices">
+            <span class="price">£12.00</span>
+          </p>
+          <button class="shop-now">Shop Now</button>
+        </div>
+      </div>
+    </div>
+
+
 </body>
+<script>$('.product-carousel').slick({
+    lazyLoad: 'ondemand',
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: '<i class="arrow right">',
+    prevArrow: '<i class="arrow left">',
+    infinite: true,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+});</script>
 </html>

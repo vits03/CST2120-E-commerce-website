@@ -1,6 +1,7 @@
 
  
  db.users.insert([{
+     _id:ObjectId('63da0baf8ad50028be088512'),
      username:"sam",
      password:"F45J34534B345B346",
      name:"samy",
@@ -23,7 +24,7 @@
     ])
  
  db.products.insert([{
-    
+     _id:ObjectId('63de644583cd1eff2b722f64'),
      name:"Iphone 14 128gb",
      description:"......",
      price:"56500",
@@ -54,7 +55,7 @@
      customerID:ObjectId('63da0baf8ad50028be088512')
      },{
 
-    totalprice:"94300",
+    totalprice:94300,
     address:"boulevard street,california",
     dateplaced:ISODate("2022-05-15T00:00:00Z"),
     products:[{productid:ObjectId('63de644583cd1eff2b722f64'),quantity:5}],
