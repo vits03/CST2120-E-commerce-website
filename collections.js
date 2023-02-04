@@ -9,7 +9,8 @@
     address:"boulevard street,california",
      email:"samsmith3@gmail.com",
     telephonenum:"23059245312",
-     country:"Mauritius"
+     country:"Mauritius",
+     cart:[{productid:ObjectId('63de644583cd1eff2b722f64')}]
     
      },{
      username:"tom",
@@ -18,7 +19,7 @@
      surname:"smith",
     address:"boulevard street,california",
      email:"tommysmith3@gmail.com",
-    telephonenum:"23059245312",
+    telephonenum:23059245312,
      country:"Mauritius"}
     
     ])
@@ -27,8 +28,8 @@
      _id:ObjectId('63de644583cd1eff2b722f64'),
      name:"Iphone 14 128gb",
      description:"......",
-     price:"56500",
-     quantity:"25",
+     price:56500,
+     quantity:25,
      category:"Mobile Phones",
      path:"iphone14.png",
      isRemoved:false
@@ -37,7 +38,7 @@
  name:"Samsung s22 128gb",
  description:"......",
  price:"66500",
- quantity:"21",
+ quantity:21,
  category:"Mobile Phones",
  path:"samsungs22.png",
  isRemoved:false
@@ -47,14 +48,14 @@
 ])
  
  db.orders.insert([{
-
+     orderid:"SS0001",
      totalprice:76800,
      address:"boulevard street,california",
      dateplaced:ISODate("2022-05-15T00:00:00Z"),
      products:[{productid:ObjectId('63de644583cd1eff2b722f64'),quantity:3}],
      customerID:ObjectId('63da0baf8ad50028be088512')
      },{
-
+    orderid:"SS0001",
     totalprice:94300,
     address:"boulevard street,california",
     dateplaced:ISODate("2022-05-15T00:00:00Z"),
