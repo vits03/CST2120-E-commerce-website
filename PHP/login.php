@@ -17,9 +17,9 @@ outputHeader("homepage","login");
             <div class="container1">
               <h4>Access to your account</h4>
             </div>
-            <form action="homepage.html">
+            <form name="login-form" action="homepage.html" onsubmit="return validateLoginForm()">
               <div class="input-container">
-                <input class="effect-21" type="text" placeholder="Email Address">
+                <input class="effect-21" type="text" id="username" placeholder="Username" required>
                   <span class="focus-border">
                     <i></i>
                   </span>
@@ -28,7 +28,7 @@ outputHeader("homepage","login");
                 <a href="">Forgot Password?</a>
               </div>
               <div class="input-container">
-                <input class="effect-21" type="password" placeholder="Password">
+                <input class="effect-21" type="password" id="password" placeholder="Password">
                   <span class="focus-border">
                     <i></i>
                   </span>
@@ -38,7 +38,7 @@ outputHeader("homepage","login");
                 <button class="button-58" role="button" type="submit">Sign In</button>
               </div>
               <div class="container3">
-                <h5>Don't have an account? <a href="signup.php">Sign Up</a></h5>
+                <h5>Don't have an account? <a href="signup.html">Sign Up</a></h5>
               </div>
             </form>
             
@@ -46,6 +46,7 @@ outputHeader("homepage","login");
         </div>
       </body>
         </div>
+        <script src="..\javascript\login.js"></script>
     
 
 

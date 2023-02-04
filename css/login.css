@@ -49,6 +49,7 @@ body{
   width:40%;
   height:75%;
   margin-top: 5rem;
+  min-width: 500px;
 }
 
 .company-logo {
@@ -128,7 +129,11 @@ input[type="text"] {font: 15px/24px "Lato", Arial, sans-serif;
   box-sizing: border-box;
   letter-spacing: 1px;}
 
-.effect-21{border: 1px solid rgb(255, 255, 255); padding: 7px 14px; transition: 0.4s; background: transparent;}
+.effect-21{
+    border: 1px solid rgb(255, 255, 255);
+    padding: 7px 14px;
+    transition: 0.4s;
+    background: transparent;}
 
 .effect-21 ~ .focus-border:before,
 .effect-21 ~ .focus-border:after{content: ""; position: absolute; top: 0; right: 0; width: 0; height: 2px; background-color: orange; transition: 0.2s; transition-delay: 0.2s;}
