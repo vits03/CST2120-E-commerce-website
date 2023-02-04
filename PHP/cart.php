@@ -129,6 +129,6 @@ outputHeader("homepage","cart");
 
 <?php
  
-outputFooter();
+outputFooter("cart");
 
 ?>

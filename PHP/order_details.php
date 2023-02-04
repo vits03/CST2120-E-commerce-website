@@ -90,6 +90,6 @@ outputHeader("homepage","order_details");
 
 <?php
  
-outputFooter();
+outputFooter("orderdetails");
 
 ?>

@@ -55,6 +55,6 @@ outputHeader("homepage","login");
 
 <?php
  
-outputFooter();
+outputFooter("login");
 
 ?>

@@ -94,6 +94,6 @@ outputHeader("homepage","signup");
 
 <?php
  
-outputFooter();
+outputFooter("signup");
 
 ?>

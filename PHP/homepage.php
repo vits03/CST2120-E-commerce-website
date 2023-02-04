@@ -290,6 +290,6 @@ outputHeader("homepage","homepage");
 
 <?php
  
-outputFooter();
+outputFooter("homepage");
 
 ?>

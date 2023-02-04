@@ -46,6 +46,6 @@ outputHeader("homepage","product-page");
 
 <?php
  
-outputFooter();
+outputFooter("productpage");
 
 ?>

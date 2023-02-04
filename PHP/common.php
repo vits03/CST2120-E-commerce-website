@@ -32,7 +32,16 @@ function outputHeader($title,$page){
              <div class="right-container">
              <div class="login"><a href="login.php">Log In</a></div>
              <div class="cart"><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></div>
-             <div class="user"><a href="#"><i id="user" class="fa-solid fa-user"></i></a></div>
+            
+             <div class="dropdown">
+  <button class="dropbtn">            <i id="user" class="fa-solid fa-user"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="userdetails.php">Account details</a>
+    <a href="orderhistory.php">Order history</a>
+    <a href="homepage.php">log out</a>
+  </div>
+</div>
             </div>
         </div>
     </div>
@@ -42,7 +51,7 @@ function outputHeader($title,$page){
 }
 
 
-function outputFooter(){
+function outputFooter($page){
    echo ' 
 
     <!--footer-->
@@ -94,9 +103,14 @@ function outputFooter(){
     </body>
     
     <script src="https://kit.fontawesome.com/32d80fb20c.js" crossorigin="anonymous"></script>
-    <script src="..\javascript\main.js"></script>
-    </html>
-';
+    ';
+    if ($page == "homepage"){
+      echo' <script src="..\javascript\main.js"></script>
+   ';
+  
+    }
+   echo ' </html>';
+;
 
 
 }
