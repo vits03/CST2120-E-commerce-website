@@ -50,9 +50,9 @@
             <div class="container1">
               <h4>Access to your account</h4>
             </div>
-            <form action="homepage.html">
+            <form name="login-form" action="homepage.html" onsubmit="return validateLoginForm()">
               <div class="input-container">
-                <input class="effect-21" type="text" placeholder="Email Address">
+                <input class="effect-21" type="text" id="username" placeholder="Username" required>
                   <span class="focus-border">
                     <i></i>
                   </span>
@@ -61,7 +61,7 @@
                 <a href="">Forgot Password?</a>
               </div>
               <div class="input-container">
-                <input class="effect-21" type="password" placeholder="Password">
+                <input class="effect-21" type="password" id="password" placeholder="Password">
                   <span class="focus-border">
                     <i></i>
                   </span>
@@ -129,7 +129,7 @@
       </section>
     </div>
   </footer>
-
+    <script src="..\javascript\login.js"></script>
     <script src="https://kit.fontawesome.com/32d80fb20c.js" crossorigin="anonymous"></script>
 </body>
 </html>

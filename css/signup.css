@@ -51,12 +51,12 @@ body{
 
 .signup-container {
     background-color: rgb(48, 48, 48);
-    height: 80%;
     width: 40%;
     margin: 0 auto;
     padding-left: 2%;
     padding-right: 2%; 
     border-radius: 20px;
+    min-width: 500px;
 }
 
 .company-logo {
