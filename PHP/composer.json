@@ -1,0 +1,6 @@
+{
+    "name": "vendor/autoload",
+    "require": {
+        "mongodb/mongodb": "^1.15"
+    }
+}

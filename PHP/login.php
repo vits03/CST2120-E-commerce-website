@@ -38,10 +38,9 @@ outputHeader("homepage","login");
                 <button class="button-58" role="button" type="submit">Sign In</button>
               </div>
               <div class="container3">
-                <h5>Don't have an account? <a href="signup.html">Sign Up</a></h5>
+                <h5>Don't have an account? <a href="signup.php">Sign Up</a></h5>
               </div>
             </form>
-            
           </div>
         </div>
       </body>

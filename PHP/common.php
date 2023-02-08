@@ -103,6 +103,8 @@ function outputFooter($page){
     </body>
     
     <script src="https://kit.fontawesome.com/32d80fb20c.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     ';
     if ($page == "homepage"){
       echo' <script src="..\javascript\main.js"></script>

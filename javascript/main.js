@@ -7,7 +7,43 @@
     const next = document.querySelector(".slider-controles-next");
     const previous = document.querySelector(".slider-controles-previous");
     const imgactivo = document.querySelectorAll(".slider-img.activo");
+    $(document).ready(function(){
+      $.get({
+      url:'../server/products.php',
+      type:'get',
+      dataType:'JSON',
+      success:function(data)
+      {
+       console.log(data)
+      data.forEach(product => {
+        // alert(product.name,product.price,product.path)
+          let $pcontainer = $('body div.product-wrapper');
   
+       $pcontainer.append($('<div/>',{'class':'product-container'}).append(
+     ($('<div/>',{'class':'btn-container'}).append(
+                      $('<a/>',{'href':'../PHP/productpage.php',text:'View','id':product._id.$oid})
+                   ).append(
+                      $('<a/>',{'onclick':"openNav()",text:'Add to cart'})
+                   ))
+  
+                   
+  
+  
+  
+  ).append(
+      $('<img/>',{'src':`..\\assets\\images\\${product.path}`})
+  ).append(
+      $('<div/>',{'class':'product-description',text:product.name}
+      )
+  ).append(
+      $('<div/>',{'class':'product-price',text:"Rs"+product.price})
+  )
+      )});
+      
+  
+  
+  }})
+  });
     controlesPuntos();
     desplazamiento();
     setInterval(auto, 4500);

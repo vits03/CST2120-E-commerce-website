@@ -738,6 +738,8 @@ footer .flex:last-child a:hover{
 .product-price{
   margin-top: 1rem;
   text-align: center;
+  min-width: 60%;
+  margin: 0 auto;
  
 }
 
