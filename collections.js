@@ -2,7 +2,7 @@
  
  db.users.insert([{
      _id:ObjectId('63da0baf8ad50028be088512'),
-     username:"sam",
+     username:"sam09",
      password:"F45J34534B345B346",
      name:"samy",
      surname:"smith",
@@ -13,7 +13,7 @@
      cart:[{productid:ObjectId('63de644583cd1eff2b722f64')}]
     
      },{
-     username:"tom",
+     username:"tom3",
      password:"F45Jsssssss45B346",
      name:"tommmy",
      surname:"smith",
