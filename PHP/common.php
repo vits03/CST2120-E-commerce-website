@@ -108,9 +108,11 @@ function outputFooter($page){
     ';
     if ($page == "homepage"){
       echo' <script src="..\javascript\main.js"></script>
-   ';
-  
+   ';}
+    elseif($page == 'productpage'){
+      echo' <script src="..\javascript\productpage.js"></script>';
     }
+    
    echo ' </html>';
 ;
 

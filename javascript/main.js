@@ -1,27 +1,18 @@
-(function () {
-    const slider = document.querySelector(".main-slider");
-    const imagenes = document.querySelector(".slider-imagenes");
-    const controles = document.querySelectorAll(".count-imagenes-num");
-    const img = document.querySelectorAll(".slider-img");
-    const countimg = document.querySelectorAll(".slider-img").length;
-    const next = document.querySelector(".slider-controles-next");
-    const previous = document.querySelector(".slider-controles-previous");
-    const imgactivo = document.querySelectorAll(".slider-img.activo");
-    $(document).ready(function(){
+ $(document).ready(function(){
       $.get({
       url:'../server/products.php',
       type:'get',
       dataType:'JSON',
       success:function(data)
       {
-       console.log(data)
+       //console.log(data)
       data.forEach(product => {
         // alert(product.name,product.price,product.path)
           let $pcontainer = $('body div.product-wrapper');
   
-       $pcontainer.append($('<div/>',{'class':'product-container'}).append(
+       $pcontainer.prepend($('<div/>',{'class':'product-container'}).append(
      ($('<div/>',{'class':'btn-container'}).append(
-                      $('<a/>',{'href':'../PHP/productpage.php',text:'View','id':product._id.$oid})
+                      $('<a/>',{text:'View','id':product._id.$oid,'class':'product-link'})
                    ).append(
                       $('<a/>',{'onclick':"openNav()",text:'Add to cart'})
                    ))
@@ -40,10 +31,70 @@
   )
       )});
       
-  
+      $('.product-link').click(function(){
+        let path=`../PHP/productpage.php?id=${$(this).attr("id")}`;
+        window.location=path;
+      
+      });
   
   }})
+  
+
+
+
+$('.test').click(function(){
+  alert($(this).attr("value"));
+});
+  $('.product-link').on("click",function(){
+    alert("sdf")
+    console.log($(this).attr("value"));
+   
+    
+    console.log(`../server/productdetails.php?id=${this.id}`)
+    $.get({
+    url:`../server/productdetails.php?id=${this.id}`,
+    type:'get',
+    dataType:'JSON',
+    success:function(data)
+    {
+     console.log(data)
+    data.forEach(product => {
+      // alert(product.name,product.price,product.path)
+        let $pcontainer = $('body div.product-wrapper');
+  
+    }
+   )
+  
+  }
+  }
+  )});
+
+
+
+
+
+
   });
+
+
+
+  $("#searchbar-input").keydown(function(){
+    alert('changed');
+    
+  })
+
+(function () {
+    const slider = document.querySelector(".main-slider");
+    const imagenes = document.querySelector(".slider-imagenes");
+    const controles = document.querySelectorAll(".count-imagenes-num");
+    const img = document.querySelectorAll(".slider-img");
+    const countimg = document.querySelectorAll(".slider-img").length;
+    const next = document.querySelector(".slider-controles-next");
+    const previous = document.querySelector(".slider-controles-previous");
+    const imgactivo = document.querySelectorAll(".slider-img.activo");
+   
+  
+
     controlesPuntos();
     desplazamiento();
     setInterval(auto, 4500);
@@ -186,3 +237,4 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
+

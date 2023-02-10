@@ -8,16 +8,13 @@ $mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
 
  
 //Create instance of MongoDB client
- $ID=$_GET["id"];
-echo $ID;
-
+ $ID=strval($_GET["id"]);
 //Select a database
 $db = $mongoClient->ecommerce;
-$products = $db->products->findone(array('_id'=>$ID));
+$criteria=['_id'=>new MongoDB\BSON\ObjectId($ID),];
+$products = $db->products->find($criteria);
 
 //Select a collection 
-
-   //Output each customer as a JSON object with comma in between
 $jsonStr = '['; //Start of array of customers in JSON
 
 //Work through the customers
@@ -35,12 +32,13 @@ $jsonStr .= ']';
 
 //Echo final string
 echo ($jsonStr);
-
+   //Output each customer as a JSON object with comma in between
+   
 
 
  
 
-echo"error mofo";
+
 exit();
 
 ?>

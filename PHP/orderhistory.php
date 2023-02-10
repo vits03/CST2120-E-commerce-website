@@ -2,11 +2,34 @@
  include('common.php');
 
 
+ require __DIR__ . '/vendor/autoload.php';
+ $mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
+ 
+ 
+ 
+  
+ //Create instance of MongoDB client
+  $ID=strval($_GET["id"]);
+ //Select a database
+ $db = $mongoClient->ecommerce;
+ $criteria=['customerID'=>new MongoDB\BSON\ObjectId($ID),];
+ $orders = $db->orders->find($criteria);
+ 
+ //Select a collection 
+ 
+ 
+ //Work through the customers
+ 
+ 
 
+
+
+
+ 
 outputHeader("homepage","order_history");
 
 
-?>
+echo'
 
 <!--INSERT ALL CONTENT HERE-->
 <div class="order-history">
@@ -20,25 +43,16 @@ outputHeader("homepage","order_history");
                   <th>Date</th>
                   <th>Total Price</th>
                   <th>Payment</th>
-                </tr>
-                <tr>
-                  <td>#GH764JK</td>
-                  <td>12/12/2022</td>
-                  <td>Rs2300</td>
-                  <td><div class="view-container">Cash On Delivery (C.O.D)<a class="view-btn"href="order_details.php">View</a> </div></td>
-                </tr>
-                <tr>
-                  <td>#Y67UI98</td>
-                  <td>16/10/2021</td>
-                  <td>Rs7865</td>
-                  <td><div class="view-container">Cash On Delivery (C.O.D) <a class="view-btn"href="order_details.php">View</a> </div></td>
-                </tr>
-                <tr>
-                  <td>#A3DUI98</td>
-                  <td>12/11/2021</td>
-                  <td>Rs312</td>
-                  <td><div class="view-container">Cash On Delivery (C.O.D) <a class="view-btn"href="order_details.php">View</a> </div></td>
-                </tr>
+                </tr>';
+                foreach ($orders as $order){
+                  echo'<tr>
+                  <td>'. $order['orderid'] .'</td>
+                  <td>'. $order['dateplaced']->toDateTime()->format("d M Y") .'</td>
+                  <td>' . $order['totalprice'] .'</td>
+                  <td><div class="view-container">Cash On Delivery (C.O.D)<a class="view-btn"href="order_details.php?id=' . $order['_id'] . '">View</a> </div></td>
+                </tr>';
+                }
+                  echo'
               </table> 
             </div>
           </div>
@@ -48,9 +62,9 @@ outputHeader("homepage","order_history");
 
 
 </div>
+';
 
 
-<?php
  
 outputFooter('orderhistory');
 

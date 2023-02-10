@@ -215,7 +215,6 @@ outputHeader("homepage","homepage");
         </select>
       </div>
 
-
       <div class="product-wrapper">
 
          

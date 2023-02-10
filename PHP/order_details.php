@@ -2,30 +2,68 @@
  include('common.php');
 
 
+ require __DIR__ . '/vendor/autoload.php';
+ $mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
+ 
+ 
+ 
+  
+ //Create instance of MongoDB client
+  $ID=strval($_GET["id"]);
+ //Select a database
+ $db = $mongoClient->ecommerce;
+ $criteria=['_id'=>new MongoDB\BSON\ObjectId($ID),];
+ $orders = $db->orders->find($criteria);
+ //Select a collection 
+ $pcriteria=['_id'=>new MongoDB\BSON\ObjectId($ID),'products'=>1,];
+ $products=$db->products->find($pcriteria);
+ //$pdetails=$db->products.find(array("_id"=>))
+ //Work through the customers
+ //echo $products;
+ //foreach ($products as $product){
+ // foreach( $product['products'] as $pid){
+ ///   echo $pid['productid'];
+  //};
+//};
 
+ 
+
+
+
+ 
+ 
 outputHeader("homepage","order_details");
 
+foreach ($orders as $order){
+  
 
-?>
 
+
+echo'
   <!--INSERT ALL CONTENT HERE-->
   <div class="order-details">
             <h1>Order details</h1>
             <div class="ref-date-detail"> <div class="ref-detail"><span> Order Reference: </span>
-              <span class="ref-num">#A3DUI98</span>
+              <span class="ref-num">'. $order['orderid'] . '</span>
             </div> 
             <div class="date-detail">
               <span>Order placed on:</span>
-              <span class="date-num">12/12/2022</span>
+              <span class="date-num">'. $order['dateplaced']->toDateTime()->format("d M Y") .'</span>
             </div>
           </div>
             <div class="payment-detail"><span>Payment method:</span><span class="payment-type">Cash On Delivery (C.O.D)</span></div>
-            <div class="address-detail"><p class="del-header">Delivery Address</p>
-           <p class="delivery-name">Prakass Sookdev</p>
-           <p class="delivery-address">Royal Road,chemin endans</p>
+            <div class="address-detail"><p class="del-header">Delivery Address</p>';
+            $uid= $order['customerID'];
+            $usercriteria=['_id'=>new MongoDB\BSON\ObjectId($uid,)];
+            $user = $db->users->findOne($usercriteria);
+            
+            echo'
+     
+           <p class="delivery-name">' . $user['name'] .'</p>
+           <p class="delivery-address">' . $user['address'] .'</p>
            <p class="delivery-postalcode">69420</p>
-           <p class="delivery-country">Mauritius</p>
-           <p class="delivery-phonenumber">59394434</p></div>
+           <p class="delivery-country">' . $user['country'] .'</p>
+           <p class="delivery-phonenumber">' . $user['telephonenum'] .'</p></div>
             <div class="product-detail">
               <table>
                 <tr>
@@ -33,50 +71,32 @@ outputHeader("homepage","order_details");
                   <th >quanity</th>
                   <th >Unit price</th>
                   <th >Total price</th>
-                </tr>
-                <tr>
-                   <td class="product">IR Obstacle Avoidance infrared Sensor Module </td>
-                   <td class="quanity">2</td>
-                   <td class="unit-price">Rs 50</td>
-                  <td class="Total price">Rs 100</td>
-                </tr>
-
-                <tr>
-                  <td class="product">IR Obstacle Avoidance infrared Sensor Module </td>
-                  <td class="quanity">2</td>
-                  <td class="unit-price">Rs 50</td>
-                 <td class="Total price">Rs 100</td>
-               </tr>
-
-
-               <tr>
-                <td class="product">IR Obstacle Avoidance infrared Sensor Module </td>
-                <td class="quanity">2</td>
-                <td class="unit-price">Rs 50</td>
-               <td class="Total price">Rs 100</td>
-             </tr>
-
-
-             <tr>
-              <td class="product">Ultrasonic Ranging module HC-SR04 - 5V </td>
-              <td class="quanity">2</td>
-              <td class="unit-price">Rs 50</td>
-             <td class="Total price">Rs 100</td>
-           </tr>
-
-
-           <tr>
-            <td class="product">Ultrasonic Ranging module HC-SR04 - 5V </td>
-            <td class="quanity">2</td>
-            <td class="unit-price">Rs 50</td>
-           <td class="Total price">Rs 100</td>
-         </tr>
-
+                </tr>';
+                foreach ($order['products'] as $product){
+                  $pid=$product['productid'];
+      
+                  $pcriteria=['_id'=>new MongoDB\BSON\ObjectId($pid),];
+                  $products = $db->products->findOne($pcriteria);
+                
+                    //echo $product['name']; 
+                    echo'<tr>
+                   <td class="product">' . $products['name'] . '</td>
+                   <td class="quanity">' . $products['quantity'] . '</td>';
+                   
+                 
+                  echo '  
+                   <td class="unit-price">Rs ' . $products['price'] . '</td>
+                  <td class="Total price">' . $products['quantity']*$products['price'] . '</td>
+                </tr>';
+                  
+                };
+               
+            echo'
            <tr>
             <td > </td>
             <td ></td>
             <td ><b>Total:</b></td>
-           <td class="Total price">Rs 500</td>
+           <td class="Total price">' . $order['totalprice'] . '</td>
          </tr>
               </table>
             </div>
@@ -88,7 +108,7 @@ outputHeader("homepage","order_details");
 </div>
 
 
-<?php
+';}
  
 outputFooter("orderdetails");
 
