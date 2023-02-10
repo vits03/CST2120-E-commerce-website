@@ -17,7 +17,7 @@ outputHeader("homepage","signup");
             <div class="container1">
                 <h4>Create your account</h4>
             </div>
-            <form onsubmit="return validateSignUpForm()" action="login.html">
+            <form onsubmit="return validateSignUpForm()" action="login.php">
                 <div class="personal-details-title">
                     <h2>Personal Details</h2>
                 </div>
@@ -49,7 +49,7 @@ outputHeader("homepage","signup");
                 </div>
                 <div class="input-half">
                     <div class="input-container">
-                        <input class="effect-21" type="tel" id="phone" pattern="[0-9]" placeholder="Phone" required>
+                        <input class="effect-21" type="tel" id="phone" placeholder="Phone" required>
                           <span class="focus-border">
                             <i></i>
                           </span>
@@ -78,7 +78,7 @@ outputHeader("homepage","signup");
                     <button class="button-58" role="button" type="submit">Sign Up</button>
                   </div>
                   <div class="container3">
-                    <h5>Already have an account? <a href="login.html">Sign In</a></h5>
+                    <h5>Already have an account? <a href="login.php">Sign In</a></h5>
                   </div>
                 
             </form>
