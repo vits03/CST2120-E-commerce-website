@@ -102,31 +102,22 @@ function validateSignUpForm() {
 
 
 function registerUser(username, password2, firstName, lastName, email, phone) {
-    //Create request object 
-    let request = new XMLHttpRequest();
-
-    //Create event handler that specifies what should happen when server responds
-    request.onload = () => {
-        // Check HTTP status code
-        if (request.status === 200) {
-            // Get data from server
-            let responseData = request.responseText;
-            alert(responseData);
-        } else {
-            alert("Error " + request.status + ": Try Again Later.");
-        }
+  $.ajax({
+    type: "POST",
+    url: "../server/register.php",
+    data: {
+      username: username.value,
+      password: password2.value,
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      phone: phone.value
+    },
+    success: function(responseData) {
+      alert(responseData);
+    },
+    error: function(xhr, status, error) {
+      alert("Error " + xhr.status + ": Try Again Later.");
     }
-
-    // Set up Request with HTTP method and URL
-    request.open("POST", "../server/register.php");
-    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-
-    // Send Request
-    request.send("username=" + username.value +
-    "&password=" + password2.value +
-    "&firstName=" + firstName.value +
-    "&lastName=" + lastName.value +
-    "&email=" + email.value +
-    "&phone=" + phone.value);
+  });
 }

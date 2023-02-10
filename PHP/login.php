@@ -17,7 +17,7 @@ outputHeader("homepage","login");
             <div class="container1">
               <h4>Access to your account</h4>
             </div>
-            <form name="login-form" action="homepage.html" onsubmit="return validateLoginForm()">
+            <form name="login-form" id="login-form" action="homepage.php" onsubmit="return validateFormLogin()">
               <div class="input-container">
                 <input class="effect-21" type="text" id="username" placeholder="Username" required>
                   <span class="focus-border">
@@ -28,7 +28,7 @@ outputHeader("homepage","login");
                 <a href="">Forgot Password?</a>
               </div>
               <div class="input-container">
-                <input class="effect-21" type="password" id="password" placeholder="Password">
+                <input class="effect-21" type="password" id="password" placeholder="Password" required>
                   <span class="focus-border">
                     <i></i>
                   </span>

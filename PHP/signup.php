@@ -9,6 +9,24 @@ outputHeader("homepage","signup");
 ?>
 
 <div class="main-content">
+
+        <!-- Modal -->
+        <div id="demo-modal" class="modal">
+          <div class="modal__content">
+            <div class="animation">
+              <img src="..\assets\images\confirmed-order.gif">
+            </div>
+            <div class="message">
+              <h3>Your order has been received!</h3>
+            </div>       
+            <a href="#" class="modal__close" onclick="closeModal()">
+              <span class="material-symbols-outlined">
+                close
+              </span>
+            </a>
+          </div>
+        </div>
+
         <div class="cover"></div>
         <div class="signup-container">
             <div class="company-logo">

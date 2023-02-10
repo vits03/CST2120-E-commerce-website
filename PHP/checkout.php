@@ -118,7 +118,7 @@ outputHeader("homepage","checkout");
                       </span>
                   </a>
               </div>
-          </div>
+            </div>
 
             <!-- Items in Checkout -->
             <div class="checkout-details">
@@ -203,6 +203,7 @@ outputHeader("homepage","checkout");
             </div>
         </div>
     </div>
+    <script src="../javascript/checkout.js" crossorigin="anonymous"></script>
 
 
 <?php
