@@ -1,26 +1,77 @@
-function validateSignUpForm() {
+// Extract data from Input Fields
+let firstName = document.getElementById("firstName");
+let lastName = document.getElementById("lastName");
+let username = document.getElementById("username");
+let email = document.getElementById("email");
+let phone = document.getElementById("phone");
+let date = document.getElementById("date");
+let password1 = document.getElementById("password1");
+let password2 = document.getElementById("password2");
+
+let errorFirstName = document.getElementById("errorFirstName");
+let errorLastName = document.getElementById("errorLastName");
+let errorUsername = document.getElementById("errorUsername");
+let errorEmail = document.getElementById("errorEmail");
+let errorPhone = document.getElementById("errorPhone");
+let errorDate = document.getElementById("errorDate");
+let errorPassword1 = document.getElementById("errorPassword1");
+let errorPassword2 = document.getElementById("errorPassword2");
+
+function validateSignUpForm(event) {
+    event.preventDefault();
+
+    let isError = validateForm();
+    if (isError) {
+        return false;
+    }
+
+    sendRequest();
+
+    return false;
+}
+
+
+function sendRequest() {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "../server/register.php", true);
+
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    let data = "firstName=" + firstName.value +
+    "&lastName=" + lastName.value +
+    "&username=" + username.value +
+    "&email=" + email.value +
+    "&phone=" + phone.value +
+    "&date=" + date.value +
+    "&password=" + password1.value;
+
+    xhr.send(data);
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            let response = JSON.parse(xhr.responseText);
+            
+            if (response.isTaken == true) {
+                errorUsername.innerHTML = "username already taken";
+                username.style.border = '2px solid red';
+            }
+            else if (response.success == true) {
+                errorUsername.innerHTML = "";
+                username.style.border = '2px solid green';
+                alert("Your Account has been created!");
+
+                window.location.href = "login.php";
+            }
+        }
+    };
+}
+
+
+function validateForm () {
     let errorFound = false;
 
-    // Extract data from Input Fields
-    let firstName = document.getElementById("firstName");
-    let lastName = document.getElementById("lastName");
-    let username = document.getElementById("username");
-    let email = document.getElementById("email");
-    let phone = document.getElementById("phone");
-    let date = document.getElementById("date");
-    let password1 = document.getElementById("password1");
-    let password2 = document.getElementById("password2");
-
-    let errorFirstName = document.getElementById("errorFirstName");
-    let errorLastName = document.getElementById("errorLastName");
-    let errorUsername = document.getElementById("errorUsername");
-    let errorEmail = document.getElementById("errorEmail");
-    let errorPhone = document.getElementById("errorPhone");
-    let errorDate = document.getElementById("errorDate");
-    let errorPassword1 = document.getElementById("errorPassword1");
-    let errorPassword2 = document.getElementById("errorPassword2");
-
-    // Checks if firstName & lastName starts and ends with alphabet, can contain '-' or space
+    // Checks if firstName & lastName starts and ends with alphabet, can contain '-'
     const nameRegex = new RegExp("^[A-Za-z][A-Za-z-]{0,48}[A-Za-z]$");
 
     // Checks if username starts with alphabet, has 8-30 characters & Number and underscore
@@ -40,7 +91,7 @@ function validateSignUpForm() {
     if (!nameRegex.test(firstName.value)) {
         errorFound = true;
         firstName.style.border = '2px solid red';
-        errorFirstName.innerHTML = "must contain only alphabets, '-' or space";
+        errorFirstName.innerHTML = "must contain only alphabets or '-'";
     } else {
         errorFirstName.innerHTML = "";
         firstName.style.border = '2px solid green';
@@ -50,7 +101,7 @@ function validateSignUpForm() {
     if (!nameRegex.test(lastName.value)) {
         errorFound = true;
         lastName.style.border = '2px solid red';
-        errorLastName.innerHTML = "must contain only alphabets, '-' or space";
+        errorLastName.innerHTML = "must contain only alphabets or '-'";
     } else {
         errorLastName.innerHTML = "";
         lastName.style.border = '2px solid green';
@@ -60,7 +111,7 @@ function validateSignUpForm() {
     if (!usernameRegex.test(username.value)) {
         errorFound = true;
         username.style.border = '2px solid red';
-        errorUsername.innerHTML = "must have 8-30 chraracters & contain only alphabets, digits or '-'";
+        errorUsername.innerHTML = "must have 8-30 chraracters & contain only alphabets, digits or '_'";
     } else {
         errorUsername.innerHTML = "";
         username.style.border = '2px solid green';
@@ -116,51 +167,5 @@ function validateSignUpForm() {
         errorPassword2.innerHTML = "password does not match";
     }
 
-    if (errorFound) {
-        return false;
-    }
-    else if (!errorFound) {
-        registerUser(username, password2, firstName, lastName, email, phone);
-    }
+    return errorFound;
 }
-
-
-async function registerUser(username, password2, firstName, lastName, email, phone) {
-    try {
-      const response = await $.ajax({
-        type: "POST",
-        url: "../server/register.php",
-        data: {
-          username: username.value,
-          password: password2.value,
-          firstName: firstName.value,
-          lastName: lastName.value,
-          email: email.value,
-          phone: phone.value
-        }
-      });
-      const data = JSON.parse(response);
-      if (data.success === true) {
-        errorUsername = "";
-        window.location.href = "login.php";
-      }
-      if (data.success === false) {
-        errorUsername.innerHTML = "username already taken";
-        alert("username already taken");
-        window.location.href = "signup.php";
-      }
-    } catch (error) {
-      alert("Error: Try Again Later.");
-    }
-  }
-
-
-// function openModal() {
-//     document.getElementById("demo-modal").style.visibility = "visible";
-//     document.getElementById("demo-modal").style.opacity = "1";
-// }
-
-// function closeModal() {
-//     document.getElementById("demo-modal").style.visibility = "hidden";
-//     document.getElementById("demo-modal").style.opacity = "0";
-// }

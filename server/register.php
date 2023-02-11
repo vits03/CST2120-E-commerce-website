@@ -36,6 +36,7 @@ foreach ($cursor as $user) {
 }
 
 if ($isFound == true) {
+    $response['isTaken'] = true;
     $response['success'] = false;
 } else {
     $dataArray = [
@@ -49,7 +50,7 @@ if ($isFound == true) {
     
     //Add the new product to the database
     $insertResult = $collection->insertOne($dataArray);
-
+    $response['isTaken'] = false;
     $response['success'] = true;
 }
 
