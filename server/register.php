@@ -32,4 +32,5 @@ $dataArray = [
 //Add the new product to the database
 $insertResult = $collection->insertOne($dataArray);
 
-echo 'Your Account has been Created! Thank you for Registering.';
+$response['success'] = true;
+echo json_encode($response);

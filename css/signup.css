@@ -38,7 +38,6 @@ body{
 }
 
 .main-content {
-    height: 100vh;
     width: 100%;
     display: flex;
   
@@ -51,7 +50,7 @@ body{
 
 .signup-container {
     background-color: rgb(48, 48, 48);
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
     padding-left: 2%;
     padding-right: 2%; 
@@ -132,7 +131,6 @@ input[type="text"] {
     align-items: center;
     width: 48%;
     position: relative;
-    margin-bottom: 4%;
   }
 
   .input-container1 {
@@ -140,7 +138,6 @@ input[type="text"] {
     align-items: center;
     width: 98%;
     position: relative;
-    margin-bottom: 4%;
   }
   
   input[type="text"] {font: 15px/24px "Lato", Arial, sans-serif;
@@ -196,6 +193,24 @@ input[type="text"] {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .error-message-half {
+    margin: 0 auto;
+    text-align: center;
+    width: 40%;
+    font-size: 13px;
+    color: rgb(255, 45, 45);
+    margin-bottom: 3%;
+  }
+
+  .error-message {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    font-size: 13px;
+    color: rgb(255, 45, 45);
+    margin-bottom: 3%;
   }
   
   /* button */

@@ -51,25 +51,41 @@ outputHeader("homepage","signup");
                           </span>
                     </div>
                 </div>
+                <div class="input-half">
+                  <div class="error-message-half" id="errorFirstName"></div>
+                  <div class="error-message-half" id="errorLastName"></div>
+                </div>
+
+
                 <div class="input-container1">
                     <input class="effect-21" type="text" id="username" placeholder="Username" required>
                       <span class="focus-border">
                         <i></i>
                       </span>
                 </div>
+                <div class="input-container-1">
+                  <div class="error-message" id="errorUsername"></div>
+                </div>
+
+
                 <div class="input-container1">
                     <input class="effect-21" type="email" id="email" placeholder="Email Address" required>
                       <span class="focus-border">
                         <i></i>
                       </span>
                 </div>
+                <div class="input-container-1">
+                  <div class="error-message" id="errorEmail"></div>
+                </div>
+
+
                 <div class="input-half">
-                    <div class="input-container">
-                        <input class="effect-21" type="tel" id="phone" placeholder="Phone" required>
-                          <span class="focus-border">
-                            <i></i>
-                          </span>
-                    </div>
+                  <div class="input-container">
+                    <input class="effect-21" type="tel" id="phone" placeholder="Phone" required>
+                      <span class="focus-border">
+                        <i></i>
+                      </span>
+                  </div>
                     <div class="input-container">
                         <input class="effect-21" type="date" id="date" placeholder="Date of Birth" required>
                           <span class="focus-border">
@@ -77,17 +93,30 @@ outputHeader("homepage","signup");
                           </span>
                     </div>
                 </div>
+                <div class="input-half">
+                  <div class="error-message-half" id="errorPhone"></div>
+                  <div class="error-message-half" id="errorDate"></div>
+                </div>
+
+
                 <div class="input-container1">
                   <input class="effect-21" type="password" id="password1" placeholder="Password" required>
                     <span class="focus-border">
                       <i></i>
                     </span>
                 </div>
+                <div class="input-container-1">
+                  <div class="error-message" id="errorPassword1"></div>
+                </div>
+
                 <div class="input-container1">
                   <input class="effect-21" type="password" id="password2" placeholder="Confirm Password" required>
                     <span class="focus-border">
                       <i></i>
                     </span>
+                </div>
+                <div class="input-container-1">
+                  <div class="error-message" id="errorPassword2"></div>
                 </div>
 
                 <div class="button">
