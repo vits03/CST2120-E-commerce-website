@@ -17,7 +17,7 @@ outputHeader("homepage","login");
             <div class="container1">
               <h4>Access to your account</h4>
             </div>
-            <form name="login-form" id="login-form" action="homepage.php" onsubmit="return validateFormLogin()">
+            <form name="login-form" id="login-form" onsubmit="verifyLogin()">
               <div class="input-container">
                 <input class="effect-21" type="text" id="username" placeholder="Username" required>
                   <span class="focus-border">

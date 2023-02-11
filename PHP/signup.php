@@ -11,13 +11,11 @@ outputHeader("homepage","signup");
 <div class="main-content">
 
         <!-- Modal -->
-        <div id="demo-modal" class="modal">
+        <!-- <div id="demo-modal" class="modal">
           <div class="modal__content">
-            <div class="animation">
-              <img src="..\assets\images\confirmed-order.gif">
-            </div>
+            <div class="animation"></div>
             <div class="message">
-              <h3>Your order has been received!</h3>
+              <h3 id="content-modal"></h3>
             </div>       
             <a href="#" class="modal__close" onclick="closeModal()">
               <span class="material-symbols-outlined">
@@ -25,7 +23,7 @@ outputHeader("homepage","signup");
               </span>
             </a>
           </div>
-        </div>
+        </div> -->
 
         <div class="cover"></div>
         <div class="signup-container">
@@ -35,7 +33,7 @@ outputHeader("homepage","signup");
             <div class="container1">
                 <h4>Create your account</h4>
             </div>
-            <form onsubmit="return validateSignUpForm()" action="login.php">
+            <form id="signup-form" action="login.php" onsubmit="return validateSignUpForm()">
                 <div class="personal-details-title">
                     <h2>Personal Details</h2>
                 </div>

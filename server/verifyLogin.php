@@ -33,9 +33,10 @@ foreach ($cursor as $user) {
 }
 
 if ($isFound) {
-    $message = "Authentication Success";
+    $response['message'] = true;
 } else {
-    $message = "Authentication Fail";
+    $response['message'] = false;
 }
 
-echo $message;
+echo json_encode($response);
+?>

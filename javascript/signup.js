@@ -101,23 +101,33 @@ function validateSignUpForm() {
 }
 
 
-function registerUser(username, password2, firstName, lastName, email, phone) {
-  $.ajax({
-    type: "POST",
-    url: "../server/register.php",
-    data: {
-      username: username.value,
-      password: password2.value,
-      firstName: firstName.value,
-      lastName: lastName.value,
-      email: email.value,
-      phone: phone.value
-    },
-    success: function(responseData) {
-      alert(responseData);
-    },
-    error: function(xhr, status, error) {
-      alert("Error " + xhr.status + ": Try Again Later.");
+async function registerUser(username, password2, firstName, lastName, email, phone) {
+    try {
+      const response = await $.ajax({
+        type: "POST",
+        url: "../server/register.php",
+        data: {
+          username: username.value,
+          password: password2.value,
+          firstName: firstName.value,
+          lastName: lastName.value,
+          email: email.value,
+          phone: phone.value
+        }
+      });
+      alert(response);
+    } catch (error) {
+      alert("Error: Try Again Later.");
     }
-  });
-}
+  }
+
+
+// function openModal() {
+//     document.getElementById("demo-modal").style.visibility = "visible";
+//     document.getElementById("demo-modal").style.opacity = "1";
+// }
+
+// function closeModal() {
+//     document.getElementById("demo-modal").style.visibility = "hidden";
+//     document.getElementById("demo-modal").style.opacity = "0";
+// }
