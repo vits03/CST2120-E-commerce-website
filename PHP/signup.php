@@ -11,11 +11,11 @@ outputHeader("homepage","signup");
 <div class="main-content">
 
         <!-- Modal -->
-        <!-- <div id="demo-modal" class="modal">
+        <div id="demo-modal" class="modal">
           <div class="modal__content">
-            <div class="animation"></div>
             <div class="message">
-              <h3 id="content-modal"></h3>
+              <h3 id="content-modal"><strong>Welcome</strong>
+              <br><br>Your Account Has Been Created! Thank You For Registering</h3>
             </div>       
             <a href="#" class="modal__close" onclick="closeModal()">
               <span class="material-symbols-outlined">
@@ -23,7 +23,7 @@ outputHeader("homepage","signup");
               </span>
             </a>
           </div>
-        </div> -->
+        </div>
 
         <div class="cover"></div>
         <div class="signup-container">

@@ -17,6 +17,8 @@ let errorDate = document.getElementById("errorDate");
 let errorPassword1 = document.getElementById("errorPassword1");
 let errorPassword2 = document.getElementById("errorPassword2");
 
+let contentModel = document.getElementById("content-model");
+
 function validateSignUpForm(event) {
     event.preventDefault();
 
@@ -59,9 +61,7 @@ function sendRequest() {
             else if (response.success == true) {
                 errorUsername.innerHTML = "";
                 username.style.border = '2px solid green';
-                alert("Your Account has been created!");
-
-                window.location.href = "login.php";
+                openModal();
             }
         }
     };
@@ -168,4 +168,17 @@ function validateForm () {
     }
 
     return errorFound;
+}
+
+
+function openModal() {
+    document.getElementById("demo-modal").style.visibility = "visible";
+    document.getElementById("demo-modal").style.opacity = "1";
+}
+
+function closeModal() {
+    window.location.href = "login.php";
+    document.getElementById("demo-modal").style.visibility = "hidden";
+    document.getElementById("demo-modal").style.opacity = "0";
+
 }

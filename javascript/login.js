@@ -28,8 +28,19 @@ function sendRequest() {
             if (response.isAuthorised) {
                 window.location.href = "homepage.php";
             } else {
-                alert("Invalid Username/Password.Please Try Again");
+                openModal();
             }
         }
     };
+}
+
+function openModal() {
+    document.getElementById("demo-modal").style.visibility = "visible";
+    document.getElementById("demo-modal").style.opacity = "1";
+}
+
+function closeModal() {
+    document.getElementById("demo-modal").style.visibility = "hidden";
+    document.getElementById("demo-modal").style.opacity = "0";
+
 }

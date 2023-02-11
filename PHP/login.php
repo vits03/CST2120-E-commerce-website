@@ -10,6 +10,22 @@ outputHeader("homepage","login");
 
  <!--INSERT ALL CONTENT HERE-->
  <div class="main-content">
+
+          <!-- Modal -->
+          <div id="demo-modal" class="modal">
+            <div class="modal__content">
+              <div class="message">
+                <h3 id="content-modal"><strong>Login Failed</strong>
+                <br><br>Invalid Username/Password. Please Try Again</h3>
+              </div>       
+              <a href="#" class="modal__close" onclick="closeModal()">
+                <span class="material-symbols-outlined">
+                  close
+                </span>
+              </a>
+            </div>
+          </div>
+
           <div class="login-container">
             <div class="company-logo">
               <img src="..\assets\images\temp-logo.png" alt="">
