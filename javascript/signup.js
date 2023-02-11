@@ -141,7 +141,13 @@ async function registerUser(username, password2, firstName, lastName, email, pho
       });
       const data = JSON.parse(response);
       if (data.success === true) {
+        errorUsername = "";
         window.location.href = "login.php";
+      }
+      if (data.success === false) {
+        errorUsername.innerHTML = "username already taken";
+        alert("username already taken");
+        window.location.href = "signup.php";
       }
     } catch (error) {
       alert("Error: Try Again Later.");
