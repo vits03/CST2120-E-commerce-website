@@ -33,9 +33,9 @@ foreach ($cursor as $user) {
 }
 
 if ($isFound) {
-    $response['message'] = true;
+    $response['isAuthorised'] = true;
 } else {
-    $response['message'] = false;
+    $response['isAuthorised'] = false;
 }
 
 echo json_encode($response);

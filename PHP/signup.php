@@ -33,7 +33,7 @@ outputHeader("homepage","signup");
             <div class="container1">
                 <h4>Create your account</h4>
             </div>
-            <form id="signup-form" action="login.php" onsubmit="return validateSignUpForm(event)">
+            <form id="signup-form" onsubmit="return validateSignUpForm(event)">
                 <div class="personal-details-title">
                     <h2>Personal Details</h2>
                 </div>
