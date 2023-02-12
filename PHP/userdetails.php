@@ -13,15 +13,15 @@ outputHeader("homepage","userdetails");
 </div>
 <div class="details-container">
 <div class="input-detail-container">
-        <form action="/modify-user-details.php">
+        <form onsubmit="modifyUser()">
             <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname" value="John"><br>
+            <input type="text" id="fname" name="fname" value=""><br>
             <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="text" id="lname" name="lname" value=""><br><br>
             <label for="email">Email address:</label><br>
-            <input type="email" name="email" id="email" value="joe@gmail.com"><br>
+            <input type="email" name="email" id="email" value=""><br>
             <label for="telephone">Tel number</label><br>
-            <input type="tel" name="tel-num" id="tel-num" value="57686789" pattern="[0-9]{8}" required><br>
+            <input type="tel" name="tel-num" id="tel-num" value="" pattern="[0-9]{8}" required><br>
             <label for="country">Country</label><span style="color: red !important; display: inline; float: none;">*</span>   <br>   
         
             <select id="country" name="country" class="form-control">
@@ -272,10 +272,10 @@ outputHeader("homepage","userdetails");
             </select><br>
             <label for="address">Address:</label><br>
             <textarea type="text"  rows=5 maxlength=128  name="address" id="address"
-            >temple,road belle vuew maurel,riviere du remart 23432</textarea>
-            <input type="submit" value="Submit">
+            ></textarea>
+            <input type='submit'  value="Submit">
           </form> 
-          
+          <button onclick="modifyUser()">sdfsdf</button>
           </div>
     </div>
 </div>

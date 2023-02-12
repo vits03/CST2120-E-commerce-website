@@ -26,13 +26,19 @@ function outputHeader($title,$page){
     <div class="navbar">
         <div class="nav">
              <div class="logo"><a href="homepage.php">Taba-J 2000</a></div>
-             <div class="searchbar">
-                    <input type="text" placeholder="Search bar" id="searchbar-input" name="fname">
+             <div class="searchbar  searchbarhover">
+               
+              <input type="text" placeholder="Search bar" id="searchbar-input" name="fname">   
+              <div class="dropdown-content-search">
+                <a href="#">Link 1</a>
+                <a href="#">kkLik2</a>
+                <a href="#">Link 3</a>
+              </div>
+  
              </div>
              <div class="right-container">
              <div class="login"><a href="login.php">Log In</a></div>
              <div class="cart"><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></div>
-            
              <div class="dropdown">
   <button class="dropbtn">            <i id="user" class="fa-solid fa-user"></i>
   </button>
@@ -109,10 +115,12 @@ function outputFooter($page){
     if ($page == "homepage"){
       echo' <script src="..\javascript\main.js"></script>
    ';}
+    elseif($page == 'userdetails'){
+      echo' <script src="..\javascript\userdetails.js"></script>';
+    }
     elseif($page == 'productpage'){
       echo' <script src="..\javascript\productpage.js"></script>';
     }
-    
    echo ' </html>';
 ;
 

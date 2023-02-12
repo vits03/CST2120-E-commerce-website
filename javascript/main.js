@@ -1,5 +1,5 @@
  $(document).ready(function(){
-      $.get({
+      $.ajax({
       url:'../server/products.php',
       type:'get',
       dataType:'JSON',
@@ -29,8 +29,11 @@
   ).append(
       $('<div/>',{'class':'product-price',text:"Rs"+product.price})
   )
-      )});
-      
+      )}); 
+     
+     
+     
+     
       $('.product-link').click(function(){
         let path=`../PHP/productpage.php?id=${$(this).attr("id")}`;
         window.location=path;
@@ -39,49 +42,50 @@
   
   }})
   
-
-
-
-$('.test').click(function(){
-  alert($(this).attr("value"));
-});
-  $('.product-link').on("click",function(){
-    alert("sdf")
-    console.log($(this).attr("value"));
-   
-    
-    console.log(`../server/productdetails.php?id=${this.id}`)
-    $.get({
-    url:`../server/productdetails.php?id=${this.id}`,
-    type:'get',
-    dataType:'JSON',
-    success:function(data)
-    {
-     console.log(data)
-    data.forEach(product => {
-      // alert(product.name,product.price,product.path)
-        let $pcontainer = $('body div.product-wrapper');
-  
-    }
-   )
-  
-  }
-  }
-  )});
-
-
-
-
-
-
   });
 
+  $("#searchbar-input").keyup(function(){
+    let  productName=$(this).val()
+    alert(productName);
+    if (productName==""){
+      $('.dropdown-content-search').css('display','none');
 
-
-  $("#searchbar-input").keydown(function(){
-    alert('changed');
-    
+    }
   })
+
+  $("#searchbar-input").keypress(function(){
+  
+    let  productName=$(this).val()
+    alert(productName);
+    //alert(productName);
+    $('.dropdown-content-search').empty();
+   // $("#searchbar-input").append($('<div/>',{'class':'dropdown-content-search'}))
+    $('.dropdown-content-search').css('display','block');
+ if (productName==""){
+      $('.dropdown-content-search').css('display','none');
+
+    }
+    $.get({
+      url:`../server/productsearch.php?search=${productName}`,
+      type:'get',
+      dataType:'JSON',
+      success:function(data)
+      {
+       console.table(data)
+      data.forEach(product => {
+        $('.dropdown-content-search').append($('<a/>',{text:product.name,'href':`productpage.php?id=${product._id.$oid}`}))
+        console.log(product)
+      }
+    
+     )
+    }
+    }
+    )
+
+
+
+     });
+  
 
 (function () {
     const slider = document.querySelector(".main-slider");

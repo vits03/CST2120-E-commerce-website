@@ -1,46 +1,34 @@
-let username = document.getElementById("username");
-let password = document.getElementById("password");
-  
+function validateLoginForm() {
+    let errorFound = false;
 
-function verifyLogin(event) {
-    event.preventDefault();
+    // Extract Data from Input Fields
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
 
-    sendRequest();
-    return false;
-}
-  
-function sendRequest() {
-    let xhr = new XMLHttpRequest();
+    // Checks if username starts with alphabet, has 8-30 characters & Number and underscore
+    const usernameRegex = new RegExp("^[A-Za-z][A-Za-z0-9_]{7,29}$");
 
-    xhr.open("POST", "../server/verifyLogin.php", true);
+    // Checks if password has Uppercase, Lowercase, atleast 8 characters & Number
+    const passwordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
 
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    if (!usernameRegex.test(username.value)) {
+        errorFound = true;
+        username.style.border = '2px solid red';
+    } else {
+        username.style.border = '2px solid green';
+    }
 
-    let data = "username=" + username.value +
-    "&password=" + password.value;
+    if (!passwordRegex.test(password.value)) {
+        errorFound = true;
+        password.style.border = '2px solid red';
+    } else {
+        password.style.border = '2px solid green';
+    }
 
-    xhr.send(data);
 
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            let response = JSON.parse(xhr.responseText);
-            
-            if (response.isAuthorised) {
-                window.location.href = "homepage.php";
-            } else {
-                openModal();
-            }
-        }
-    };
-}
-
-function openModal() {
-    document.getElementById("demo-modal").style.visibility = "visible";
-    document.getElementById("demo-modal").style.opacity = "1";
-}
-
-function closeModal() {
-    document.getElementById("demo-modal").style.visibility = "hidden";
-    document.getElementById("demo-modal").style.opacity = "0";
+    // Return false if error is found in Form
+    if (errorFound) {
+        return false;
+    }
 
 }
