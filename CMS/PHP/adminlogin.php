@@ -9,7 +9,7 @@ echo'<!DOCTYPE html>
     <title>Login | Taba-J Admin</title>
 
     <!-- CSS Link -->
-    <link rel="stylesheet" href="..\CMS\adminlogin.css">
+    <link rel="stylesheet" href="..\css\adminlogin.css">
     
 </head>
 <body>
@@ -34,7 +34,7 @@ echo'<!DOCTYPE html>
                       </span>
                 </div>
 
-                <a href="admin-view-products.html">
+                <a href="adminviewproducts.php">
                     <div class="button">
                         <button class="button-58" role="button" type="submit">Sign In</button>
                     </div>
