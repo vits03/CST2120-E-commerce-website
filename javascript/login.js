@@ -1,34 +1,46 @@
-function validateLoginForm() {
-    let errorFound = false;
+let username = document.getElementById("username");
+let password = document.getElementById("password");
+  
 
-    // Extract Data from Input Fields
-    let username = document.getElementById("username");
-    let password = document.getElementById("password");
+function verifyLogin(event) {
+    event.preventDefault();
 
-    // Checks if username starts with alphabet, has 8-30 characters & Number and underscore
-    const usernameRegex = new RegExp("^[A-Za-z][A-Za-z0-9_]{7,29}$");
+    sendRequest();
+    return false;
+}
+  
+function sendRequest() {
+    let xhr = new XMLHttpRequest();
 
-    // Checks if password has Uppercase, Lowercase, atleast 8 characters & Number
-    const passwordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
+    xhr.open("POST", "../server/verifyLogin.php", true);
 
-    if (!usernameRegex.test(username.value)) {
-        errorFound = true;
-        username.style.border = '2px solid red';
-    } else {
-        username.style.border = '2px solid green';
-    }
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-    if (!passwordRegex.test(password.value)) {
-        errorFound = true;
-        password.style.border = '2px solid red';
-    } else {
-        password.style.border = '2px solid green';
-    }
+    let data = "username=" + username.value +
+    "&password=" + password.value;
 
+    xhr.send(data);
 
-    // Return false if error is found in Form
-    if (errorFound) {
-        return false;
-    }
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            let response = JSON.parse(xhr.responseText);
+            
+            if (response.isAuthorised) {
+                window.location.href = "homepage.php";
+            } else {
+                openModal();
+            }
+        }
+    };
+}
+
+function openModal() {
+    document.getElementById("demo-modal").style.visibility = "visible";
+    document.getElementById("demo-modal").style.opacity = "1";
+}
+
+function closeModal() {
+    document.getElementById("demo-modal").style.visibility = "hidden";
+    document.getElementById("demo-modal").style.opacity = "0";
 
 }
