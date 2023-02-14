@@ -14,35 +14,52 @@ echo'<!DOCTYPE html>
 </head>
 <body>
     <div class="main-content">
+
+        <!-- Modal -->
+        <div id="demo-modal" class="modal">
+        <div class="modal__content">
+            <div class="message">
+            <h3 id="content-modal"><strong>Login Failed</strong>
+            <br><br>Invalid Username/Password. Please Try Again</h3>
+            </div>       
+            <a href="#" class="modal__close" onclick="closeModal()">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+            </a>
+        </div>
+        </div>
+
         <div class="cover"></div>
         <div class="login-container">
             <div class="login-heading">
                 <h1>Taba-J Admin</h1>
             </div>
-            <div class="login-input">
-                <div class="input-container">
-                    <input class="effect-21" type="text" placeholder="User ID">
-                      <span class="focus-border">
-                        <i></i>
-                      </span>
-                  </div>
-
-                <div class="input-container">
-                    <input class="effect-21" type="password" placeholder="Password">
-                      <span class="focus-border">
-                        <i></i>
-                      </span>
-                </div>
-
-                <a href="adminviewproducts.php">
-                    <div class="button">
-                        <button class="button-58" role="button" type="submit">Sign In</button>
+            <form id="login-form" onsubmit="return verifyLogin(event)">
+                <div class="login-input">
+                    <div class="input-container">
+                        <input class="effect-21" type="text" id="username" placeholder="User ID" required>
+                        <span class="focus-border">
+                            <i></i>
+                        </span>
                     </div>
-                </a>
-                
-            </div>
+
+                    <div class="input-container">
+                        <input class="effect-21" type="password" id="password" placeholder="Password" required>
+                        <span class="focus-border">
+                            <i></i>
+                        </span>
+                    </div>
+
+                        <div class="button">
+                            <button class="button-58" role="button" type="submit">Sign In</button>
+                        </div>
+                    
+                </div>
+            </form>
         </div>
     </div>
+    <script src="..\javascript\adminlogin.js"></script>
 </body>
 </html>';
 ?>
