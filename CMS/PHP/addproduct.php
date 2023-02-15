@@ -11,30 +11,41 @@ echo'<!--INSERT ALL CONTENT HERE-->
    <div class="addproducts-container">
       
        <div class="add-product"> 
-           <form action="/action_category.php"><p>Add a product</p>
+           <form><p>Add a product</p>
+
              <label for="fname" class="block">Product name</label>
-             <textarea id="productname" name="productname" rows="4" cols="50"></textarea><br><br>
+             <textarea id="productname" rows="4" cols="50" type="text" required></textarea><br><br>
              
 
              <label for="fname" class="block">Product Description</label>
-             <textarea id="description" name="Description" rows="4" cols="50"></textarea><br><br>
+             <textarea id="description" rows="4" cols="50" type="text" required></textarea><br><br>
             
              <label for="fname" class="block">Price</label>
-             <textarea id="price" name="Description" rows="4" cols="50"></textarea><br><br>
+             <textarea id="price"rows="2" cols="50" type="number" min"0" max="9999999"required></textarea><br><br>
                  
              <label for="fname" class="block">Quantity</label>
-             <textarea id="description" name="Description" rows="4" cols="50"></textarea><br><br>
+             <textarea id="quantity" rows="2" cols="50" type="number" min="0" max="9999"required></textarea><br><br>
+
+
               <p>Choose a category</p>
-              <input type="radio" id="category1" name="category" value="mobile">
-                <label for="category1">Mobile Phones</label><br>
-              <input type="radio" id="category2" name="category" value="60">
+
+              <input type="radio" id="category1" name="category" value="Mobile Phones">
+              <label for="category1">Mobile Phones</label><br>
+
+              <input type="radio" id="category2" name="category" value="Tablets">
               <label for="category2">Tablets</label><br>  
-               <input type="radio" id="category3" name="category" value="100">
+
+              <input type="radio" id="category3" name="category" value="Monitors">
               <label for="category3">Monitors</label><br>
-                 <input type="radio" id="category3" name="category" value="100">
-                
-                 <label for="category3">Wireless earbuds</label>
-            <br>
+
+              <input type="radio" id="category3" name="category" value="Wireless Earbuds">
+              <label for="category3">Wireless earbuds</label><br>
+
+              <input type="radio" id="category3" name="category" value="Televisions">
+              <label for="category3">Televisions</label><br><br><br>
+
+              <input type="file" id="image" name="image">
+
              <input type="submit" value="Submit">
             
              
@@ -43,7 +54,7 @@ echo'<!--INSERT ALL CONTENT HERE-->
 </div>
 
 
-
+<script src="..\javascript\addproducts.js"></script>
 </div>
 
 ';

@@ -3,39 +3,46 @@ include('common.php');
 outputHeader('editproduct','TabaJ-Admin');
 
 
-echo' <!--INSERT ALL CONTENT HERE-->
+echo'<!--INSERT ALL CONTENT HERE-->
 <div class="addproduct-addition-container">
    <div class="addproducts-container">
       
        <div class="add-product"> 
-           <form action="/action_category.php"><p>Edit a product</p>
+           <form><p>Add a product</p>
+
              <label for="fname" class="block">Product name</label>
-             <textarea id="productname" name="productname" rows="4" cols="50">Nintendo Switch – OLED Model w/ Neon Red & Neon Blue Joy-Con</textarea><br><br>
+             <textarea id="productname" rows="4" cols="50" type="text" required></textarea><br><br>
              
 
              <label for="fname" class="block">Product Description</label>
-             <textarea id="description" name="Description" rows="4" cols="50">7-inch OLED screen - Enjoy vivid colors and crisp contrast with a screen that makes colors pop
-               Wired LAN port - Use the dock’s LAN port when playing in TV mode for a wired internet connection
-               64 GB internal storage - Save games to your system with 64 GB of internal storage
-               Enhanced audio – Enjoy enhanced sound from the system’s onboard speakers when playing in Handheld and Tabletop modes.
-               Wide adjustable stand – Freely angle the system’s wide, adjustable stand for comfortable viewing in Tabletop mode. Nintendo Switch – OLED Model supports all Joy-Con controllers and Nintendo Switch software</textarea><br><br>
+             <textarea id="description" rows="4" cols="50" type="text" required></textarea><br><br>
             
              <label for="fname" class="block">Price</label>
-             <textarea id="price" name="Description" rows="4" cols="50">Rs 45,000</textarea><br><br>
+             <textarea id="price"rows="2" cols="50" type="number" min"0" max="9999999"required></textarea><br><br>
                  
              <label for="fname" class="block">Quantity</label>
-             <textarea id="description" name="Description" rows="4" cols="50">1</textarea><br><br>
+             <textarea id="quantity" rows="2" cols="50" type="number" min="0" max="9999"required></textarea><br><br>
+
+
               <p>Choose a category</p>
-              <input type="radio" checked="checked" id="category1" name="category" value="mobile">
-                <label for="category1">Mobile Phones</label><br>
-              <input type="radio" id="category2" name="category" value="60">
+
+              <input type="radio" id="category1" name="category" value="Mobile Phones">
+              <label for="category1">Mobile Phones</label><br>
+
+              <input type="radio" id="category1" name="category" value="Tablets">
               <label for="category2">Tablets</label><br>  
-               <input type="radio" id="category3" name="category" value="100">
+
+              <input type="radio" id="category1" name="category" value="Monitors">
               <label for="category3">Monitors</label><br>
-                 <input type="radio" id="category3" name="category" value="100">
-                
-                 <label for="category3">Wireless earbuds</label>
-            <br>
+
+              <input type="radio" id="category1" name="category" value="Wireless Earbuds">
+              <label for="category3">Wireless earbuds</label><br>
+
+              <input type="radio" id="category1" name="category" value="Televisions">
+              <label for="category3">Televisions</label><br><br><br>
+
+              <input type="file" id="image" name="image">
+
              <input type="submit" value="Submit">
             
              
@@ -44,10 +51,8 @@ echo' <!--INSERT ALL CONTENT HERE-->
 </div>
 
 
-
+<script src="..\javascript\editproduct.js"></script>
 </div>
-
-
 
 ';
 

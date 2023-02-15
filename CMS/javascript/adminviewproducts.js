@@ -1,9 +1,12 @@
+
+
 $(document).ready(function() {
     $.ajax({
         url: '../server/getProducts.php',
         type: 'GET',
         success: function(response) {
             var products = response;
+            console.log(products);
             var tableBody = $('#table-body');
             for (var i = 0; i < products.length; i++) {
                 var product = products[i];
@@ -14,10 +17,9 @@ $(document).ready(function() {
                 '<td>' + product.price + '</td>' +
                 '<td>' + product.quantity + '</td>' +
                 '<td class="buttons">' +
-                '<a class="button-68" href="editproduct.php" id="edit" role="button">Edit</a>' +
-                '</div>' +
+                '<a class="button-68" href="editproduct.php?id=' + product._id.$oid +'" id="edit" role="button">Edit</a>' +
                 '<div class="delete-button">' +
-                '<button class="button-68" id="delete" role="button">Delete</button>' +
+                '<button class="button-68" id="delete" onclick="deleteCollection()" role="button">Delete</button>' +
                 '</div>' +
                 '</td>' +
                 '</tr>';
