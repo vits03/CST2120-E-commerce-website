@@ -31,6 +31,15 @@ $(document).ready(function() {
                     deleteProduct(orderID);
                 }
             });
+
+            // Add an input event listener to the search input element
+            $('#search').on('input', function() {
+                var searchValue = $(this).val().toLowerCase();
+                $('#table-body tr').filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(searchValue) > -1);
+                });
+            });
+
         },
         
         error: function(xhr, status, error) {

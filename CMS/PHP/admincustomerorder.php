@@ -1,10 +1,8 @@
 <?php
+
 include('common.php');
 
-
 outputHeader('admincustomerorder',"TabaJ-Admin");
-
-
 
 echo'
 <!--INSERT ALL CONTENT HERE-->
@@ -17,9 +15,7 @@ echo'
             <div class="search-input">
                 <input id="search" placeholder="Search..." type="text">
             </div>
-            <div class="search-button">
-                <button class="button-68" id="search-btn" role="button">Search</button>
-            </div>
+
         </div>
         <div class="filter">
             <details class="dropdown">

@@ -293,10 +293,11 @@ footer{
 }
 
 #search {
-    height: 50%;
+    height: 30px;
     width: 90%;
     border-radius: 5px;
-    
+    border: #636161;
+    background-color: rgb(249, 246, 241);
     margin: 5%
 }
 
@@ -332,7 +333,7 @@ footer{
 
 h2{
     text-align: center;
-    font-size: 1rem;
+    font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: white;

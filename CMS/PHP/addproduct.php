@@ -17,10 +17,10 @@ echo'<!--INSERT ALL CONTENT HERE-->
              <textarea id="productname" rows="4" cols="50" type="text" required></textarea><br><br>
              
 
-             <label for="fname" class="block">Product Description</label>
+             <label for="fname" class="block">Product Description (separate with comma)</label>
              <textarea id="description" rows="4" cols="50" type="text" required></textarea><br><br>
             
-             <label for="fname" class="block">Price</label>
+             <label for="fname" class="block">Price (Rs)</label>
              <textarea id="price"rows="2" cols="50" type="number" min"0" max="9999999"required></textarea><br><br>
                  
              <label for="fname" class="block">Quantity</label>

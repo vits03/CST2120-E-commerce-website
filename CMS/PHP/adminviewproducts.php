@@ -14,21 +14,17 @@ echo'
         <div class="search-input">
             <input id="search" placeholder="Search..." type="text">
         </div>
-        <div class="search-button">
-            <button class="button-68" id="search-btn" role="button">Search</button>
-        </div>
     </div>
     <div class="filter">
         <details class="dropdown">
             <summary role="button">
-              <a class="button">Filter by</a>
+              <a class="button">Sort by</a>
             </summary>
             <ul>
-              <li><a href="#">Product ID</a></li>
-              <li><a href="#">Product Name</a></li>
-              <li><a href="#">Category</a></li>
-              <li><a href="#">Price</a></li>
-              <li><a href="#">Quantity</a></li>
+              <li><a href="#" id="sort-asc">Name: Ascending</a></li>
+              <li><a href="#" id="sort-desc">Name: Descending</a></li>
+              <li><a href="#" id="sort-price-low-to-high">Price: Low to High</a></li>
+              <li><a href="#" id="sort-price-high-to-low">Price: High to Low</a></li>
           </ul>
         </details>
     </div>
@@ -38,7 +34,7 @@ echo'
             <thead>
             <tr>
                 <th>Product ID</th>
-                <th>Product Name</th>
+                <th id="product-name-header">Product Name</th>
                 <th>Category</th>
                 <th>Price</th>
                 <th>Quantity</th>

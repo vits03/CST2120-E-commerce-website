@@ -14,7 +14,7 @@ $collection = $db->products;
 
 // Get data
 $productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
-$description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+$desc = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
 $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_INT);
 $quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_NUMBER_INT);
 $category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_STRING);
@@ -24,7 +24,8 @@ if ($quantity != 0) {
 } else {
     $isRemoved = true;
 }
-
+$delimiter = ",";
+$description = explode($delimiter,$desc);
 // Update product Collection
 $result = [
     "name" => $productName,

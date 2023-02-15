@@ -32,6 +32,68 @@ $(document).ready(function() {
                     deleteProduct(productId);
                 }
             });
+
+            // Add an input event listener to the search input element
+            $('#search').on('input', function() {
+                var searchValue = $(this).val().toLowerCase();
+                $('#table-body tr').filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(searchValue) > -1);
+                });
+            });
+
+            $('#sort-asc').on('click', function() {
+                var tableRows = $('#table-body tr');
+                tableRows.sort(function(a, b) {
+                    var aVal = $(a).find('td:nth-child(2)').text();
+                    var bVal = $(b).find('td:nth-child(2)').text();
+                    return aVal.localeCompare(bVal);
+                });
+                $('#table-body').empty().append(tableRows);
+            });
+
+            // Add a click event listener to the "Sort by" dropdown
+            $('#sort-desc').on('click', function() {
+                var rows = tableBody.find('tr').get();
+                rows.sort(function(a, b) {
+                var nameA = $(a).find('td:eq(1)').text().toUpperCase();
+                var nameB = $(b).find('td:eq(1)').text().toUpperCase();
+                if (nameA < nameB) {
+                    return 1;
+                }
+                if (nameA > nameB) {
+                    return -1;
+                }
+                return 0;
+                });
+                $.each(rows, function(index, row) {
+                tableBody.append(row);
+                });
+            });
+
+            $('#sort-price-low-to-high').on('click', function() {
+                var tableRows = $('#table-body tr');
+                tableRows.sort(function(a, b) {
+                    var aVal = parseFloat($(a).find('td:nth-child(4)').text().replace('$', ''));
+                    var bVal = parseFloat($(b).find('td:nth-child(4)').text().replace('$', ''));
+                    return aVal - bVal;
+                });
+                $('#table-body').empty().append(tableRows);
+            });
+
+            // Add a click event listener to the "Sort by" dropdown
+            $('#sort-price-high-to-low').on('click', function() {
+                var rows = tableBody.find('tr').get();
+                rows.sort(function(a, b) {
+                    var priceA = parseFloat($(a).find('td:eq(3)').text());
+                    var priceB = parseFloat($(b).find('td:eq(3)').text());
+                    return priceB - priceA;
+                });
+                $.each(rows, function(index, row) {
+                    tableBody.append(row);
+                });
+            });
+
+            
         },
         
         error: function(xhr, status, error) {
@@ -39,6 +101,8 @@ $(document).ready(function() {
         }
     })
 });
+
+
 
 // Function to delete a product from the database
 function deleteProduct(productId) {
