@@ -3,7 +3,7 @@
 
 
 
-outputHeader("homepage","checkout");
+outputHeader("checkout","checkout");
 
 
 ?>
@@ -94,7 +94,7 @@ outputHeader("homepage","checkout");
                         <span class="button-82-shadow"></span>
                         <span class="button-82-edge"></span>
                         <span class="button-82-front text">
-                          Continue to shipping
+                         checkout
                         </span>
                     </button>
                         
@@ -118,60 +118,20 @@ outputHeader("homepage","checkout");
                       </span>
                   </a>
               </div>
-            </div>
+          </div>
 
             <!-- Items in Checkout -->
             <div class="checkout-details">
               <!-- Items -->
                 <div class="items">
                   <!-- Item 1 -->
-                    <div class="item-detail">
-                        <div class="product-photo">
-                            <img src="..\assets\images\tv.png" alt="">
-                        </div>
-                        <div class="product-desc">
-                            <h4>Samsung 43" UHD Smart TV</h4>
-                        </div>
-                        <div class="product-price">
-                            <h4>Rs 75,000</h4>
-                        </div>
-                    </div>
+                   
                     <!-- Item 2 -->
-                    <div class="item-detail">
-                        <div class="product-photo">
-                            <img src="..\assets\images\phone1.png" alt="">
-                        </div>
-                        <div class="product-desc">
-                            <h4>Apple Iphone 13 Pro Max</h4>
-                        </div>
-                        <div class="product-price">
-                            <h4>Rs 65,490</h4>
-                        </div>
-                    </div>
+                   
                     <!-- Item 3 -->
-                    <div class="item-detail">
-                        <div class="product-photo">
-                            <img src="..\assets\images\vacuum-cleaner.png" alt="">
-                        </div>
-                        <div class="product-desc">
-                            <h4>Candy Vacuum Cleaner 2000W</h4>
-                        </div>
-                        <div class="product-price">
-                            <h4>Rs 3,990</h4>
-                        </div>
-                    </div>
+                    
                     <!-- Item 4 -->
-                    <div class="item-detail">
-                        <div class="product-photo">
-                            <img src="..\assets\images\phone2.png" alt="">
-                        </div>
-                        <div class="product-desc">
-                            <h4>Huawei P50 Pro</h4>
-                        </div>
-                        <div class="product-price">
-                            <h4>Rs 52,990</h4>
-                        </div>
-                    </div>
+                  
                 </div>
 
                 <!-- Display total of products -->
@@ -179,16 +139,16 @@ outputHeader("homepage","checkout");
                     <div class="subtotal">
                         <h4>Subtotal</h4>
                     </div>
-                    <div class="total-price">
-                        <h4>Rs 197,470</h4>
+                    <div class="total-price subtotalprice">
+                        <h4></h4>
                     </div>
                 </div>
                 <div class="total">
                     <div class="subtotal">
                         <h4>Shipping</h4>
                     </div>
-                    <div class="total-price">
-                        <h4>Rs 32,960</h4>
+                    <div class="total-price shippingprice">
+                        <h4></h4>
                     </div>
                 </div>
                 <hr class="solid">
@@ -196,18 +156,17 @@ outputHeader("homepage","checkout");
                     <div class="subtotal">
                         <h2>Total</h2>
                     </div>
-                    <div class="total-price">
-                        <h2>Rs 230,430</h2>
+                    <div class="total-price ">
+                        <h2 class="totalprice"></h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../javascript/checkout.js" crossorigin="anonymous"></script>
 
 
 <?php
  
-outputFooter('homepage');
+outputFooter('checkout');
 
 ?>

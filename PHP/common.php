@@ -121,6 +121,13 @@ function outputFooter($page){
     elseif($page == 'productpage'){
       echo' <script src="..\javascript\productpage.js"></script>';
     }
+    elseif($page == 'cart'){
+      echo' <script src="..\javascript\cart.js"></script>';
+     echo'<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>';
+    }
+    elseif($page == 'checkout'){
+      echo' <script src="..\javascript\checkout.js"></script>';
+    }
    echo ' </html>';
 ;
 

@@ -13,7 +13,7 @@ $(document).ready(function() {
                 '<td>' + product.category + '</td>' +
                 '<td>' + product.price + '</td>' +
                 '<td>' + product.quantity + '</td>' +
-                '<td class="buttons">' +
+                '<td class="buttons">'
                 '<a class="button-68" href="editproduct.php" id="edit" role="button">Edit</a>' +
                 '</div>' +
                 '<div class="delete-button">' +
