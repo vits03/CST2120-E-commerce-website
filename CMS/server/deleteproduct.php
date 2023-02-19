@@ -12,13 +12,18 @@ $db = $mongoClient->ecommerce;
 //Select a collection 
 $collection = $db->products;
 
-// Get all products
-$cursor = $collection->find(["isRemoved" => false]);
+// Get data
+$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
+$update = [
+    '$set' => [
+    'isRemoved' => true,
 
-// Convert cursor to array
-$products = iterator_to_array($cursor);
+]];
 
-// Return products in JSON format
-header('Content-Type: application/json');
-echo json_encode($products);
+
+
+
+$document = $collection->updateOne(['_id' => new MongoDB\BSON\ObjectID($id)], $update);
+echo $id;
 ?>
+
