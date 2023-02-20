@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+    // Get data from server-side (getOrder)
     $.ajax({
         url: '../server/getOrder.php',
         type: 'GET',
@@ -9,6 +11,7 @@ $(document).ready(function() {
             for (var i = 0; i < orders.length; i++) {
                 var order = orders[i];
                 
+                // Get Customer Details from server-side with id (getCustomerDetails)
                 $.ajax({
                     url: '../server/getCustomerDetails.php?customerID=' + order.customerID.$oid,
                     type: 'GET',
@@ -18,6 +21,7 @@ $(document).ready(function() {
                     }
                 })
 
+                // Display Data of Customer in row in table on admincustomerorder Page
                 var row = '<tr data-id="' + order._id.$oid + '">' +
                 '<td>' + order._id.$oid + '</td>' +
                 '<td>' + order.customerID.$oid + '</td>' +
@@ -30,6 +34,8 @@ $(document).ready(function() {
                 '</div>' +
                 '</td>' +
                 '</tr>';
+
+                // Add data to table
                 tableBody.append(row);
             }
             

@@ -1,6 +1,8 @@
 $(document).ready(function() {
     $('form').submit(function(e) {
         e.preventDefault();
+
+        // Extract Data from HTML using JQuery
         var productName = $('#productname').val();
         var description = $('#description').val();
         var price = Number($('#price').val());
@@ -17,6 +19,7 @@ $(document).ready(function() {
 
         errorFound = false;
 
+    // Validation for ProductName
     if (typeof productName !== 'string' || productName == "") {
        errorProductName.innerHTML = "Invalid Product Name";
        $('#productname').css('border', '2px solid red');
@@ -26,6 +29,7 @@ $(document).ready(function() {
         errorProductName.innerHTML = "";
     }
 
+    // Validation for Description
     if (typeof description !== 'string' || description == "") {
         errorDescription.innerHTML = "Invalid Description";
         $('#description').css('border', '2px solid red');
@@ -35,6 +39,7 @@ $(document).ready(function() {
         errorDescription.innerHTML = "";
     }
 
+    // Validation for Price
     if (typeof price !== 'number' || price == "" || isNaN(price)) {
         errorPrice.innerHTML = "Invalid Price";
         $('#price').css('border', '2px solid red');
@@ -44,6 +49,7 @@ $(document).ready(function() {
         errorPrice.innerHTML = "";
     }
 
+    // Validation for Quantity
     if (typeof quantity !== 'number' || quantity == "" || isNaN(quantity)) {
         errorQuantity.innerHTML = "Invalid Quantity";
         $('#quantity').css('border', '2px solid red');
@@ -53,6 +59,7 @@ $(document).ready(function() {
         errorQuantity.innerHTML = "";
     }
 
+    // Validation for Category
     if (typeof category !== 'string' || category == "") {
         errorCategory.innerHTML = "Please Select on Category";
         errorFound = true;
@@ -60,6 +67,7 @@ $(document).ready(function() {
         errorCategory.innerHTML = "";
     }
     
+    // Validation for File Upload
     if (!image) {
         errorImage.innerHTML = "Please Select an Image to Upload";
         errorFound = true;
@@ -80,7 +88,8 @@ $(document).ready(function() {
         formData.append('quantity', quantity);
         formData.append('category', category);
         formData.append('image', image);
-  
+
+    // Send data to Server-Side (updateProduct.php)
       $.ajax({
           url: '../server/updateProduct.php?id=' + prodID,
           type: 'POST',
@@ -88,6 +97,7 @@ $(document).ready(function() {
           contentType: false,
           processData: false,
           success: function(response) {
+            // Redirect to adminviewproducts.php
               window.location.href = "../PHP/adminviewproducts.php";
           },
           error: function(xhr, status, error) {
@@ -102,12 +112,16 @@ $(document).ready(function() {
     // Get the value of the "id" parameter
     $id = urlParams.get('id');
     let prodID = $id;
+
+    // Get data from Server-Side with id (getProductDetails.php)
     $.ajax({
         url: '../server/getProductDetails.php?id=' + $id,
         type: 'GET',
         success: function(response) {
             var details = response;
             console.log(details);
+
+            // Display data from server-side in textboxes in HTML
             $('#productname').val(details.name);
             $('#description').val(details.description);
             $('#price').val(details.price);
