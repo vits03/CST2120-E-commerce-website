@@ -2,51 +2,90 @@ $(document).ready(function() {
     $('form').submit(function(e) {
       e.preventDefault();
       var productName = $('#productname').val();
-    var description = $('#description').val();
-    var price = Number($('#price').val());
-    var quantity = Number($('#quantity').val());
-    var category = $('input[name=category]:checked').val();
-    errorFound = false;
+      var description = $('#description').val();
+      var price = Number($('#price').val());
+      var quantity = Number($('#quantity').val());
+      var category = $('input[name=category]:checked').val();
+      var image = $('#image')[0].files[0];
+  
+      let errorProductName = document.getElementById("errorProductName");
+      let errorDescription = document.getElementById("errorDescription");
+      let errorPrice = document.getElementById("errorPrice");
+      let errorQuantity = document.getElementById("errorQuantity");
+      let errorCategory = document.getElementById("errorCategory");
+      let errorImage = document.getElementById("errorImage");
+  
+      errorFound = false;
 
     if (typeof productName !== 'string' || productName == "") {
-        console.log("Invalid Product Name");
-        errorFound = true;
+       errorProductName.innerHTML = "Invalid Product Name";
+       $('#productname').css('border', '2px solid red');
+       errorFound = true;
+    } else {
+        $('#productname').css('border', '2px solid green');
+        errorProductName.innerHTML = "";
     }
 
     if (typeof description !== 'string' || description == "") {
-        console.log("Invalid Description");
+        errorDescription.innerHTML = "Invalid Description";
+        $('#description').css('border', '2px solid red');
         errorFound = true;
+    } else {
+        $('#description').css('border', '2px solid green');
+        errorDescription.innerHTML = "";
     }
 
     if (typeof price !== 'number' || price == "" || isNaN(price)) {
-        console.log("Invalid Price");
+        errorPrice.innerHTML = "Invalid Price";
+        $('#price').css('border', '2px solid red');
         errorFound = true;
+    } else {
+        $('#price').css('border', '2px solid green');
+        errorPrice.innerHTML = "";
     }
 
     if (typeof quantity !== 'number' || quantity == "" || isNaN(quantity)) {
-        console.log("Invalid Quantity");
+        errorQuantity.innerHTML = "Invalid Quantity";
+        $('#quantity').css('border', '2px solid red');
         errorFound = true;
+    } else {
+        $('#quantity').css('border', '2px solid green');
+        errorQuantity.innerHTML = "";
     }
 
-    if (typeof category !== 'string') {
-        console.log("Please Select on Category");
+    if (typeof category !== 'string' || category == "") {
+        errorCategory.innerHTML = "Please Select on Category";
         errorFound = true;
+    } else {
+        errorCategory.innerHTML = "";
+    }
+
+    if (!image) {
+        errorImage.innerHTML = "Please Select an Image to Upload";
+        errorFound = true;
+    } else {
+        errorImage.innerHTML = "";
     }
 
     if (errorFound) {
         return;
     }
 
+    // Use FormData object to send file along with other form data
+    var formData = new FormData();
+    formData.append('productName', productName);
+    formData.append('description', description);
+    formData.append('price', price);
+    formData.append('quantity', quantity);
+    formData.append('category', category);
+    formData.append('image', image);
+
     $.ajax({
         url: '../server/addNewProduct.php',
         type: 'POST',
-        data: {
-          productName: productName,
-          description: description,
-          price: price,
-          quantity: quantity,
-          category: category
-        },
+        data: formData,
+        contentType: false,
+        processData: false,
         success: function(response) {
             console.log(response);
             window.location.href = "../PHP/adminviewproducts.php";

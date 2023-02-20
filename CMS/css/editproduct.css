@@ -338,3 +338,10 @@ input[type="text"]{
     border-radius: 10px;
     height: 2rem;
 }
+
+
+.error-message {
+    font-size: 13px;
+    color: rgb(255, 45, 45);
+    margin-bottom: 3%;
+  }
