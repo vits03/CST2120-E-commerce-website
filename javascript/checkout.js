@@ -9,6 +9,7 @@ function closeModal() {
 }
 
 $(document).ready(function(){
+    displayUsername();
     let total=0
     let quantity=0;
     const cartdata=[];
@@ -67,3 +68,22 @@ $.ajax('../server/cartcontent.php', {
 });
     }
 });
+
+
+
+function displayUsername(){
+    $.get({
+        url:'../server/userdetails.php?id=63de635283cd1eff2b722f60',
+        type:'get',
+        dataType:'JSON',
+        success:function(data)
+        {
+         data.forEach(user=>{
+           $('#fname').attr('value',user['name']);
+           $('#lname').attr('value',user['surname']);
+           $('#email').attr('value',user['email']);
+           $('#address').val(user['address']);
+         })
+        }
+    })
+}

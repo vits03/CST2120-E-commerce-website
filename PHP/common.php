@@ -114,6 +114,7 @@ function outputFooter($page){
     ';
     if ($page == "homepage"){
       echo' <script src="..\javascript\main.js"></script>
+       <script src="..\javascript\tracker.js"></script>
    ';}
     elseif($page == 'userdetails'){
       echo' <script src="..\javascript\userdetails.js"></script>';

@@ -22,8 +22,7 @@ if  ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $order=["orderid"=>$order_Data["orderid"],"totalprice"=>$order_Data['totalprice'],"address"=>$order_Data['address'],"dateplaced"=>$date,"products"=>$product_ordered];
 
-   echo("the date is as such");
-   var_dump($order);
+   
         
            
      

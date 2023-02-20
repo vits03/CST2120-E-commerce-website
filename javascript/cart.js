@@ -40,6 +40,8 @@ $.ajax('../server/cartcontent.php', {
        $(".totalprice").text(total);
        $(".subtotalprice").text(total*0.75);
        $(".shippingprice").text(total*0.15);
+
+
        $('input[type="number"]').on('change',function(){
         let pid=$(this).attr('pid');
         cart.forEach(cartitem=>{
@@ -53,6 +55,8 @@ $.ajax('../server/cartcontent.php', {
       localStorage.setItem("cart",JSON.stringify(cart));
       location.reload();
        });
+
+       
          $('.product-delete').click(function(){  
              let pid=$(this).attr('pid');
              cart.forEach(cartitem=>{

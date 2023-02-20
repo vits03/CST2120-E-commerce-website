@@ -1,3 +1,8 @@
+
+
+let categories=[];
+ let allProducts;
+ let selectedProducts;
  $(document).ready(function(){
       $.ajax({
       url:'../server/products.php',
@@ -5,6 +10,8 @@
       dataType:'JSON',
       success:function(data)
       {
+        allProducts=data;
+        selectedProducts=allProducts;
        //console.log(data)
       data.forEach(product => {
         // alert(product.name,product.price,product.path)
@@ -34,9 +41,9 @@
 
 
        if (!localStorage.getItem("cart")){
-        localStorage.setItem("cart",JSON.stringify([]))
+        localStorage.setItem("cart",JSON.stringify([]));
        }
-      
+
        $('.addtocart').click(function(){
         let increased=false;
         const cartdata=[];
@@ -52,7 +59,7 @@
           if (item.id == pid){
             item.quantity=parseInt(item.quantity)+1;
             localStorage.setItem('cart',JSON.stringify(cart));
-            increased=true
+            increased=true;
           }
         
          })
@@ -102,17 +109,18 @@
       });
   
   }})
-  
+
+ 
+
   });
+  
 
-
-
-
+  
 
 
   $("#searchbar-input").keyup(function(){
     let  productName=$(this).val()
-    alert(productName);
+    
     if (productName==""){
       $('.dropdown-content-search').css('display','none');
 
@@ -291,13 +299,14 @@
   })();
   
 
-  var slider = document.getElementById("myRange");
+var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.textContent = this.value;
+  filterPrice(this.value);
 } 
 
 function openNav() {
@@ -307,4 +316,296 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
+function openProductPage(){
+  $('.product-link').click(function(){
+    let path=`../PHP/productpage.php?id=${$(this).attr("id")}`;
+    window.location=path;
+  
+  });
+}
 
+function render_Category(category){
+  let $pcontainer = $('body div.product-wrapper');
+  $pcontainer.empty()
+  selectedProducts=[];
+  allProducts.forEach(product=>{
+
+   if (product.category == category){
+       selectedProducts.push(product);
+       $pcontainer.append($('<div/>',{'class':'product-container'}
+       ).append(($('<div/>',{'class':'btn-container'}
+       ).append($('<a/>',{text:'View','onclick':"addProductPage()",'id':product._id.$oid,'class':'product-link'})
+       ).append($('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
+       ))
+       
+  
+  ).append(
+    $('<img/>',{'src':`..\\assets\\images\\${product.path}`})
+).append(
+    $('<div/>',{'class':'product-description',text:product.name}
+    )
+).append(
+    $('<div/>',{'class':'product-price',text:"Rs"+product.price})
+)
+    )}});
+}
+
+
+
+
+
+function filterPrice(price){
+ 
+  let $pcontainer = $('body div.product-wrapper');
+  $pcontainer.empty()
+
+  selectedProducts.forEach(product=>{
+      if (parseInt(product.price) > price){
+        console.table(product);
+       $pcontainer.append($('<div/>',{'class':'product-container'}
+       ).append(($('<div/>',{'class':'btn-container'}
+       ).append($('<a/>',{text:'View','onclick':"openProductPage()",'id':product._id.$oid,'class':'product-link'})
+       ).append($('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
+       ))
+       
+  
+  ).append(
+    $('<img/>',{'src':`..\\assets\\images\\${product.path}`})
+).append(
+    $('<div/>',{'class':'product-description',text:product.name}
+    )
+).append(
+    $('<div/>',{'class':'product-price',text:"Rs"+product.price})
+)
+    )}});
+}
+
+
+
+
+
+
+
+
+
+function filter(filterType){
+  if (filterType == "Ascending"){
+    selectedProducts.sort(function(a, b){return a.price - b.price});
+  }
+  else if (filterType == "Descending"){
+    selectedProducts.sort(function(a, b){return b.price - a.price});
+  }
+   else{
+   selectedProducts.sort(function () {
+      return Math.random() - 0.5;});
+   }
+  let $pcontainer = $('body div.product-wrapper');
+  $pcontainer.empty()
+
+  selectedProducts.forEach(product=>{
+       $pcontainer.append($('<div/>',{'class':'product-container'}
+       ).append(($('<div/>',{'class':'btn-container'}
+       ).append($('<a/>',{text:'View','onclick':"addProductPage()",'id':product._id.$oid,'class':'product-link'})
+       ).append($('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
+       ))
+       
+  
+  ).append(
+    $('<img/>',{'src':`..\\assets\\images\\${product.path}`})
+).append(
+    $('<div/>',{'class':'product-description',text:product.name}
+    )
+).append(
+    $('<div/>',{'class':'product-price',text:"Rs"+product.price})
+)
+    )});
+}
+
+function renderProducts(){
+  let $pcontainer = $('body div.product-wrapper');
+  $pcontainer.empty()
+  selectedProducts=[];
+   console.log(categories);
+    allProducts.forEach(product=>{
+      categories.forEach(category=>{
+      if (product.category == category){
+        selectedProducts.push(product);
+       $pcontainer.append($('<div/>',{'class':'product-container'}
+       ).append(($('<div/>',{'class':'btn-container'}
+       ).append($('<a/>',{text:'View','onclick':"addProductPage()",'id':product._id.$oid,'class':'product-link'})
+       ).append($('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
+       ))
+       
+  
+  ).append(
+    $('<img/>',{'src':`..\\assets\\images\\${product.path}`})
+).append(
+    $('<div/>',{'class':'product-description',text:product.name}
+    )
+).append(
+    $('<div/>',{'class':'product-price',text:"Rs"+product.price})
+)
+    )
+  
+  } 
+});
+
+   })
+
+}
+
+$(".phones").click(function(){
+  //selectedProducts=allProducts.sort(function(a, b){return a.price - b.price});
+  resetCheckbox();
+    console.log(allProducts);
+    render_Category("Mobile Phones");
+})
+
+function resetCheckbox(){
+  $('input[type=checkbox]').prop("checked",false);
+  categories=[];
+}
+
+$(".televisions").click(function(){
+  alert("tens");
+  resetCheckbox();
+ render_Category("Television");
+})
+
+$(".monitors").click(function(){
+  resetCheckbox();
+  render_Category("Monitors");
+})
+
+$(".earbuds").click(function(){
+  resetCheckbox();
+  render_Category("Wireless Earbuds");
+})
+$(".tablets").click(function(){
+  resetCheckbox();
+  render_Category("Tablets");
+})
+
+$("select").change(function(){
+  filter($(this).val());
+})
+
+$("#Phones").change(function(){
+  if (document.getElementById('Phones').checked){
+      categories.push("Mobile Phones");
+      alert("ph");
+  }
+  else{
+    const index = categories.indexOf("Mobile Phones");
+    const x = categories.splice(index,1 );
+  }
+  renderProducts();
+});
+
+$("#Tablets").change(function(){
+  if (document.getElementById('Tablets').checked){
+    categories.push("Tablets")
+}
+else{
+  const index = categories.indexOf("Tablets");
+    const x = categories.splice(index,1 );
+}
+renderProducts();
+});
+
+$("#Monitors").change(function(){
+  if (document.getElementById('Monitors').checked){
+  categories.push("Monitors")
+}
+else{
+  const index = categories.indexOf("Monitors");
+  const x = categories.splice(index,1 );
+}
+renderProducts();
+});
+
+
+$("#Televisions").change(function(){
+  if (document.getElementById('Televisions').checked){
+  categories.push("Televisions")
+}
+else{
+const index = categories.indexOf("Televisions");
+const x = categories.splice(index,1 );
+}
+renderProducts();
+});
+
+  console.log(categories);
+  
+  $("#wireless-earbuds").change(function(){
+   if (document.getElementById('wireless-earbuds').checked){
+  categories.push("Wireless Earbuds")
+}
+else{
+  const index = categories.indexOf("Wireless Earbuds");
+  const x = categories.splice(index,1 );
+}
+renderProducts();
+  });
+
+
+function add_to_cart(){
+  
+  let increased=false;
+  const cartdata=[];
+  let pid=$(this).attr("id");
+  //localStorage.setItem("63e3e1bd9edaff14d4c0d694","vitthal");
+  if (! localStorage.getItem("cart")){
+      localStorage.setItem("cart",JSON.stringify([{"id":pid,"quantity":1}]));
+  }
+  else{
+    let cart = JSON.parse(localStorage.getItem("cart"));
+     cart.forEach(item => {
+      console.log(pid,item.id,item.id == pid)
+      if (item.id == pid){
+        item.quantity=parseInt(item.quantity)+1;
+        localStorage.setItem('cart',JSON.stringify(cart));
+        increased=true;
+      }
+    
+     })
+     if (increased == false){
+        cart.push({"id":pid,"quantity":1});
+        localStorage.setItem('cart',JSON.stringify(cart));
+      }
+      cart.forEach(cartitem=>{
+        cartdata.push({'id':cartitem.id});
+      })
+   // localStorage.setItem("cart",JSON.stringify(cart));
+  }
+  $('.cart-item').detach();
+  let cartObj={}
+  cartObj.array=cartdata;
+  console.table(cartObj);
+  console.table(cartdata);
+  //get request to server to get all products details
+  $.ajax('../server/cartcontent.php', {
+    type: 'POST',  // http method
+    data: cartObj,
+    dataType:'JSON',            // data to submit
+    success: function (data, status, xhr) {
+       console.log('status: ' + status + ', data: ' + data)
+       data.forEach(product=>{
+        let $sidebar = $('body div.item-container');
+
+        $sidebar.append($('<div/>',{'class':'cart-item'})
+        .append($('<div/>',{'class':'product-image'})
+        .append($('<img/>',{'src':`..\\assets\\images\\${product.path}`}))).append($('<div/>',{'class':'product-name',text:product.name})
+        ).append($('<div/>',{'class':'product-price',text:product.price})));
+       })
+      
+    
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+           console.log('Error' + errorMessage);
+    }
+});
+  //display in sidebar.
+  ;
+}

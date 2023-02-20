@@ -23,7 +23,7 @@ outputHeader("checkout","checkout");
                 </div>
                 <form action="">
                   <div class="input-parent">
-                    <input class="effect-20" type="email" placeholder="Email Address">
+                    <input class="effect-20" id="email" type="email" placeholder="Email Address">
                       <span class="focus-border">
                         <i></i>
                       </span>
@@ -31,28 +31,23 @@ outputHeader("checkout","checkout");
                 <div class="container1">
                     <h2>Shipping Address</h2>
                 </div>
-                <div class="input-parent">
-                    <input class="effect-20" type="text" placeholder="Country">
-                      <span class="focus-border">
-                        <i></i>
-                      </span>
-                </div>
+                
                 <div class="input-wrapper">
                     <div class="input-parent-half">
-                      <input class="effect-20" type="text" placeholder="First Name">
+                      <input class="effect-20"  id="fname" type="text" placeholder="First Name">
                         <span class="focus-border">
                           <i></i>
                         </span>
                     </div>
                     <div class="input-parent-half">
-                      <input class="effect-20" type="text" placeholder="Last Name">
+                      <input class="effect-20" id="lname" type="text" placeholder="Last Name">
                         <span class="focus-border">
                           <i></i>
                         </span>
                     </div>
                   </div>
                   <div class="input-parent">
-                    <input class="effect-20" type="text" placeholder="Address">
+                    <input class="effect-20" id="address" type="text" placeholder="Address">
                       <span class="focus-border">
                         <i></i>
                       </span>

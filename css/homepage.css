@@ -28,7 +28,9 @@ body{
     padding: 0.5rem;
 }
 
-
+.option{
+  color: white;
+}
  /* Dropdown Button */
  .dropbtn {
   background-color: rgba(250,38,26,1);
@@ -902,7 +904,7 @@ span,p{
   padding: 1%;
   margin: 0 auto;
   width: 90%;
-  height: 90%;
+  
   border-radius: 15px;
   align-items: center;
   background-color: rgb(245, 245, 245);
@@ -973,3 +975,20 @@ img {
 button-87:active {
   transform: scale(0.95);
 }
+
+.recommended-container{
+  border: 2px solid var(--primary);
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2rem;
+}
+
+  .recommended-text{
+    color: var(--primary);
+    font-size: 2rem;
+  }
+
+  .item-container{
+    height: 70vh;
+    overflow: scroll;
+  }

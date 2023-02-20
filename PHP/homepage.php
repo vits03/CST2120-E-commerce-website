@@ -137,17 +137,48 @@ outputHeader("homepage","homepage");
         </div>
       </div>
 </div>
+<div class="recommended"><div class="recommended-text">Recomended for you</div>
+<div class="recommended-container">
+  
+<div class="product-container">
+              <div class="btn-container"><a href="product-page.html">View</a><a onclick="openNav()">Add to cart</a></div>
+                <img src="..\assets\images\monitor1.jpg" alt="">
+                <div class="product-description">SPEKZ 24 Inch Computer Monitor, FHD PC Monitors 1920 x 1080p </div>
+                <div class="product-price">Rs 7,680</div> 
+          </div>
 
+          <div class="product-container">
+              <div class="btn-container"><a href="product-page.html">View</a><a onclick="openNav()">Add to cart</a></div>
+                <img src="..\assets\images\monitor1.jpg" alt="">
+                <div class="product-description">SPEKZ 24 Inch Computer Monitor, FHD PC Monitors 1920 x 1080p </div>
+                <div class="product-price">Rs 7,680</div> 
+          </div>
+
+
+          <div class="product-container">
+              <div class="btn-container"><a href="product-page.html">View</a><a onclick="openNav()">Add to cart</a></div>
+                <img src="..\assets\images\monitor1.jpg" alt="">
+                <div class="product-description">SPEKZ 24 Inch Computer Monitor, FHD PC Monitors 1920 x 1080p </div>
+                <div class="product-price">Rs 7,680</div> 
+          </div>
+
+          <div class="product-container">
+              <div class="btn-container"><a href="product-page.html">View</a><a onclick="openNav()">Add to cart</a></div>
+                <img src="..\assets\images\monitor1.jpg" alt="">
+                <div class="product-description">SPEKZ 24 Inch Computer Monitor, FHD PC Monitors 1920 x 1080p </div>
+                <div class="product-price">Rs 7,680</div> 
+          </div>
+</div>
+</div>
 <!-- Categories of Electronics -->
 <div class="option-container">
-  <div class="option">
-      <a href="">Mobile phones</a>
+  <div class="option phones">
+      Mobile phones
   </div>
-  <div class="option"><a href="#">Televisions</a></div>
-  <div class="option"><a href="#">Tablets</a></div>
-  <div class="option"><a href="#">wireless earbuds</a></div>
-  <div class="option"><a href="#">Monitors</a>
-  </div>
+  <div class="option televisions">Televisions</a></div>
+  <div class="option tablets">Tablets</div>
+  <div class="option earbuds">wireless earbuds</div>
+  <div class="option monitors">Monitors</div>
 </div>
 
 <!-- Filter Container -->
@@ -161,16 +192,16 @@ outputHeader("homepage","homepage");
    <span>Rs</span> <span id="demo"></span>
 <div class="categories">
   <p>Categories</p>
-  <form action="../action_page.php">
-    <input type="checkbox" id="Phones" name="Phones" value="Bike">
+  <form >
+    <input type="checkbox" id="Phones" name="Phones" value="Phones">
     <label for="Phones"> Mobile Phones</label><br>
-    <input type="checkbox" id="Tablets" name="Tablets" value="Car">
+    <input type="checkbox" id="Tablets" name="Tablets" value="Tablets">
     <label for="Tablets"> Tablets</label><br>
-    <input type="checkbox" id="Televisions" name="Televisions" value="Boat">
+    <input type="checkbox" id="Televisions" name="Televisions" value="Televisions">
     <label for="Televisions"> Televisions</label><br>
-    <input type="checkbox" id="Monitors" name="Monitors" value="monitors">
+    <input type="checkbox" id="Monitors" name="Monitors" value="Monitors">
     <label for="Monitors"> Monitors</label><br>
-    <input type="checkbox" id="wireless earbuds" name="wireless earbuds" value="wirelessEarbuds">
+    <input type="checkbox" id="wireless-earbuds" name="wireless earbuds" value="wireless earbuds">
     <label for="earbuds">wireless Earbuds</label><br>
     <input class="category-filter-submit"type="submit" value="Submit">
   </form>

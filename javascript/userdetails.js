@@ -3,7 +3,6 @@ formChanged=false;
 //$('input').attr('value','sdfsf');
 function modifyUser(){
    if (formChanged){
-    alert('button pressed');
     $.ajax('../server/userdetails.php', {
         type: 'POST',  // http method
         data: modifiedData,  // data to submit
@@ -57,6 +56,7 @@ $('#address').change(function()
 
 
 $(document).ready(function(){
+    
     $.get({
     url:'../server/userdetails.php?id=63de635283cd1eff2b722f60',
     type:'get',
