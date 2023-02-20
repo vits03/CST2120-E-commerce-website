@@ -8,6 +8,16 @@ $(document).ready(function() {
             var tableBody = $('#table-body');
             for (var i = 0; i < orders.length; i++) {
                 var order = orders[i];
+                
+                $.ajax({
+                    url: '../server/getCustomerDetails.php?customerID=' + order.customerID.$oid,
+                    type: 'GET',
+                    success: function(response) {
+                        var customerDetails = response;
+                        console.log(customerDetails);
+                    }
+                })
+
                 var row = '<tr data-id="' + order._id.$oid + '">' +
                 '<td>' + order._id.$oid + '</td>' +
                 '<td>' + order.customerID.$oid + '</td>' +
@@ -39,6 +49,38 @@ $(document).ready(function() {
                     $(this).toggle($(this).text().toLowerCase().indexOf(searchValue) > -1);
                 });
             });
+
+            $('#sort-price-lth').on('click', function() {
+                var rows = $('#table-body tr').get();
+            
+                rows.sort(function(rowA, rowB) {
+                    var priceA = parseFloat($(rowA).find('td:eq(3)').text().replace(/\D/g,''));
+                    var priceB = parseFloat($(rowB).find('td:eq(3)').text().replace(/\D/g,''));
+            
+                    return priceA - priceB;
+                });
+            
+                $.each(rows, function(index, row) {
+                    $('#table-body').append(row);
+                });
+            });
+
+            
+            $('#sort-price-htl').on('click', function() {
+                var rows = $('#table-body tr').get();
+            
+                rows.sort(function(rowA, rowB) {
+                    var priceA = parseFloat($(rowA).find('td:eq(3)').text().replace(/\D/g,''));
+                    var priceB = parseFloat($(rowB).find('td:eq(3)').text().replace(/\D/g,''));
+            
+                    return priceB - priceA;
+                });
+            
+                $.each(rows, function(index, row) {
+                    $('#table-body').append(row);
+                });
+            });
+            
 
         },
         

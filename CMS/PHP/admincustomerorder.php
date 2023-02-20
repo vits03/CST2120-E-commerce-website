@@ -23,11 +23,8 @@ echo'
                   <a class="button">Filter by</a>
                 </summary>
                 <ul>
-                  <li><a href="#">Order ID</a></li>
-                  <li><a href="#">Customer ID</a></li>
-                  <li><a href="#">Products</a></li>
-                  <li><a href="#">Total</a></li>
-                  <li><a href="#">Options</a></li>
+                  <li><a href="#" id="sort-price-lth">Price: Low to High</a></li>
+                  <li><a href="#" id="sort-price-htl">Price: High to Low</a></li>
               </ul>
             </details>
         </div>
