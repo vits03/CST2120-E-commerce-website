@@ -13,7 +13,6 @@ $mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
 $db = $mongoClient->ecommerce;
 $criteria=['_id'=>new MongoDB\BSON\ObjectId($ID),];
 $products = $db->products->find($criteria);
-
 //Select a collection 
 $jsonStr = '['; //Start of array of customers in JSON
 

@@ -13,40 +13,13 @@ outputHeader("homepage","homepage");
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
       <!-- Item 1 -->
       <div class="item-container">
-        <div class="cart-item">
-          <div class="product-image">
-              <img src="..\assets\images\tv.png">
-          </div>
-          <div class="product-name">Samsung 43" UHD Smart TV</div>
-          <div class="product-price">Rs 75,000</div>
-        </div>
+        
 
-        <!-- Item 2 -->
-        <div class="cart-item">
-          <div class="product-image">
-              <img src="..\assets\images\phone1.png">
-          </div>
-          <div class="product-name">Apple Iphone 13 Pro Max</div>
-          <div class="product-price">Rs 65,490</div>
-      </div>
+       
+     
+      
 
-      <!-- Item 3 -->
-      <div class="cart-item">
-        <div class="product-image">
-            <img src="..\assets\images\vacuum-cleaner.png">
-        </div>
-        <div class="product-name">Candy Vacuum Cleaner 2000W</div>
-        <div class="product-price">Rs 3,990</div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="cart-item">
-        <div class="product-image">
-            <img src="..\assets\images\phone2.png">
-        </div>
-        <div class="product-name">Huawei P50 Pro</div>
-        <div class="product-price">Rs 52,990</div>
-    </div>
+      
 
     <div class="button">
       <a href="cart.php">

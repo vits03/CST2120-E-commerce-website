@@ -8,13 +8,14 @@
        //console.log(data)
       data.forEach(product => {
         // alert(product.name,product.price,product.path)
+         if(product.isRemoved==false){
           let $pcontainer = $('body div.product-wrapper');
   
-       $pcontainer.prepend($('<div/>',{'class':'product-container'}).append(
+       $pcontainer.append($('<div/>',{'class':'product-container'}).append(
      ($('<div/>',{'class':'btn-container'}).append(
                       $('<a/>',{text:'View','id':product._id.$oid,'class':'product-link'})
                    ).append(
-                      $('<a/>',{'onclick':"openNav()",text:'Add to cart'})
+                      $('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
                    ))
   
                    
@@ -29,10 +30,70 @@
   ).append(
       $('<div/>',{'class':'product-price',text:"Rs"+product.price})
   )
-      )}); 
-     
-     
-     
+      )}}); 
+
+
+       if (!localStorage.getItem("cart")){
+        localStorage.setItem("cart",JSON.stringify([]))
+       }
+      
+       $('.addtocart').click(function(){
+        let increased=false;
+        const cartdata=[];
+      let pid=$(this).attr("id");
+      //localStorage.setItem("63e3e1bd9edaff14d4c0d694","vitthal");
+      if (! localStorage.getItem("cart")){
+          localStorage.setItem("cart",JSON.stringify([{"id":pid,"quantity":1}]));
+      }
+      else{
+        let cart = JSON.parse(localStorage.getItem("cart"));
+         cart.forEach(item => {
+          console.log(pid,item.id,item.id == pid)
+          if (item.id == pid){
+            item.quantity=parseInt(item.quantity)+1;
+            localStorage.setItem('cart',JSON.stringify(cart));
+            increased=true
+          }
+        
+         })
+         if (increased == false){
+            cart.push({"id":pid,"quantity":1});
+            localStorage.setItem('cart',JSON.stringify(cart));
+          }
+          cart.forEach(cartitem=>{
+            cartdata.push({'id':cartitem.id});
+          })
+       // localStorage.setItem("cart",JSON.stringify(cart));
+      }
+      $('.cart-item').detach();
+      let cartObj={}
+      cartObj.array=cartdata;
+      console.table(cartObj);
+      console.table(cartdata);
+      //get request to server to get all products details
+      $.ajax('../server/cartcontent.php', {
+        type: 'POST',  // http method
+        data: cartObj,
+        dataType:'JSON',            // data to submit
+        success: function (data, status, xhr) {
+           console.log('status: ' + status + ', data: ' + data)
+           data.forEach(product=>{
+            let $sidebar = $('body div.item-container');
+  
+            $sidebar.append($('<div/>',{'class':'cart-item'})
+            .append($('<div/>',{'class':'product-image'})
+            .append($('<img/>',{'src':`..\\assets\\images\\${product.path}`}))).append($('<div/>',{'class':'product-name',text:product.name})
+            ).append($('<div/>',{'class':'product-price',text:product.price})));
+           })
+          
+        
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+               console.log('Error' + errorMessage);
+        }
+    });
+      //display in sidebar.
+      });
      
       $('.product-link').click(function(){
         let path=`../PHP/productpage.php?id=${$(this).attr("id")}`;
@@ -43,6 +104,11 @@
   }})
   
   });
+
+
+
+
+
 
   $("#searchbar-input").keyup(function(){
     let  productName=$(this).val()
@@ -56,7 +122,7 @@
   $("#searchbar-input").keypress(function(){
   
     let  productName=$(this).val()
-    alert(productName);
+    //alert(productName);
     //alert(productName);
     $('.dropdown-content-search').empty();
    // $("#searchbar-input").append($('<div/>',{'class':'dropdown-content-search'}))
@@ -65,7 +131,7 @@
       $('.dropdown-content-search').css('display','none');
 
     }
-    $.get({
+    $.ajax({
       url:`../server/productsearch.php?search=${productName}`,
       type:'get',
       dataType:'JSON',
