@@ -248,6 +248,204 @@ db.users.insert([
     path:"samsungs22.png",
     isRemoved:false
  }
+, {
+  name:"Google Pixel 7-5G Android Phone",
+  description:["Google Pixel 7 is powered by Google Tensor G2", "it’s faster, more efficient, and more secure, with the best photo and video quality yet on Pixel[1]",
+  "Unlocked Android 5G phone gives you the flexibility to change carriers and choose your own data plan[2];", "works with Google Fi, Verizon, T-Mobile, AT&T, and other major carriers",
+  "Pixel’s Adaptive Battery can last over 24 hours; when Extreme Battery Saver is turned on, it can last up to 72 hours[3]",
+  "The 6.3-inch Pixel 7 display is super sharp, with rich, vivid colors", "it’s fast and responsive for smoother gaming, scrolling, and moving between apps[4]"],
+  price:47500,
+  quantity:33,
+  category:"Mobile Phones",
+  path:"pixel7.jpg",
+  isRemoved:false
+},
+{
+  name:"OnePlus 10 Pro | 5G Android ",
+  description:["Unleash the power of 5G | Powered by the latest Qualcomm Snapdragon 8 Gen 1 processor, the 10 Pro is capable of blazing-fast 5G speeds. [5G network only compatible with TMO, Verizon, Google Fi, Mint Mobile] *5G available in selected areas",
+ " Powerful triple camera System, co-developed with Hasselblad | Featuring a primary 48MP Sony IMX sensor, the 10 Pro captures stunning natural colors & can shoot up to 8k video.",
+  "Capture the bigger picture with a 150º Ultra-Wide Camera | A versatile 50MP ultra-wide sensor shoots with an expansive 150º field-of-view, enabling you to take your creativity to a whole new level."],
+  price:26590,
+  quantity:93,
+  category:"Mobile Phones",
+  path:"oneplus10.jpg",
+  isRemoved:false
+},
+{
+  name:"TCL 20 Pro 5G Unlocked Smartphone  ",
+  description:["The Power of 5G: Experience revolutionary speeds, faster streaming, quicker downloads, as well as enhanced AI features and hyper-accurate GPS with the Qualcomm Snapdragon 750G 5G Mobile processor",
+  "NXTVISION 2.0 Intelligent Display: Discover seamless visuals that go beyond the edge with the TCL 20 Pro 5G smartphone's 6.67-inch FHD+ NXTVISION AMOLED Dotch Display." ,
+   "48MP OIS Quad Camera: Capture sharp photos and videos with the 48MP Optical Image Stabilization (OIS) main camera. The 16MP ultra wide-angle, 5MP macro, and 2MP depth camera allow you to capture and explore more of the world around you" ],
+  price:15570,
+  quantity:13,
+  category:"Mobile Phones",
+  path:"tcl20.jpg",
+  isRemoved:false
+},
+{
+  name:"Motorola Edge + |2022|  ",
+  description:["Industry-leading Snapdragon 8 performance. Experience the fastest, most powerful mobile platform.",
+   "Industry-leading Snapdragon 8 performance. Experience the fastest, most powerful mobile platform.",
+  "High-res 50MP ultra-wide and 60MP selfie cameras. Capture amazing detail in both normal and low light using Quad Pixel technology",
+"Ultra-smooth 144 Hz display + Dolby Atmos audio. Enjoy a 6.7 OLED display with HDR10+ for a billion shades of color and listen with stereo speakers."],
+  price:23450,
+  quantity:43,
+  category:"Mobile Phones",
+  path:"motoedge.jpg",
+  isRemoved:false
+},
+{
+  name:"Hisense A4 Series 40-Inch Class FHD  ",
+  description:["Full High Definition Resolution: Along with its 1080p high-definition LCD screen, you'll find a powerful full array LED backlight at work creating a sharper, more colorful picture..Wall Mount : VESA 100 x 200. Display aspect ratio 16:9",
+   "Motion Rate 120: Don't struggle to keep your eye on the ball—enjoy fast-paced sports, movies and gaming without the lag",
+   "Game Mode: Enjoy a better gaming experience. In Game Mode, input lag is significantly improved, so your commands from the controller are virtually instantaneous on the screen.",
+  ],
+  price:7650,
+  quantity:13,
+  category:"Televisions",
+  path:"hisensetv.jpg",
+  isRemoved:false
+},
+{
+  name:"SAMSUNG 32-inch Class LED Smart FHD   ",
+  description:["Full HD 1080p Resolution - Enjoy a viewing experience that is 2x the clarity of standard HD TVs..Power Supply (V) AC110-120V 50/60Hz",
+  "Smart TV - Get to your entertainment the faster, easier, and more intelligent way. Easily access your streaming services all in one place using the Samsung Remote Control.",
+"Micro Dimming Pro - Reveal a more true-to-life picture with enhanced contrast.",
+"Quad Core Processor: enjoy a Fluid browsing experience and faster control switching between apps, streaming content and other media effortlessly."],
+  price:9260,
+  quantity:48,
+  category:"Televisions",
+  path:"samsungtv32.jpg",
+  isRemoved:false
+},
+{
+  name:"LG 32LM577BPUA 32 Inch LED ",
+  description:["LG USA AUTHORIZED - Includes Full LG USA Protection",
+"Built-In Wi-Fi Connectivity | Quad-core processor | Active HDR (HDR10, HLG)",
+"IN THE BOX: Remote Control - Stand Assembly","BUNDLE INCLUDES: LG 32 Inch LED HD Smart webOS TV","1 YR CPS Enhanced Protection Pack in ADDITION to the Included FULL Manufacturer Protection"],
+  price:12360,
+  quantity:71,
+  category:"Televisions",
+  path:"lgtv32.jpg",
+  isRemoved:false
+},
+{
+  name:"FREE SIGNAL TV New Transit Platinum  ",
+  description:["Extremely Efficient/Low 12V Power Draw. Multiple 12V connection options. Full 110V Compatibility with Adapter.",
+"Built in Wifi/Internet Access, Bluetooth Connectivity, Integrated SD - DVD Player.",
+"Preloaded Popular Apps (Netflix, Amazon Prime, YouTube, Pandora & More).","Rugged Vibration Resistant Chassis for Trouble-Free Mobile/Off Road Use."],
+  price:15912,
+  quantity:37,
+  category:"Televisions",
+  path:"signaltv.jpg",
+  isRemoved:false
+},
+,
+{
+  name:"VIZIO 24-inch D-Series Full HD ",
+  description:["1080p High-Definition - Watch TV in crisp, clear 1080p Full HD resolution and experience a brilliant picture with the VIZIO D-Series.",
+"Full Array LED Backlight - Evenly distributed LEDs across the screen’s backlight deliver superior light uniformity and picture performance.",
+"IQ Picture Processor - Delivers superior picture processing, faster navigation, and quicker load times to get to your favorite content faster.",
+"SmartCast - With intuitive navigation, enjoy instant access to the best selection of apps from top-tier streaming services like Netflix, Disney+, YouTube, HBO Max and many more right out of the box."],
+  price:5660,
+  quantity:21,
+  category:"Televisions",
+  path:"viziotv.jpg",
+  isRemoved:false
+},
+{
+  name:"TCL 32 Class 3-Series HD 720p",
+  description:["Stunning High-Definition: Stunning HD resolution offers enhanced clarity and detail for all your favorite entertainment.  ",
+"Simple, customizable home screen: Your favorite broadcast TV, streaming channels, gaming console and other devices are front-and-center, so you can spend your time relaxing – not scrolling.",
+"Stream what you love: Enjoy free TV, live news, sports, movies, and more.","Endless free entertainment: Access the best selection of free entertainment with 250+ live TV channels, award-winning Roku Originals, in-season shows, hit movies, kids’ TV and more."],
+  price:4560,
+  quantity:30,
+  category:"Televisions",
+  path:"tcltv.jpg",
+  isRemoved:false
+},
+{
+  name:"Apple 2022 10.9-inch iPad (Wi-Fi + Cellular, 64GB)",
+  description:["Striking 10.9-inch Liquid Retina display with True Tone ",
+"A14 Bionic chip with 6-core CPU and 4-core GPU",
+"12MP Wide back camera","Landscape 12MP Ultra Wide front camera with Center Stage","Touch ID for secure authentication and Apple Pay"],
+
+  price:24560,
+  quantity:10,
+  category:"Tablets",
+  path:"ipad10.jpg",
+  isRemoved:false
+},
+{
+  name:"Apple iPad Pro (12.9-inch, Wi-Fi + Cellular, 1TB) ",
+  description:["12.9-Inch Edge-to-Edge Liquid Retina Display with ProMotion, True Tone, and P3 Wide Colo  ",
+"A12Z Bionic Chip with Neural Engine - 802.11AX Wi-Fi 6 - Up to 10 Hours of Battery Life/Charge",
+"12MP Wide Camera, 10MP Ultra Wide Camera, 7MP TrueDepth Front Camera, and LIDAR Scanner","Four Speaker Audio and Five Studio-Quality Microphones - Face ID for Secure Authentication and Apple Pay"],
+
+  price:45800,
+  quantity:67,
+  category:"Tablets",
+  path:"ipadpro.jpg",
+  isRemoved:false
+},
+{
+  name:"All-new Amazon Fire HD 8 tablet, 8” HD Display ",
+  description:["Enhanced performance - Updated hexa-core processor for more responsive performance (up to 30% faster than previous gen Fire HD 8).  ",
+"All day battery life - Up to 13 hours of reading, browsing the web, watching videos, and listening to music at home and on-the-go.",
+"Stream or download your favorite shows and movies from Prime Video, Netflix, Disney+, and HBO. Enjoy your favorite content from Facebook, Hulu, Instagram, TikTok, and more through Amazon’s Appstore (Google Play not supported. Subscription for some apps required).",
+"Stay connected with family and friends - ask Alexa to make video calls to friends and family or download apps like Zoom."],
+
+  price:4500,
+  quantity:60,
+  category:"Tablets",
+  path:"firetablet.jpg",
+  isRemoved:false
+},
+{
+  name:"SAMSUNG Galaxy Tab A8 10.5” 32GB ",
+  description:["Screen Everyone Will Love: Whether your family is streaming or video chatting with friends, the Galaxy Tab A8 tablet brings out the best in every moment on a 10.5LCD screen  ",
+"Charge Fast, Power for Hours: Go for hours on a single charge and back to 100% with the fast charging USB C port; Battery life may vary depending on network environment, usage patterns and other factors",
+"Stream or download your favorite shows and movies from Prime Video, Netflix, Disney+, and HBO. Enjoy your favorite content from Facebook, Hulu, Instagram, TikTok, and more through Amazon’s Appstore (Google Play not supported. Subscription for some apps required).",
+"Stay connected with family and friends - ask Alexa to make video calls to friends and family or download apps like Zoom."],
+
+  price:6870,
+  quantity:19,
+  category:"Tablets",
+  path:"samsungtablet.jpg",
+  isRemoved:false
+},
+
+{
+  name:"TECLAST Android 12 Tablet 10 inch Tablets,",
+  description:["【8 Core CPU, 8GB+128GB tablet】M40Plus Android 12 tablet is equipped with 8GB RAM +ROM 128GB large capacity, Up to 1TB of storage is available using a MicroSD card(FAT32 formatted, sold separately).  ",
+"【The latest Android 12 tablet & GMS certification & child protection + parental control]】 Andorid tablet 10 inch is equipped with a new system  providing a more personalized, safe and easy-to-operate system experience. ",
+"【1920*1200 FHD IPS 10.1 Inch Screen】TECLAST android tablet has a 10.1 inch 1920*1200 resolution full screen, wide viewing angle, high-resolution images, and perfect vision",
+"Stay connected with family and friends - ask Alexa to make video calls to friends and family or download apps like Zoom."],
+
+  price:3420,
+  quantity:72,
+  category:"Tablets",
+  path:"telcasttablet.jpg",
+  isRemoved:false
+},
+
+{
+  name:"Lenovo Tab M8 Tablet,",
+  description:["【Stunning performance and stylish design combine in this quick, powerful Android tablet, powered by a Quad-Core, 2.0 GHz processor and Android 9 Pie  ",
+"The modern, refined look and feel are accentuated by the full metal cover and 82% panel-to-body ratio",
+"The stunning 8 HD (1280 x 800) display brings you a crisper and brighter image, so you can watch your favorite movies and shows without missing a detail",
+"Long-life battery – Watch or browse all day long without the need to recharge with 5000 mAh battery capacity"],
+
+  price:4100,
+  quantity:72,
+  category:"Tablets",
+  path:"telcasttablet.jpg",
+  isRemoved:false
+},
+
+
+
+
 
 ])
  
@@ -281,40 +479,3 @@ db.users.insert([
     }])
 
 
-
-//        ["7-inch OLED screen - Enjoy vivid colors and crisp contrast with a screen that makes colors pop ",
-//         "Wired LAN port - Use the dock’s LAN port when playing in TV mode for a wired internet connection" ,
-//        "64 GB internal storage - Save games to your system with 64 GB of internal storage",
-//      "  Enhanced audio – Enjoy enhanced sound from the system’s onboard speakers when playing in Handheld and Tabletop modes. ",
-//       " Wide adjustable stand – Freely angle the system’s wide, adjustable stand for comfortable viewing in Tabletop mode. Nintendo Switch – OLED Model supports all Joy-Con controllers and Nintendo Switch software"];
-
-//      [ "Vibrant 6.1-inch Super Retina XDR display with OLED technology. Action mode for smooth, steady, handheld videos",
-// "High resolution and color accuracy make everything look sharp and true to life",
-// "New Main camera and improved image processing to capture your shots in all kinds of light - especially low light",
-// "4K Cinematic mode at 24 fps automatically shifts focus to the most important subject in a scene.",
-// "A15 Bionic, with a 5‑core GPU for lightning-fast performance. Superfast 5G"]
-
-
-// ["6.1, 1080 x 2340pixels, Infinity-O FHD+ Dynamic AMOLED 2X Display, 3700mAh Battery, Wireless Powershare128GB ROM",
-// " 8GB RAM, No SD Card Slot, Qualcomm SM8450 Snapdragon 8 Gen 1 (4 nm), Octa-Core, Adreno 730",
-// "Rear Camera: 50MP f/1.8 + 10MP, f/2.4 + 12MP, f/2.2, Front Camera: 10 MP, f/2.2, Android 12, One UI 4.1",
-//  "GSM 850/900/1800/1900, CDMA 800/1900, 3G: HSDPA 850/900/1700(AWS)/1900/2100, CDMA2000 1xEV-DO, 4G LTE"]
-
-
-
-//  db.products.insert([{
-
-//     name:"Nintendo Switch-128gb 4K",
-//     description:
-//     ["7-inch OLED screen - Enjoy vivid colors and crisp contrast with a screen that makes colors pop ",
-//      "Wired LAN port - Use the dock’s LAN port when playing in TV mode for a wired internet connection" ,
-//     "64 GB internal storage - Save games to your system with 64 GB of internal storage",
-//   "  Enhanced audio – Enjoy enhanced sound from the system’s onboard speakers when playing in Handheld and Tabletop modes. ",
-//    " Wide adjustable stand – Freely angle the system’s wide, adjustable stand for comfortable viewing in Tabletop mode. Nintendo Switch – OLED Model supports all Joy-Con controllers and Nintendo Switch software"],
-//     price:22500,
-//     quantity:61,
-//     category:"Tablets",
-//     path:"nintendoswitch.jpg",
-//     isRemoved:false
-   
-//     }])
