@@ -54,9 +54,9 @@ $.ajax('../server/cartcontent.php', {
         ).append($('<div/>',{'class':'product-price'}).append($("<h4/>",{text:"Rs"+" "+product.price}))).append($("<div/>",{"class":"quantity",text:"X"+quantity})));
       
        });
-       $(".totalprice").text(total);
-       $(".subtotalprice").text(total*0.75);
-       $(".shippingprice").text(total*0.15);
+       $(".totalprice").text('Rs ' + total);
+       $(".subtotalprice").text('Rs ' + total*0.75);
+       $(".shippingprice").text('Rs ' + total*0.15);
       
          
        

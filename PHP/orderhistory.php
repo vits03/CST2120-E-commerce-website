@@ -1,4 +1,8 @@
 <?php
+
+// Start the session
+session_start();
+
  include('common.php');
 
 
@@ -9,7 +13,7 @@
  
   
  //Create instance of MongoDB client
-  $ID=strval($_GET["id"]);
+  $ID = $_SESSION['id'];
  //Select a database
  $db = $mongoClient->ecommerce;
  $criteria=['customerID'=>new MongoDB\BSON\ObjectId($ID),];

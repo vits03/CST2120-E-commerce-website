@@ -28,7 +28,7 @@
       $('<div/>',{'class':'product-description',text:product.name}
       )
   ).append(
-      $('<div/>',{'class':'product-price',text:"Rs"+product.price})
+      $('<div/>',{'class':'product-price',text:"Rs "+product.price})
   )
       )}}); 
 

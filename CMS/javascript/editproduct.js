@@ -126,7 +126,7 @@ $(document).ready(function() {
             $('#description').val(details.description);
             $('#price').val(details.price);
             $('#quantity').val(details.quantity);
-            $('input[id="category1"][value="'+ details.category + '"]').prop('checked', true);
+            $('input[name=category][value="'+ details.category + '"]').prop('checked', true);
 
         },
         

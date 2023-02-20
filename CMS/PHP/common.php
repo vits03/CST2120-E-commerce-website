@@ -30,7 +30,7 @@ function outputHeader($page,$title){
                <div class="view-product-link"><a href="adminviewproducts.php">View products</a></div>
                <div class="add-product-link"><a href="addproduct.php">Add products</a></div>
                <div class="Customer-order-link"><a href="admincustomerorder.php">Customer Orders</a></div>
-               <div class="logout"><a href="adminlogin.php">Log out</a></div>
+               <div class="logout"><a href="../server/logout.php">Log out</a></div>
               </div>
   
           </div>

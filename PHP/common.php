@@ -2,6 +2,10 @@
 
 
 function outputHeader($title,$page){
+
+  //start the session
+  session_start();
+
     echo'
     <!DOCTYPE html>
 <html lang="en">
@@ -36,18 +40,26 @@ function outputHeader($title,$page){
               </div>
   
              </div>
-             <div class="right-container">
-             <div class="login"><a href="login.php">Log In</a></div>
-             <div class="cart"><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></div>
-             <div class="dropdown">
-  <button class="dropbtn">            <i id="user" class="fa-solid fa-user"></i>
-  </button>
-  <div class="dropdown-content">
-    <a href="userdetails.php">Account details</a>
-    <a href="orderhistory.php">Order history</a>
-    <a href="homepage.php">log out</a>
-  </div>
-</div>
+             <div class="right-container">';
+             if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {
+              echo '<div class="login"><a href="login.php">Log In</a></div>';
+             }
+             
+             echo '<div class="cart"><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></div>';
+
+             if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
+              echo '<div class="dropdown">
+              <button class="dropbtn">            <i id="user" class="fa-solid fa-user"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="userdetails.php">Account Details</a>
+                <a href="orderhistory.php">Order History</a>
+                <a href="../server/logout.php">Log Out</a>
+              </div>';
+             }
+
+             
+echo '</div>
             </div>
         </div>
     </div>

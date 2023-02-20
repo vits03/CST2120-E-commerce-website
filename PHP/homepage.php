@@ -11,16 +11,7 @@ outputHeader("homepage","homepage");
 
 <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <!-- Item 1 -->
       <div class="item-container">
-        
-
-       
-     
-      
-
-      
-
     <div class="button">
       <a href="cart.php">
         <button class="button-87" role="button">Go to Cart</button>
