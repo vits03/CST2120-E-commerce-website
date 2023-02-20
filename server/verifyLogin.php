@@ -1,5 +1,8 @@
 <?php
 
+// Start the session
+session_start();
+
 //Include libraries
 require __DIR__ . '/vendor/autoload.php';
     
@@ -28,6 +31,10 @@ $isFound = false;
 foreach ($cursor as $user) {
     if($user['username'] == $username and $user['password'] == $password){   
         $isFound = true;
+        // Store the username in a session
+        $_SESSION['username'] = $username;
+        $_SESSION['id'] = (string) $user['_id'];
+
         break;
     }
 }

@@ -26,6 +26,27 @@ if ($quantity != 0) {
 }
 $delimiter = ",";
 $description = explode($delimiter,$desc);
+
+$uploadFileName = $_FILES["image"]["name"];
+if(getimagesize($_FILES["image"]["tmp_name"]) === false) {
+    echo "File is not an image.";
+    return;
+}
+
+//Specify where file will be stored
+$target_file = '../../assets/images/' . $uploadFileName;
+
+/* Files are uploaded to a temporary location. 
+    Need to move file to the location that was set earlier in the script */
+if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+    echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+    echo '<p>Uploaded image: <img src="' . $target_file . '"></p>';//Include uploaded image on page
+} 
+else {
+    echo "Sorry, there was an error uploading your file.";
+}
+    
+
 // Update product Collection
 $result = [
     "name" => $productName,
@@ -33,6 +54,7 @@ $result = [
     "price" => (int)$price,
     "quantity" => (int)$quantity,
     "category" => $category,
+    "path" => $uploadFileName,
     "isRemoved" => $isRemoved
 ];
 

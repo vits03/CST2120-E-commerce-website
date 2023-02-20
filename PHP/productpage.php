@@ -42,7 +42,7 @@ echo'               ';
 echo'             </div>';
 echo'             <div class="product-details">';
 echo'                    <div class="product-description">'. $cust['name'] .'</div>';
-echo'                    <div class="product-price">RS'. $cust['price'] .'</div>';
+echo'                    <div class="product-price">Rs '. $cust['price'] .'</div>';
 echo'                    <div class="product-specification">';
 echo'                      <p><b>Product Description</b></p>';
 echo'                      <ul class="product-list-description">';

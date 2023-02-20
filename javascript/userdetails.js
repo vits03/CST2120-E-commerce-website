@@ -58,7 +58,7 @@ $('#address').change(function()
 $(document).ready(function(){
     
     $.get({
-    url:'../server/userdetails.php?id=63de635283cd1eff2b722f60',
+    url:'../server/userdetails.php',
     type:'get',
     dataType:'JSON',
     success:function(data)

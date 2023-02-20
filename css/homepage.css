@@ -712,13 +712,13 @@ footer .flex:last-child a:hover{
 .filter{
   height: 100%;
   width: 17%;
-  border: 3px solid #fb682f;
+  background-color: #f5f1ec;
   border-radius: 10px;
 }
 .products{
   display: flex;
   flex-direction: column;
-  border: 3px solid #fb682f;
+  background-color: #f5f1ec;
   border-radius: 10px;
   width:75%;
   padding: 1rem;
@@ -735,11 +735,10 @@ footer .flex:last-child a:hover{
   width: 100%
 }
 .product-container{
-  background-color:#FAF9F6;
+  background-color: white;
   position: relative;
   height: 16rem;
   width: 13rem;
- border: 3px solid #fb682f;
   border-radius: 10px;
   margin-top: 2rem;
   padding: 0 2rem;
@@ -786,7 +785,8 @@ select{
 }
 
 .product-container:hover {
-  opacity:0.8;
+  transition-duration: 0.2s;
+  opacity:0.5;
 }
 
 span,p{

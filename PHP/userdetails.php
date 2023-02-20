@@ -21,7 +21,7 @@ outputHeader("homepage","userdetails");
             <label for="email">Email address:</label><br>
             <input type="email" name="email" id="email" value=""><br>
             <label for="telephone">Tel number</label><br>
-            <input type="tel" name="tel-num" id="tel-num" value="" pattern="[0-9]{8}" required><br>
+            <input type="tel" name="tel-num" id="tel-num" value="" required><br>
             <label for="country">Country</label><span style="color: red !important; display: inline; float: none;">*</span>   <br>   
         
             <select id="country" name="country" class="form-control">
