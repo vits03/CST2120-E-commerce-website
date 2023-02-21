@@ -9,28 +9,14 @@ if (!isset($_SESSION['username'])) {
 
   require __DIR__ . '/vendor/autoload.php';
   $mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
-  
-  
-  
-    
+
   //Create instance of MongoDB client
     $ID = $_SESSION['id'];
   //Select a database
   $db = $mongoClient->ecommerce;
   $criteria=['customerID'=>new MongoDB\BSON\ObjectId($ID),];
   $orders = $db->orders->find($criteria);
-  
-  //Select a collection 
-  
-  
-  //Work through the customers
-  
-  
 
-
-
-
-  
   outputHeader("homepage","order_history");
 
 
@@ -50,7 +36,7 @@ if (!isset($_SESSION['username'])) {
                     <th>Payment</th>
                   </tr>';
                   foreach ($orders as $order){
-                    echo'<tr>
+                    echo '<tr>
                     <td>'. $order['orderid'] .'</td>
                     <td>'. $order['dateplaced']->toDateTime()->format("d M Y") .'</td>
                     <td>' . $order['totalprice'] .'</td>
@@ -66,11 +52,8 @@ if (!isset($_SESSION['username'])) {
       
 
 
-  </div>
-  ';
-
-
-  
-  outputFooter('orderhistory');
+  </div>';
 }
+
+outputFooter('orderhistory');
 ?>

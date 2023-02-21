@@ -1,18 +1,12 @@
 <?php
 
+        include('common.php');
+        outputHeader("homepage","userdetails");
+
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
   } else {
-        include('common.php');
-
-
-
-        outputHeader("homepage","userdetails");
-
-
-        ?>
-
-
+echo '
         <div class="user-detail-container"><div class="user-profile"> <i id="user-big" class="fa-solid fa-user"></i></div>
         </div>
         <div class="details-container">
@@ -215,13 +209,13 @@ if (!isset($_SESSION['username'])) {
                     <label for="address">Address:</label><br>
                     <textarea type="text"  rows=5 maxlength=128  name="address" id="address"
                     ></textarea>
-                    <input type='submit'  value="Submit">
+                    <input type="submit"  value="Submit">
                 </form> 
                 </div>
             </div>
-        </div>
-        <?php
+        </div>';
+  }
+
         
         outputFooter("userdetails");
-  }
 ?>
