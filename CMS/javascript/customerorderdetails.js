@@ -1,70 +1,73 @@
+$(document).ready(function () {
+  // Get the URL query parameters
+  const urlParams = new URLSearchParams(window.location.search);
 
+  // Get the value of the "id" parameter
+  $id = urlParams.get("id");
+  let orderID = $id;
 
-$(document).ready(function() {
-    // Get the URL query parameters
-    const urlParams = new URLSearchParams(window.location.search);
+  $.ajax({
+    url: "../server/getOrderDetails.php?id=" + $id,
+    type: "GET",
+    success: function (response) {
+      var orderDetails = response;
 
-    // Get the value of the "id" parameter
-    $id = urlParams.get('id');
-    let orderID = $id;
+      var tableBody = $("#table-body");
 
+      for (var i = 0; i < orderDetails.products.length; i++) {
+        // Essential Data (ProductID, CustomerID, Quantity, Order Total Price)
+        var productID = orderDetails.products[i].productid.$oid;
+        var customerID = orderDetails.customerID.$oid;
+        var quantity = orderDetails.products[i].quantity;
+        var orderTotalPrice = orderDetails.totalprice;
 
-    $.ajax({
-        url: '../server/getOrderDetails.php?id=' + $id,
-        type: 'GET',
-        success: function(response) {
-            var orderDetails = response;
-            console.log(orderDetails);
+        $(".orderid").text(orderID);
+        $("#total-price").text(orderTotalPrice);
 
-            var tableBody = $('#table-body');
+        // Get Request to receive product details
+        $.ajax({
+          url: "../server/getProductDetails.php?id=" + productID,
+          type: "GET",
+          success: function (response) {
+            var product = response;
 
-            for (var i = 0; i < orderDetails.products.length; i++) {
+            // Essential Data (Product Name)
+            var ProductName = product.name;
+            var productPrice = product.price;
 
-                // Essential Data (ProductID, CustomerID, Quantity, Order Total Price)
-                var productID = orderDetails.products[i].productid.$oid;
-                var customerID = orderDetails.customerID.$oid;
-                var quantity = orderDetails.products[i].quantity;
-                var orderTotalPrice = orderDetails.totalprice;
-                
-                $('.orderid').text(orderID);
-                $('#total-price').text(orderTotalPrice);
+            var row =
+              "<tr>" +
+              "<td>" +
+              productID +
+              "</td>" +
+              "<td>" +
+              customerID +
+              "</td>" +
+              "<td>" +
+              ProductName +
+              "</td>" +
+              "<td>" +
+              quantity +
+              "</td>" +
+              "<td>" +
+              productPrice +
+              "</td>" +
+              "<td>" +
+              quantity * productPrice +
+              "</td>" +
+              "</tr>";
+            tableBody.append(row);
+          },
 
-                // Get Request to receive product details
-                $.ajax({
-                    url: '../server/getProductDetails.php?id=' + productID,
-                    type: 'GET',
-                    success: function(response) {
-                        var product = response;
-                        console.log(product);
-            
-                        // Essential Data (Product Name)
-                        var ProductName = product.name;
-                        var productPrice = product.price;
-
-                        var row = '<tr>' +
-                                        '<td>' + productID + '</td>' +
-                                        '<td>' + customerID + '</td>' +
-                                        '<td>' + ProductName + '</td>' +
-                                        '<td>' + quantity + '</td>' +
-                                        '<td>' + productPrice + '</td>' +
-                                        '<td>' + quantity * productPrice + '</td>' +
-                                    '</tr>'
-                tableBody.append(row);
-            
-                    },
-                    
-                    error: function(xhr, status, error) {
-                        console.log("Error: " + error.message);
-                    }
-                });
-
-                
-
-            }
-        },
-        
-        error: function(xhr, status, error) {
+          error: function (xhr, status, error) {
             console.log("Error: " + error.message);
-        }
-    })
+          },
+        });
+      }
+    },
+
+    error: function (xhr, status, error) {
+      console.log("Error: " + error.message);
+    },
+  });
 });

@@ -83,7 +83,7 @@
                           <a href="cart.php"><strong>Return to cart</strong></a>
                       </div>
                       <div class="continue">
-                        <button class="button-82-pushable" role="button" onclick="openModal()">
+                        <button class="button-82-pushable" role="button" id="checkout-btn" onclick="openModal()">
                           <span class="button-82-shadow"></span>
                           <span class="button-82-edge"></span>
                           <span class="button-82-front text">
