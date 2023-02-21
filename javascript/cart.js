@@ -2,7 +2,7 @@ $(document).ready(function(){
     let total=0
     let quantity=0;
     const cartdata=[];
-    let cart = JSON.parse(localStorage.getItem("cart"));
+    let cart = JSON.parse(sessionStorage.getItem("cart"));
     //console.log(cart.length != null);
     if (cart != null & cart.length != 0){
     cart.forEach(cartitem=>{
@@ -52,7 +52,7 @@ $.ajax('../server/cartcontent.php', {
         })
 
       
-      localStorage.setItem("cart",JSON.stringify(cart));
+      sessionStorage.setItem("cart",JSON.stringify(cart));
       location.reload();
        });
 
@@ -69,7 +69,7 @@ $.ajax('../server/cartcontent.php', {
               // cart.pop(cartitem.id);
             }
         })
-        localStorage.setItem("cart",JSON.stringify(cart));
+        sessionStorage.setItem("cart",JSON.stringify(cart));
         location.reload();
         });
        

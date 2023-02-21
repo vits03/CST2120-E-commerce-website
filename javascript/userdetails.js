@@ -2,13 +2,16 @@ modifiedData={}
 formChanged=false;
 //$('input').attr('value','sdfsf');
 function modifyUser(){
+  alert("pressed");
    if (formChanged){
+    console.log(modifiedData);
     $.ajax('../server/userdetails.php', {
         type: 'POST',  // http method
         data: modifiedData,  // data to submit
         success: function (data, status, xhr) {
            console.log('status: ' + status + ', data: ' + data);
-           location.reload();
+           alert(data.name)
+           //location.reload();
         },
         error: function (jqXhr, textStatus, errorMessage) {
                console.log('Error' + errorMessage);
@@ -21,6 +24,7 @@ $('#fname').change(function()
 {
   modifiedData.name=$(this).val()
   formChanged=true;
+  console.log(modifiedData);
 });
 
 $('#lname').change(function()
@@ -63,6 +67,7 @@ $(document).ready(function(){
     dataType:'JSON',
     success:function(data)
     {
+      console.log(data);
      data.forEach(user=>{
 
        $('#fname').attr('value',user['name']);

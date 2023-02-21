@@ -58,10 +58,6 @@ echo'';
 echo'              </div>';
 echo'';
 echo'      </div>';
-echo'      <div class="product-review">';
-echo'          <p>Product Review</p>';
-echo'        <iframe width="1046" height="523" src="https://www.youtube.com/embed/Chy9V9uY2eQ" title="Nintendo nailed it. - Nintendo Switch OLED" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-echo'      </div>';
 echo'   </div>';
 
  

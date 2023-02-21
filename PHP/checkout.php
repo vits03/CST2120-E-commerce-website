@@ -54,13 +54,13 @@ outputHeader("checkout","checkout");
                   </div>
                   <div class="input-wrapper">
                     <div class="input-parent-half">
-                      <input class="effect-20" type="text" placeholder="City">
+                      <input class="effect-20"  id="city" type="text" placeholder="City">
                         <span class="focus-border">
                           <i></i>
                         </span>
                     </div>
                     <div class="input-parent-half">
-                      <input class="effect-20" type="text" placeholder="Postal Code">
+                      <input class="effect-20" id="postalcode" type="text" placeholder="Postal Code">
                         <span class="focus-border">
                           <i></i>
                         </span>
@@ -85,7 +85,7 @@ outputHeader("checkout","checkout");
                         <a href="cart.php"><strong>Return to cart</strong></a>
                     </div>
                     <div class="continue">
-                      <button class="button-82-pushable" role="button" onclick="openModal()">
+                      <button  id="checkout-btn" class="button-82-pushable" role="button" onclick="openModal()">
                         <span class="button-82-shadow"></span>
                         <span class="button-82-edge"></span>
                         <span class="button-82-front text">

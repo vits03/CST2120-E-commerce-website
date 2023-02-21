@@ -1,20 +1,17 @@
+
 <?php
-
-// Start the session
-session_start();
-
 //Include libraries
 require __DIR__ . '/vendor/autoload.php';
 $mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
 
-
+session_start();
 
  
 //Create instance of MongoDB client
 
  if ($_SERVER["REQUEST_METHOD"] == "GET") {
-//Select a database
-$ID = $_SESSION['id']; 
+//Select a database 
+$ID = $_SESSION['id'];
 $db = $mongoClient->ecommerce;
 $criteria=['_id'=>new MongoDB\BSON\ObjectId($ID),];
 $users = $db->users->find($criteria);
@@ -49,15 +46,17 @@ echo ($jsonStr);
     //$dataa=$_POST;
     $modifiedData = $_REQUEST;
     
-    
-
+  
 //Select a database
 $db = $mongoClient->ecommerce;
 $criteria=['_id'=>new MongoDB\BSON\ObjectId($_SESSION['id']),];
 $users = $db->users->updateOne($criteria,['$set'=>$modifiedData]);
 
 
-   
+var_dump(($users));
+//Work through the customers
+print_r($users);
+
 
  }
  

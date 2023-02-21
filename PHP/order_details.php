@@ -1,4 +1,5 @@
 <?php
+ //session_start();
  include('common.php');
 
 
@@ -16,16 +17,6 @@
  $orders = $db->orders->find($criteria);
  //Select a collection 
  $pcriteria=['_id'=>new MongoDB\BSON\ObjectId($ID),'products'=>1,];
- $products=$db->products->find($pcriteria);
- //$pdetails=$db->products.find(array("_id"=>))
- //Work through the customers
- //echo $products;
- //foreach ($products as $product){
- // foreach( $product['products'] as $pid){
- ///   echo $pid['productid'];
-  //};
-//};
-
  
 
 
@@ -74,14 +65,14 @@ echo'
                 </tr>';
                 foreach ($order['products'] as $product){
                   $pid=$product['productid'];
-      
+                  
                   $pcriteria=['_id'=>new MongoDB\BSON\ObjectId($pid),];
                   $products = $db->products->findOne($pcriteria);
                 
                     //echo $product['name']; 
                     echo'<tr>
                    <td class="product">' . $products['name'] . '</td>
-                   <td class="quanity">' . $products['quantity'] . '</td>';
+                   <td class="quantity">' . $product['quantity'] . '</td>';
                    
                  
                   echo '  
