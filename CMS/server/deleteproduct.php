@@ -20,9 +20,6 @@ $update = [
 
 ]];
 
-
-
-
 $document = $collection->updateOne(['_id' => new MongoDB\BSON\ObjectID($id)], $update);
 echo $id;
 ?>

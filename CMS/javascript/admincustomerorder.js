@@ -72,7 +72,8 @@ $(document).ready(function () {
           );
         });
       });
-
+      
+      // Add event listener to sort price from low-to-high
       $("#sort-price-lth").on("click", function () {
         var rows = $("#table-body tr").get();
 
@@ -92,6 +93,7 @@ $(document).ready(function () {
         });
       });
 
+      // Add event listener to sort price from high-to-low
       $("#sort-price-htl").on("click", function () {
         var rows = $("#table-body tr").get();
 

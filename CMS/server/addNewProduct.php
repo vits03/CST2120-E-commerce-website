@@ -12,7 +12,7 @@ $db = $mongoClient->ecommerce;
 //Select a collection 
 $collection = $db->products;
 
-// Get data
+// Get data from client-side
 $productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
 $desc = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
 $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_INT);
