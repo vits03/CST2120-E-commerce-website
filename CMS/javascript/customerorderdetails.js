@@ -6,6 +6,7 @@ $(document).ready(function () {
   $id = urlParams.get("id");
   let orderID = $id;
 
+  // Send GET Request to obtain all Orders details from DB
   $.ajax({
     url: "../server/getOrderDetails.php?id=" + $id,
     type: "GET",
@@ -13,7 +14,7 @@ $(document).ready(function () {
       var orderDetails = response;
 
       var tableBody = $("#table-body");
-
+      // Display on Row in Table
       for (var i = 0; i < orderDetails.products.length; i++) {
         // Essential Data (ProductID, CustomerID, Quantity, Order Total Price)
         var productID = orderDetails.products[i].productid.$oid;
