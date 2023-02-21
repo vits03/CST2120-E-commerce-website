@@ -132,33 +132,7 @@ outputHeader("homepage","homepage");
 <div class="recommended-container">
   
 <div class="product-container">
-              <div class="btn-container"><a href="product-page.html">View</a><a onclick="openNav()">Add to cart</a></div>
-                <img src="..\assets\images\monitor1.jpg" alt="">
-                <div class="product-description">SPEKZ 24 Inch Computer Monitor, FHD PC Monitors 1920 x 1080p </div>
-                <div class="product-price">Rs 7,680</div> 
-          </div>
-
-          <div class="product-container">
-              <div class="btn-container"><a href="product-page.html">View</a><a onclick="openNav()">Add to cart</a></div>
-                <img src="..\assets\images\monitor1.jpg" alt="">
-                <div class="product-description">SPEKZ 24 Inch Computer Monitor, FHD PC Monitors 1920 x 1080p </div>
-                <div class="product-price">Rs 7,680</div> 
-          </div>
-
-
-          <div class="product-container">
-              <div class="btn-container"><a href="product-page.html">View</a><a onclick="openNav()">Add to cart</a></div>
-                <img src="..\assets\images\monitor1.jpg" alt="">
-                <div class="product-description">SPEKZ 24 Inch Computer Monitor, FHD PC Monitors 1920 x 1080p </div>
-                <div class="product-price">Rs 7,680</div> 
-          </div>
-
-          <div class="product-container">
-              <div class="btn-container"><a href="product-page.html">View</a><a onclick="openNav()">Add to cart</a></div>
-                <img src="..\assets\images\monitor1.jpg" alt="">
-                <div class="product-description">SPEKZ 24 Inch Computer Monitor, FHD PC Monitors 1920 x 1080p </div>
-                <div class="product-price">Rs 7,680</div> 
-          </div>
+              
 </div>
 </div>
 <!-- Categories of Electronics -->
@@ -211,20 +185,6 @@ outputHeader("homepage","homepage");
       </div>
 
       <div class="product-wrapper">
-
-         
-       
-          <div class="product-container">
-              <div class="btn-container"><a href="product-page.html">View</a><a onclick="openNav()">Add to cart</a></div>
-                <img src="..\assets\images\monitor1.jpg" alt="">
-                <div class="product-description">SPEKZ 24 Inch Computer Monitor, FHD PC Monitors 1920 x 1080p </div>
-                <div class="product-price">Rs 7,680</div> 
-          </div>
-        
-          
-      
-       
-      
         
           </div>       
       </div>

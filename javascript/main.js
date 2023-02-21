@@ -11,6 +11,10 @@ let categories=[];
       success:function(data)
       {
         allProducts=data;
+        allProducts=allProducts.filter(product=>{
+               return product.isRemoved == false;
+        })
+       
         selectedProducts=allProducts;
        //console.log(data)
       data.forEach(product => {
@@ -20,7 +24,7 @@ let categories=[];
   
        $pcontainer.append($('<div/>',{'class':'product-container'}).append(
      ($('<div/>',{'class':'btn-container'}).append(
-                      $('<a/>',{text:'View','id':product._id.$oid,'class':'product-link'})
+                      $('<a/>',{text:'View','id':product._id.$oid,'class':'product-link',"href":`../PHP/productpage.php?id=${product._id.$oid}`})
                    ).append(
                       $('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
                    ))
@@ -40,43 +44,42 @@ let categories=[];
       )}}); 
 
 
-       if (!localStorage.getItem("cart")){
-        localStorage.setItem("cart",JSON.stringify([]));
+       if (!sessionStorage.getItem("cart")){
+        sessionStorage.setItem("cart",JSON.stringify([]));
        }
 
        $('.addtocart').click(function(){
         let increased=false;
         const cartdata=[];
       let pid=$(this).attr("id");
-      //localStorage.setItem("63e3e1bd9edaff14d4c0d694","vitthal");
-      if (! localStorage.getItem("cart")){
-          localStorage.setItem("cart",JSON.stringify([{"id":pid,"quantity":1}]));
+      //sessionStorage.setItem("63e3e1bd9edaff14d4c0d694","vitthal");
+      if (! sessionStorage.getItem("cart")){
+          sessionStorage.setItem("cart",JSON.stringify([{"id":pid,"quantity":1}]));
       }
       else{
-        let cart = JSON.parse(localStorage.getItem("cart"));
+        let cart = JSON.parse(sessionStorage.getItem("cart"));
          cart.forEach(item => {
           console.log(pid,item.id,item.id == pid)
           if (item.id == pid){
             item.quantity=parseInt(item.quantity)+1;
-            localStorage.setItem('cart',JSON.stringify(cart));
+            sessionStorage.setItem('cart',JSON.stringify(cart));
             increased=true;
           }
         
          })
          if (increased == false){
             cart.push({"id":pid,"quantity":1});
-            localStorage.setItem('cart',JSON.stringify(cart));
+            sessionStorage.setItem('cart',JSON.stringify(cart));
           }
           cart.forEach(cartitem=>{
             cartdata.push({'id':cartitem.id});
           })
-       // localStorage.setItem("cart",JSON.stringify(cart));
+       // sessionStorage.setItem("cart",JSON.stringify(cart));
       }
       $('.cart-item').detach();
       let cartObj={}
       cartObj.array=cartdata;
-      console.table(cartObj);
-      console.table(cartdata);
+      
       //get request to server to get all products details
       $.ajax('../server/cartcontent.php', {
         type: 'POST',  // http method
@@ -99,7 +102,7 @@ let categories=[];
                console.log('Error' + errorMessage);
         }
     });
-      //display in sidebar.
+      
       });
      
       $('.product-link').click(function(){
@@ -116,7 +119,6 @@ let categories=[];
   
 
   
-
 
   $("#searchbar-input").keyup(function(){
     let  productName=$(this).val()
@@ -320,7 +322,6 @@ function openProductPage(){
   $('.product-link').click(function(){
     let path=`../PHP/productpage.php?id=${$(this).attr("id")}`;
     window.location=path;
-  
   });
 }
 
@@ -334,8 +335,8 @@ function render_Category(category){
        selectedProducts.push(product);
        $pcontainer.append($('<div/>',{'class':'product-container'}
        ).append(($('<div/>',{'class':'btn-container'}
-       ).append($('<a/>',{text:'View','onclick':"addProductPage()",'id':product._id.$oid,'class':'product-link'})
-       ).append($('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
+       ).append($('<a/>',{text:'View',"href":`../PHP/productpage.php?id=${product._id.$oid}`,'id':product._id.$oid,'class':'product-link'})
+       ).append($('<a/>',{'onclick':`add_to_cart("${product._id.$oid}")`,'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
        ))
        
   
@@ -364,8 +365,8 @@ function filterPrice(price){
         console.table(product);
        $pcontainer.append($('<div/>',{'class':'product-container'}
        ).append(($('<div/>',{'class':'btn-container'}
-       ).append($('<a/>',{text:'View','onclick':"openProductPage()",'id':product._id.$oid,'class':'product-link'})
-       ).append($('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
+       ).append($('<a/>',{text:'View','onclick':"openProductPage()","href":`../PHP/productpage.php?id=${product._id.$oid}`,'id':product._id.$oid,'class':'product-link'})
+       ).append($('<a/>',{'onclick':`add_to_cart("${product._id.$oid}")`,'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
        ))
        
   
@@ -405,8 +406,8 @@ function filter(filterType){
   selectedProducts.forEach(product=>{
        $pcontainer.append($('<div/>',{'class':'product-container'}
        ).append(($('<div/>',{'class':'btn-container'}
-       ).append($('<a/>',{text:'View','onclick':"addProductPage()",'id':product._id.$oid,'class':'product-link'})
-       ).append($('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
+       ).append($('<a/>',{text:'View',"href":`../PHP/productpage.php?id=${product._id.$oid}`,'id':product._id.$oid,'class':'product-link'})
+       ).append($('<a/>',{'onclick':`add_to_cart("${product._id.$oid}")`,'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
        ))
        
   
@@ -432,8 +433,8 @@ function renderProducts(){
         selectedProducts.push(product);
        $pcontainer.append($('<div/>',{'class':'product-container'}
        ).append(($('<div/>',{'class':'btn-container'}
-       ).append($('<a/>',{text:'View','onclick':"addProductPage()",'id':product._id.$oid,'class':'product-link'})
-       ).append($('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
+       ).append($('<a/>',{text:'View',"href":`../PHP/productpage.php?id=${product._id.$oid}`,'id':product._id.$oid,'class':'product-link'})
+       ).append($('<a/>',{'onclick':`add_to_cart("${product._id.$oid}")`,'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
        ))
        
   
@@ -456,8 +457,7 @@ function renderProducts(){
 
 $(".phones").click(function(){
   //selectedProducts=allProducts.sort(function(a, b){return a.price - b.price});
-  resetCheckbox();
-    console.log(allProducts);
+    resetCheckbox();
     render_Category("Mobile Phones");
 })
 
@@ -493,7 +493,7 @@ $("select").change(function(){
 $("#Phones").change(function(){
   if (document.getElementById('Phones').checked){
       categories.push("Mobile Phones");
-      alert("ph");
+     
   }
   else{
     const index = categories.indexOf("Mobile Phones");
@@ -550,34 +550,36 @@ renderProducts();
   });
 
 
-function add_to_cart(){
-  
+function add_to_cart(pid){
+ // $('.addtocart').click(function(){
+    
   let increased=false;
   const cartdata=[];
-  let pid=$(this).attr("id");
-  //localStorage.setItem("63e3e1bd9edaff14d4c0d694","vitthal");
-  if (! localStorage.getItem("cart")){
-      localStorage.setItem("cart",JSON.stringify([{"id":pid,"quantity":1}]));
+ 
+  //sessionStorage.setItem("63e3e1bd9edaff14d4c0d694","vitthal");
+  if (! sessionStorage.getItem("cart")){
+      sessionStorage.setItem("cart",JSON.stringify([{"id":pid,"quantity":1}]));
   }
   else{
-    let cart = JSON.parse(localStorage.getItem("cart"));
+    let cart = JSON.parse(sessionStorage.getItem("cart"));
      cart.forEach(item => {
       console.log(pid,item.id,item.id == pid)
       if (item.id == pid){
+
         item.quantity=parseInt(item.quantity)+1;
-        localStorage.setItem('cart',JSON.stringify(cart));
+        sessionStorage.setItem('cart',JSON.stringify(cart));
         increased=true;
       }
     
      })
      if (increased == false){
         cart.push({"id":pid,"quantity":1});
-        localStorage.setItem('cart',JSON.stringify(cart));
+        sessionStorage.setItem('cart',JSON.stringify(cart));
       }
       cart.forEach(cartitem=>{
         cartdata.push({'id':cartitem.id});
       })
-   // localStorage.setItem("cart",JSON.stringify(cart));
+   // sessionStorage.setItem("cart",JSON.stringify(cart));
   }
   $('.cart-item').detach();
   let cartObj={}
@@ -599,6 +601,7 @@ function add_to_cart(){
         .append($('<img/>',{'src':`..\\assets\\images\\${product.path}`}))).append($('<div/>',{'class':'product-name',text:product.name})
         ).append($('<div/>',{'class':'product-price',text:product.price})));
        })
+       openNav();
       
     
     },

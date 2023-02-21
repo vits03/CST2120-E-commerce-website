@@ -19,10 +19,8 @@ console.log(JSON.parse(localStorage.getItem("tracking")).keywordSearched[0].word
 function DisplayRecommended(){
    
     let keywords=JSON.parse(localStorage.getItem("tracking")).keywordSearched;
-    console.log(keywords);
-for(let i=0;i<3;i++){
-    console.log(keywords[i].word);
-getProduct(keywords[i].word);
+     for(let i=0;i<2;i++){
+     getProduct(keywords[i].word);
 
 }
 }
@@ -80,14 +78,14 @@ $.ajax({
      console.log(data)
     data.forEach(product => {
       // alert(product.name,product.price,product.path)
-       if(product.isRemoved==false && index<3){
+       if(product.isRemoved==false && index<2){
          index+=1;
 
      $pcontainer.append($('<div/>',{'class':'product-container'}).append(
    ($('<div/>',{'class':'btn-container'}).append(
-                    $('<a/>',{text:'View','id':product._id.$oid,'class':'product-link'})
+                    $('<a/>',{text:'View','id':product._id.$oid,'class':'product-link',"href":`../PHP/productpage.php?id=${product._id.$oid}`})
                  ).append(
-                    $('<a/>',{'onclick':"openNav()",'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
+                    $('<a/>',{'onclick':`add_to_cart("${product._id.$oid}")`,'class':"addtocart",'id':product._id.$oid,text:'Add to cart'})
                  ))
 
                  

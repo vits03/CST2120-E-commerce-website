@@ -10,7 +10,7 @@ function closeModal() {
 
 $(document).ready(function(){
     displayUsername();
-    let total=0
+     total=0
     let quantity=0;
     const cartdata=[];
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -20,19 +20,7 @@ $(document).ready(function(){
       });
       let cartObj={}
       cartObj.array=cartdata;
-  $('.button-82-pushable').click(function(){
-    
-    const currentdate = Date.now();
-let order={"orderid":"S00432","totalprice":23331,"address":"temple road belle",
-"dateplaced":currentdate,"products":cart,"customerID":"63de635283cd1eff2b722f60"}
-    $.ajax('../server/checkout_server.php', {
-        type: 'POST',  // http method
-        data: order,            // data to submit
-        success: function (data, status, xhr) {
-           console.log(data);
-        }
-        });
-  })
+  
 $.ajax('../server/cartcontent.php', {
     type: 'POST',  // http method
     data: cartObj,
@@ -55,9 +43,9 @@ $.ajax('../server/cartcontent.php', {
         ).append($('<div/>',{'class':'product-price'}).append($("<h4/>",{text:"Rs"+" "+product.price}))).append($("<div/>",{"class":"quantity",text:"X"+quantity})));
       
        });
-       $(".totalprice").text('Rs ' + total);
-       $(".subtotalprice").text('Rs ' + total*0.75);
-       $(".shippingprice").text('Rs ' + total*0.15);
+       $(".totalprice").text(total);
+       $(".subtotalprice").text(total*0.75);
+       $(".shippingprice").text(total*0.15);
       
          
        
@@ -87,3 +75,26 @@ function displayUsername(){
         }
     })
 }
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+$("#checkout-btn").click(function(){
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    let orderid = ((Math.random() + 1).toString(36).substring(6)).toUpperCase();
+    address= $("#address").val()+","+$("#city").val()+","+$("#postalcode").val()
+    let name=$('#fname').val()+" "+$('#lname').val();
+    const currentdate = Date.now();
+    let order={"orderid":orderid,"totalprice":total,"name":name,"address":address,
+    "dateplaced":currentdate,"products":cart}
+        $.ajax('../server/checkout_server.php', {
+            type: 'POST',  // http method
+            data: order,            // data to submit
+            success: function (data, status, xhr) {
+               console.log(data); 
+               sessionStorage.setItem("cart",[]);
+               window.location.href="../PHP/homepage.php";
+            }
+           
+            });
+      
+})
