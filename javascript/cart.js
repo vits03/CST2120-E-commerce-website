@@ -61,7 +61,12 @@ $.ajax('../server/cartcontent.php', {
              let pid=$(this).attr('pid');
              cart.forEach(cartitem=>{
             if (cartitem.id==pid){
-               cart.pop(cartitem.id);
+            console.log(cart,cartitem);
+           const index = cart.indexOf(cartitem);
+           if (index > -1) { // only splice array when item is found
+             cart.splice(index, 1); // 2nd parameter means remove one item only
+           }
+              // cart.pop(cartitem.id);
             }
         })
         localStorage.setItem("cart",JSON.stringify(cart));
