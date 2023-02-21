@@ -13,7 +13,7 @@ $(document).ready(function(){
      total=0
     let quantity=0;
     const cartdata=[];
-    let cart = JSON.parse(localStorage.getItem("cart"));
+    let cart = JSON.parse(sessionStorage.getItem("cart"));
     if (cart != null){
     cart.forEach(cartitem=>{
         cartdata.push({'id':cartitem.id});
@@ -79,7 +79,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 $("#checkout-btn").click(function(){
-    let cart = JSON.parse(localStorage.getItem("cart"));
+    let cart = JSON.parse(sessionStorage.getItem("cart"));
     let orderid = ((Math.random() + 1).toString(36).substring(6)).toUpperCase();
     address= $("#address").val()+","+$("#city").val()+","+$("#postalcode").val()
     let name=$('#fname').val()+" "+$('#lname').val();

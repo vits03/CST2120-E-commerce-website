@@ -1,9 +1,9 @@
 <?php
  //session_start();
- include('common.php');
+ 
 
 
-if (isset($_SESSION['username'])) {
+//if (isset($_SESSION['username'])) {
   include('common.php');
 
   require __DIR__ . '/vendor/autoload.php';
@@ -106,10 +106,10 @@ echo'
  
 outputFooter("orderdetails");
 
-} else {
+
   header("Location: login.php");
   exit();
-}
+
 
  
 ?>
