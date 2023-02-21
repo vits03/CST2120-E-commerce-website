@@ -1,5 +1,4 @@
 <?php
-
 // Start the session
 session_start();
 
@@ -13,7 +12,7 @@ $mongoClient = (new MongoDB\Client);
 $db = $mongoClient->ecommerce;
 
 //Select a collection 
-$collection = $db->users;
+$collection = $db->admin;
 
 // Get data
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
@@ -25,16 +24,16 @@ $findUser = [
 ];
 
 // Search for username & password in database
-$cursor = $db->users->find($findUser);
+$cursor = $db->admin->find($findUser);
 
 $isFound = false;
 foreach ($cursor as $user) {
     if($user['username'] == $username and $user['password'] == $password){   
         $isFound = true;
+        
         // Store the username in a session
         $_SESSION['username'] = $username;
-        $_SESSION['id'] = (string) $user['_id'];
-
+        
         break;
     }
 }

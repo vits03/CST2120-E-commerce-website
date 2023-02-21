@@ -1,13 +1,10 @@
 $(document).ready(function () {
-
-  // Send GET Request to Obtain all Products from DB
   $.ajax({
     url: "../server/getProducts.php",
     type: "GET",
     success: function (response) {
       var products = response;
 
-      // Display Content in Rows in Table
       var tableBody = $("#table-body");
       for (var i = 0; i < products.length; i++) {
         var product = products[i];
@@ -63,7 +60,6 @@ $(document).ready(function () {
         });
       });
 
-      // Sort Table in Ascending Order (Product Name)
       $("#sort-asc").on("click", function () {
         var tableRows = $("#table-body tr");
         tableRows.sort(function (a, b) {
@@ -93,7 +89,6 @@ $(document).ready(function () {
         });
       });
 
-      // Sort Table by Price (low-to-high)
       $("#sort-price-low-to-high").on("click", function () {
         var tableRows = $("#table-body tr");
         tableRows.sort(function (a, b) {
@@ -108,7 +103,7 @@ $(document).ready(function () {
         $("#table-body").empty().append(tableRows);
       });
 
-      // Sort Table by Price (high-to-low)
+      // Add a click event listener to the "Sort by" dropdown
       $("#sort-price-high-to-low").on("click", function () {
         var rows = tableBody.find("tr").get();
         rows.sort(function (a, b) {

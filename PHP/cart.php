@@ -18,23 +18,7 @@ echo'
         <!-- Cart List -->
         <div class="cart-container">
             <!-- Item 1 -->
-            <div class="cart-item">
-                <div class="product-image">
-                    <img src="..\assets\images\tv.png">
-                </div>
-                <div class="product-name">Samsung 43" UHD Smart TV</div>
-                <div class="product-price">Rs 75,000</div>
-                <div class="product-qty">
-                    <input type="number" id=prod-qty min="1" max="50">
-                </div>
-                <div class="product-delete">
-                    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_pdepdwwd.json"
-                    background="transparent"
-                    speed="1"
-                    style="width: 50px; height: 50px;"
-                    hover></lottie-player>
-                </div>
-            </div>
+           
             
             
 

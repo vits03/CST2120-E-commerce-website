@@ -4,6 +4,8 @@ $(document).ready(function () {
   const cartdata = [];
   let cart = JSON.parse(sessionStorage.getItem("cart"));
 
+
+  // check if cart has been created
   if ((cart != null) & (cart.length != 0)) {
     cart.forEach((cartitem) => {
       cartdata.push({ id: cartitem.id });
@@ -11,6 +13,7 @@ $(document).ready(function () {
     let cartObj = {};
     cartObj.array = cartdata;
 
+    ///post request to server to get all data in cart
     $.ajax("../server/cartcontent.php", {
       type: "POST", // http method
       data: cartObj,
@@ -67,6 +70,7 @@ $(document).ready(function () {
           location.reload();
         });
 
+         //event listener for deleting products
         $(".product-delete").click(function () {
           let pid = $(this).attr("pid");
           cart.forEach((cartitem) => {
@@ -76,7 +80,7 @@ $(document).ready(function () {
                 // only splice array when item is found
                 cart.splice(index, 1); // 2nd parameter means remove one item only
               }
-              // cart.pop(cartitem.id);
+      
             }
           });
           sessionStorage.setItem("cart", JSON.stringify(cart));

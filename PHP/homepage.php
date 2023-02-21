@@ -168,7 +168,6 @@ outputHeader("homepage","homepage");
     <label for="Monitors"> Monitors</label><br>
     <input type="checkbox" id="wireless-earbuds" name="wireless earbuds" value="wireless earbuds">
     <label for="earbuds">wireless Earbuds</label><br>
-    <input class="category-filter-submit"type="submit" value="Submit">
   </form>
 </div>
   </div>

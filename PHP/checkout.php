@@ -16,7 +16,7 @@
                           <h2>Contact Information</h2>
                       </div>
                       <div class="container2">
-                          <span>Already have an account? <a href="login.html">Log In</a></span>
+                          
                       </div>
                   </div>
                   <form action="">

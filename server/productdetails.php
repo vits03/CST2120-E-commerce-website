@@ -23,13 +23,12 @@ foreach ($products as $customer){
     $jsonStr .= ',';//Separator between customers
 }
 
-//Remove last comma
+
 $jsonStr = substr($jsonStr, 0, strlen($jsonStr) - 1);
 
-//Close array
+
 $jsonStr .= ']';
 
-//Echo final string
 echo ($jsonStr);
    //Output each customer as a JSON object with comma in between
    

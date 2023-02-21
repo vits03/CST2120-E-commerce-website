@@ -1,6 +1,6 @@
 modifiedData = {};
 formChanged = false;
-
+//modifies user details
 function modifyUser() {
   if (formChanged) {
     $.ajax("../server/userdetails.php", {

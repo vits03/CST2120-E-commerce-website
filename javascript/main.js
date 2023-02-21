@@ -2,7 +2,7 @@ let categories = [];
 let allProducts;
 let selectedProducts;
 $(document).ready(function () {
-  $.ajax({
+  $.ajax({ //get request to fetch all data from server
     url: "../server/products.php",
     type: "get",
     dataType: "JSON",
@@ -13,7 +13,7 @@ $(document).ready(function () {
       });
 
       selectedProducts = allProducts;
-      data.forEach((product) => {
+      data.forEach((product) => { //display each product in their container
         if (product.isRemoved == false) {
           let $pcontainer = $("body div.product-wrapper");
 
@@ -60,12 +60,13 @@ $(document).ready(function () {
       if (!sessionStorage.getItem("cart")) {
         sessionStorage.setItem("cart", JSON.stringify([]));
       }
-
+      
+      //event listener to add items to cart
       $(".addtocart").click(function () {
         let increased = false;
         const cartdata = [];
         let pid = $(this).attr("id");
-        //sessionStorage.setItem("63e3e1bd9edaff14d4c0d694","vitthal");
+        
         if (!sessionStorage.getItem("cart")) {
           sessionStorage.setItem(
             "cart",
@@ -87,7 +88,7 @@ $(document).ready(function () {
           cart.forEach((cartitem) => {
             cartdata.push({ id: cartitem.id });
           });
-          // sessionStorage.setItem("cart",JSON.stringify(cart));
+        
         }
         $(".cart-item").detach();
         let cartObj = {};
@@ -134,6 +135,7 @@ $(document).ready(function () {
   });
 });
 
+
 $("#searchbar-input").keyup(function () {
   let productName = $(this).val();
 
@@ -142,6 +144,8 @@ $("#searchbar-input").keyup(function () {
   }
 });
 
+
+//send data to server when user searches for a product
 $("#searchbar-input").keypress(function () {
   let productName = $(this).val();
 
@@ -155,7 +159,6 @@ $("#searchbar-input").keypress(function () {
     type: "get",
     dataType: "JSON",
     success: function (data) {
-      console.table(data);
       data.forEach((product) => {
         $(".dropdown-content-search").append(
           $("<a/>", {
@@ -168,6 +171,8 @@ $("#searchbar-input").keypress(function () {
   });
 });
 
+
+//carousel
 (function () {
   const slider = document.querySelector(".main-slider");
   const imagenes = document.querySelector(".slider-imagenes");
@@ -326,6 +331,7 @@ function openProductPage() {
   });
 }
 
+//display products for each category selected
 function render_Category(category) {
   let $pcontainer = $("body div.product-wrapper");
   $pcontainer.empty();
@@ -366,13 +372,13 @@ function render_Category(category) {
   });
 }
 
+//display products greater than  slider range value
 function filterPrice(price) {
   let $pcontainer = $("body div.product-wrapper");
   $pcontainer.empty();
 
   selectedProducts.forEach((product) => {
     if (parseInt(product.price) > price) {
-      console.table(product);
       $pcontainer.append(
         $("<div/>", { class: "product-container" })
           .append(
@@ -407,6 +413,7 @@ function filterPrice(price) {
   });
 }
 
+//displays product in ascending or descending order
 function filter(filterType) {
   if (filterType == "Ascending") {
     selectedProducts.sort(function (a, b) {
@@ -537,6 +544,8 @@ $("select").change(function () {
   filter($(this).val());
 });
 
+
+//checkboxes functionality
 $("#Phones").change(function () {
   if (document.getElementById("Phones").checked) {
     categories.push("Mobile Phones");
@@ -588,12 +597,12 @@ $("#wireless-earbuds").change(function () {
 });
 
 function add_to_cart(pid) {
-  // $('.addtocart').click(function(){
+  
 
   let increased = false;
   const cartdata = [];
 
-  //sessionStorage.setItem("63e3e1bd9edaff14d4c0d694","vitthal");
+  
   if (!sessionStorage.getItem("cart")) {
     sessionStorage.setItem("cart", JSON.stringify([{ id: pid, quantity: 1 }]));
   } else {
@@ -612,13 +621,13 @@ function add_to_cart(pid) {
     cart.forEach((cartitem) => {
       cartdata.push({ id: cartitem.id });
     });
-    // sessionStorage.setItem("cart",JSON.stringify(cart));
+    
   }
   $(".cart-item").detach();
   let cartObj = {};
   cartObj.array = cartdata;
-  console.table(cartObj);
-  console.table(cartdata);
+  
+
   //get request to server to get all products details
   $.ajax("../server/cartcontent.php", {
     type: "POST", // http method

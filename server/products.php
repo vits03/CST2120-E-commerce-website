@@ -4,17 +4,17 @@
 //Include libraries
 require __DIR__ . '/vendor/autoload.php';
     
-//Create instance of MongoDB client
-$mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
 
-//Select a database
+$mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
 $db = $mongoClient->ecommerce;
 $products = $db->products->find();
 
-//Select a collection 
 
-   //Output each customer as a JSON object with comma in between
-$jsonStr = '['; //Start of array of customers in JSON
+
+   
+
+//returns all products in database
+$jsonStr = '['; 
 
 //Work through the customers
 foreach ($products as $customer){

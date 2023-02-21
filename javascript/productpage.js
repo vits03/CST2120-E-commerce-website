@@ -6,12 +6,11 @@ $("#searchbar-input").keypress(function () {
     $(".dropdown-content-search").css("display", "none");
   }
 
-  $.get({
+  $.get({ //fetches all details of the product clicked
     url: `../server/productsearch.php?search=${productName}`,
     type: "get",
     dataType: "JSON",
     success: function (data) {
-      console.table(data);
       data.forEach((product) => {
         $(".dropdown-content-search").append(
           $("<a/>", {
@@ -23,3 +22,41 @@ $("#searchbar-input").keypress(function () {
     },
   });
 });
+
+$(document).ready(function(){
+  $('.cart-button').click(function(){
+    let id=$(this).attr("id");
+    add_to_cart(id);
+    window.location.href="../PHP/cart.php"
+  })
+})
+
+function add_to_cart(pid) {
+  
+  let increased = false;
+  const cartdata = [];
+
+  
+  if (!sessionStorage.getItem("cart")) {
+    sessionStorage.setItem("cart", JSON.stringify([{ id: pid, quantity: 1 }]));
+  } else {
+    let cart = JSON.parse(sessionStorage.getItem("cart"));
+    cart.forEach((item) => {
+      if (item.id == pid) {
+        item.quantity = parseInt(item.quantity) + 1;
+        sessionStorage.setItem("cart", JSON.stringify(cart));
+        increased = true;
+      }
+    });
+    if (increased == false) {
+      cart.push({ id: pid, quantity: 1 });
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+    }
+    cart.forEach((cartitem) => {
+      cartdata.push({ id: cartitem.id });
+    });
+    
+  }
+    
+  ;
+}

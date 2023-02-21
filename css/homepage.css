@@ -50,6 +50,7 @@ body{
     display: flex;
     align-items: center;
      width: 30%;
+     margin-top: 1rem;
     
  }
  
@@ -74,6 +75,12 @@ body{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
+.dropdown-content-search a {
+  color: var(--primary);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 /* Links inside the dropdown */
 .dropdown-content a {
   color: var(--primary);
@@ -81,12 +88,7 @@ body{
   text-decoration: none;
   display: block;
 }
-.dropdown-content-search a {
-  color: var(--primary);
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {color: rgba(250,38,26,1);}
 

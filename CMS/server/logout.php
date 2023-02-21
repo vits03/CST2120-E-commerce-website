@@ -4,7 +4,7 @@ session_start();
 session_unset();
 session_destroy();
 
-header("Location: ../PHP/homepage.php");
+header("Location: ../PHP/adminlogin.php");
 
 
 

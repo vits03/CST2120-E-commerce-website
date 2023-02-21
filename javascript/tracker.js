@@ -15,6 +15,7 @@ tracking = {
 
 localStorage.setItem("tracking", JSON.stringify(tracking));
 
+//displays recommeded products based on search frequency
 function DisplayRecommended() {
   let keywords = JSON.parse(localStorage.getItem("tracking")).keywordSearched;
   for (let i = 0; i < 2; i++) {
@@ -110,5 +111,4 @@ $(document).ready(function () {
   DisplayRecommended();
 });
 
-//send request to server to find 2 or more  most searched keywords in tracking (first two elements in array keywords searched)
-//display data using jquery
+

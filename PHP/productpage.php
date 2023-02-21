@@ -51,7 +51,7 @@ echo'                      <ul class="product-list-description">';
                              }                     
 echo'                      </ul>';
 echo'                    </div>';
-echo'                    <div class="cart-btn"><a href="cart.php">Add to cart</a> <a href="checkout.php">Buy Now</a></div>';
+echo'                    <div  class="cart-btn" onclick="add_to_cart("'. $ID .'")"><a class="cart-button"id='. $ID .'>Add to cart</a> <a>Buy Now</a></div>';
 echo'                    ';
 echo'                    ';
 echo'';

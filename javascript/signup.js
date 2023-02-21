@@ -148,12 +148,7 @@ function validateForm() {
   }
 
   // Validation for date
-  // let result = validateDate(date);
-  // if (result == false) {
-  //     date.style.border = '2px solid red';
-  // } else {
-  //     date.style.border = '2px solid green';
-  // }
+  
   date.style.border = "2px solid green";
 
   // Validate for password1

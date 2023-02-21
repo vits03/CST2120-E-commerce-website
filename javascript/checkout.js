@@ -9,7 +9,7 @@ function closeModal() {
 }
 
 $(document).ready(function () {
-  displayUsername();
+  displayUsername(); //fill form with username and email addresss
   total = 0;
   let quantity = 0;
   const cartdata = [];
@@ -20,7 +20,8 @@ $(document).ready(function () {
     });
     let cartObj = {};
     cartObj.array = cartdata;
-
+   
+    //display all items details in cart
     $.ajax("../server/cartcontent.php", {
       type: "POST", // http method
       data: cartObj,
@@ -86,6 +87,8 @@ function displayUsername() {
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+
+//checkout btn to send data to server
 $("#checkout-btn").click(function () {
   let cart = JSON.parse(sessionStorage.getItem("cart"));
   let orderid = (Math.random() + 1).toString(36).substring(6).toUpperCase();
