@@ -49,26 +49,14 @@ echo ($jsonStr);
     //$dataa=$_POST;
     $modifiedData = $_REQUEST;
     
-    foreach($_REQUEST as $x => $x_value) {
-       echo "Key=" . $x . ", Value=" . $x_value;
-        echo "<br>";
-      }
+    
 
 //Select a database
 $db = $mongoClient->ecommerce;
-$criteria=['_id'=>new MongoDB\BSON\ObjectId($ID),];
+$criteria=['_id'=>new MongoDB\BSON\ObjectId($_SESSION['id']),];
 $users = $db->users->updateOne($criteria,['$set'=>$modifiedData]);
 
-//Select a collection 
-//$jsonStr = '['; //Start of array of customers in JSON
-var_dump(($users));
-//Work through the customers
-print_r($users);
-//Remove last comma
 
-//Echo final string
-
-   //Output each customer as a JSON object with comma in between
    
 
  }
