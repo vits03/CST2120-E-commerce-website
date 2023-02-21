@@ -233,7 +233,7 @@ db.users.insert([
     price:56500,
     quantity:25,
     category:"Mobile Phones",
-    path:"iphone14.png",
+    path:"iphone14.jpg",
     isRemoved:false
  },
  {
@@ -245,7 +245,7 @@ db.users.insert([
     price:66500,
     quantity:21,
     category:"Mobile Phones",
-    path:"samsungs22.png",
+    path:"samsungs22.jpg",
     isRemoved:false
  }
 , {
@@ -441,12 +441,7 @@ db.users.insert([
   category:"Tablets",
   path:"telcasttablet.jpg",
   isRemoved:false
-},
-
-
-
-
-
+}
 ])
  
  db.orders.insert([

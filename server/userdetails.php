@@ -7,9 +7,6 @@ session_start();
 require __DIR__ . '/vendor/autoload.php';
 $mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
 
-
-
- 
 //Create instance of MongoDB client
 
  if ($_SERVER["REQUEST_METHOD"] == "GET") {

@@ -17,6 +17,7 @@ function modifyUser(){
    }
    
 }
+
 $('#fname').change(function()
 {
   modifiedData.name=$(this).val()
@@ -50,7 +51,7 @@ $('select').change(function()
 
 $('#address').change(function()
 {
-  modifiedData.telephonenum=$(this).val()
+  modifiedData.address=$(this).val()
   formChanged=true;
 });
 

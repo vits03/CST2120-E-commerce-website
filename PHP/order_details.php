@@ -1,22 +1,24 @@
 <?php
- include('common.php');
 
 
- require __DIR__ . '/vendor/autoload.php';
+if (isset($_SESSION['username'])) {
+  include('common.php');
+
+  require __DIR__ . '/vendor/autoload.php';
  $mongoClient = new \MongoDB\Client("mongodb://localhost:27017");
  
  
  
   
  //Create instance of MongoDB client
-  $ID=strval($_GET["id"]);
+  $ID= $_GET['id'];
  //Select a database
  $db = $mongoClient->ecommerce;
  $criteria=['_id'=>new MongoDB\BSON\ObjectId($ID),];
  $orders = $db->orders->find($criteria);
  //Select a collection 
  $pcriteria=['_id'=>new MongoDB\BSON\ObjectId($ID),'products'=>1,];
- $products=$db->products->find($pcriteria);
+ $products=$db->products->find($criteria);
  //$pdetails=$db->products.find(array("_id"=>))
  //Work through the customers
  //echo $products;
@@ -61,7 +63,7 @@ echo'
      
            <p class="delivery-name">' . $user['name'] .'</p>
            <p class="delivery-address">' . $user['address'] .'</p>
-           <p class="delivery-postalcode">69420</p>
+        
            <p class="delivery-country">' . $user['country'] .'</p>
            <p class="delivery-phonenumber">' . $user['telephonenum'] .'</p></div>
             <div class="product-detail">
@@ -112,4 +114,10 @@ echo'
  
 outputFooter("orderdetails");
 
+} else {
+  header("Location: login.php");
+  exit();
+}
+
+ 
 ?>
